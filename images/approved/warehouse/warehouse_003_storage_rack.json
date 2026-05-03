@@ -1,0 +1,19 @@
+{
+  "word": "storage rack",
+  "category": "warehouse",
+  "query": "warehouse storage rack",
+  "provider": "pexels",
+  "provider_id": "4170172",
+  "source": "Pexels",
+  "sourceUrl": "https://www.pexels.com/photo/green-metal-shelves-with-construction-materials-4170172/",
+  "photographer": "Engin Akyurt",
+  "license": "Pexels License",
+  "downloadUrl": "https://images.pexels.com/photos/4170172/pexels-photo-4170172.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "imagePath": "images/raw/warehouse/storage_rack/pexels_4170172.jpg",
+  "sidecarPath": "",
+  "sha256": "8be1dfd34c73951176fc930719468cadc5c958589fc31ed1250714e30dc5a78b",
+  "width": 6048,
+  "height": 4032,
+  "approvedId": "warehouse_003_storage_rack",
+  "approvedImagePath": "images/approved/warehouse/warehouse_003_storage_rack.jpg"
+}

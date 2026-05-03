@@ -1,0 +1,19 @@
+{
+  "word": "swivel chair",
+  "category": "office",
+  "query": "office swivel chair",
+  "provider": "pexels",
+  "provider_id": "14245340",
+  "source": "Pexels",
+  "sourceUrl": "https://www.pexels.com/photo/a-swivel-chair-near-table-with-laptop-14245340/",
+  "photographer": "Anji Beiye",
+  "license": "Pexels License",
+  "downloadUrl": "https://images.pexels.com/photos/14245340/pexels-photo-14245340.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "imagePath": "images/raw/office/swivel_chair/pexels_14245340.jpg",
+  "sidecarPath": "",
+  "sha256": "16741185eb79de827a00dd1a337c82bd4c407ee1467acd9a869b7ab0dd9d2491",
+  "width": 8688,
+  "height": 5792,
+  "approvedId": "office_010_swivel_chair",
+  "approvedImagePath": "images/approved/office/office_010_swivel_chair.jpg"
+}

@@ -1,0 +1,19 @@
+{
+  "word": "conveyor belt",
+  "category": "warehouse",
+  "query": "warehouse conveyor belt",
+  "provider": "pexels",
+  "provider_id": "11679684",
+  "source": "Pexels",
+  "sourceUrl": "https://www.pexels.com/photo/conveyer-belt-on-industrial-plant-11679684/",
+  "photographer": "Mark Stebnicki",
+  "license": "Pexels License",
+  "downloadUrl": "https://images.pexels.com/photos/11679684/pexels-photo-11679684.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "imagePath": "images/raw/warehouse/conveyor_belt/pexels_11679684.jpg",
+  "sidecarPath": "",
+  "sha256": "13eec2006693b16134133585a5c272851d7d90767c4b938582573f22cce070a9",
+  "width": 8640,
+  "height": 5760,
+  "approvedId": "warehouse_008_conveyor_belt",
+  "approvedImagePath": "images/approved/warehouse/warehouse_008_conveyor_belt.jpg"
+}

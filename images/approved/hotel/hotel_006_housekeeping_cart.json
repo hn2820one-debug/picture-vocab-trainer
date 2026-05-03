@@ -1,0 +1,19 @@
+{
+  "word": "housekeeping cart",
+  "category": "hotel",
+  "query": "hotel housekeeping cart",
+  "provider": "pexels",
+  "provider_id": "3772615",
+  "source": "Pexels",
+  "sourceUrl": "https://www.pexels.com/photo/man-in-white-long-sleeve-3772615/",
+  "photographer": "Andrea Piacquadio",
+  "license": "Pexels License",
+  "downloadUrl": "https://images.pexels.com/photos/3772615/pexels-photo-3772615.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "imagePath": "images/raw/hotel/housekeeping_cart/pexels_3772615.jpg",
+  "sidecarPath": "",
+  "sha256": "c22bec4cb9b90e6abe201edf6a29e0878a78ccd9b84eed915458f312ab9a558e",
+  "width": 6850,
+  "height": 4975,
+  "approvedId": "hotel_006_housekeeping_cart",
+  "approvedImagePath": "images/approved/hotel/hotel_006_housekeeping_cart.jpg"
+}

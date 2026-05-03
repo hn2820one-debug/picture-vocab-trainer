@@ -1,0 +1,19 @@
+{
+  "word": "printer",
+  "category": "office",
+  "query": "office printer",
+  "provider": "pexels",
+  "provider_id": "11833899",
+  "source": "Pexels",
+  "sourceUrl": "https://www.pexels.com/photo/white-and-black-photocopier-machine-11833899/",
+  "photographer": "Engin Akyurt",
+  "license": "Pexels License",
+  "downloadUrl": "https://images.pexels.com/photos/11833899/pexels-photo-11833899.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "imagePath": "images/raw/office/printer/pexels_11833899.jpg",
+  "sidecarPath": "",
+  "sha256": "1a29450da05ca2c3c210b1da18a96184fe65ef91e13318e451466ebdbba10df2",
+  "width": 8944,
+  "height": 6708,
+  "approvedId": "office_001_printer",
+  "approvedImagePath": "images/approved/office/office_001_printer.jpg"
+}

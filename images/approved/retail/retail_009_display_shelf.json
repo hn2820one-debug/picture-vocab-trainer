@@ -1,0 +1,19 @@
+{
+  "word": "display shelf",
+  "category": "retail",
+  "query": "retail display shelf",
+  "provider": "pexels",
+  "provider_id": "27939229",
+  "source": "Pexels",
+  "sourceUrl": "https://www.pexels.com/photo/a-shelf-with-snacks-and-snacks-on-it-27939229/",
+  "photographer": "Allen Boguslavsky",
+  "license": "Pexels License",
+  "downloadUrl": "https://images.pexels.com/photos/27939229/pexels-photo-27939229.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "imagePath": "images/raw/retail/display_shelf/pexels_27939229.jpg",
+  "sidecarPath": "",
+  "sha256": "7fe16d972718bede18f1b87b87ed4bc3aedb2bcf5de689b71508a6cd5568506a",
+  "width": 8022,
+  "height": 6017,
+  "approvedId": "retail_009_display_shelf",
+  "approvedImagePath": "images/approved/retail/retail_009_display_shelf.jpg"
+}

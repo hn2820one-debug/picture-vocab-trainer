@@ -1,0 +1,19 @@
+{
+  "word": "barcode scanner",
+  "category": "retail",
+  "query": "retail barcode scanner",
+  "provider": "pexels",
+  "provider_id": "12935075",
+  "source": "Pexels",
+  "sourceUrl": "https://www.pexels.com/photo/person-using-scanner-on-bottle-of-wine-12935075/",
+  "photographer": "iMin Technology",
+  "license": "Pexels License",
+  "downloadUrl": "https://images.pexels.com/photos/12935075/pexels-photo-12935075.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "imagePath": "images/raw/retail/barcode_scanner/pexels_12935075.jpg",
+  "sidecarPath": "",
+  "sha256": "f81f3c1a8564e785d0d365a2be83842d14cf862e164080079a9cb07d622ced0a",
+  "width": 7008,
+  "height": 4672,
+  "approvedId": "retail_006_barcode_scanner",
+  "approvedImagePath": "images/approved/retail/retail_006_barcode_scanner.jpg"
+}

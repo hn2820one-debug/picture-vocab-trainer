@@ -1,0 +1,19 @@
+{
+  "word": "receiving area",
+  "category": "warehouse",
+  "query": "warehouse receiving dock",
+  "provider": "pixabay",
+  "provider_id": "4408573",
+  "source": "Pixabay",
+  "sourceUrl": "https://pixabay.com/photos/production-facility-logistic-4408573/",
+  "photographer": "marcinjozwiak",
+  "license": "Pixabay Content License",
+  "downloadUrl": "https://pixabay.com/get/g86c9ce516a13b312a4d393d91d7a2f47ad09088da0d4ec4995cbb5274469393b84d277928a4786010bb781870ee635c59ed9b2e470094cfb48f51afeefc27745_1280.jpg",
+  "imagePath": "images/raw/warehouse/receiving_area/pixabay_4408573.jpg",
+  "sidecarPath": "",
+  "sha256": "77fbf1e8017f409f78cbeb07cd9fc630b4a345d89516913b39d6b979f77b42c7",
+  "width": 5464,
+  "height": 3640,
+  "approvedId": "warehouse_010_receiving_area",
+  "approvedImagePath": "images/approved/warehouse/warehouse_010_receiving_area.jpg"
+}

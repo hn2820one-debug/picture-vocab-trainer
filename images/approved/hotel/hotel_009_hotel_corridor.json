@@ -1,0 +1,19 @@
+{
+  "word": "hotel corridor",
+  "category": "hotel",
+  "query": "hotel corridor",
+  "provider": "pexels",
+  "provider_id": "33803745",
+  "source": "Pexels",
+  "sourceUrl": "https://www.pexels.com/photo/luxurious-heritage-hotel-corridor-in-bikaner-33803745/",
+  "photographer": "Abhishek  Navlakha",
+  "license": "Pexels License",
+  "downloadUrl": "https://images.pexels.com/photos/33803745/pexels-photo-33803745.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "imagePath": "images/raw/hotel/hotel_corridor/pexels_33803745.jpg",
+  "sidecarPath": "",
+  "sha256": "1acfb6202bbadb72a33eabb68c55b21e308a6ae954776363d511a40d10d25eac",
+  "width": 9254,
+  "height": 6169,
+  "approvedId": "hotel_009_hotel_corridor",
+  "approvedImagePath": "images/approved/hotel/hotel_009_hotel_corridor.jpg"
+}

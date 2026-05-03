@@ -1,0 +1,19 @@
+{
+  "word": "departure board",
+  "category": "airport",
+  "query": "airport departure board",
+  "provider": "pexels",
+  "provider_id": "12940608",
+  "source": "Pexels",
+  "sourceUrl": "https://www.pexels.com/photo/airport-departures-board-12940608/",
+  "photographer": "Atlantic Ambience",
+  "license": "Pexels License",
+  "downloadUrl": "https://images.pexels.com/photos/12940608/pexels-photo-12940608.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "imagePath": "images/raw/airport/departure_board/pexels_12940608.jpg",
+  "sidecarPath": "",
+  "sha256": "8e436eff1b0fd5ad15248834abc994fcc35da53b422c3a35f7fb5297281881fb",
+  "width": 6000,
+  "height": 4000,
+  "approvedId": "airport_004_departure_board",
+  "approvedImagePath": "images/approved/airport/airport_004_departure_board.jpg"
+}

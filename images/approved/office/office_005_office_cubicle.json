@@ -1,0 +1,19 @@
+{
+  "word": "office cubicle",
+  "category": "office",
+  "query": "office cubicle",
+  "provider": "pexels",
+  "provider_id": "5483233",
+  "source": "Pexels",
+  "sourceUrl": "https://www.pexels.com/photo/interior-design-of-an-office-5483233/",
+  "photographer": "cottonbro studio",
+  "license": "Pexels License",
+  "downloadUrl": "https://images.pexels.com/photos/5483233/pexels-photo-5483233.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "imagePath": "images/raw/office/office_cubicle/pexels_5483233.jpg",
+  "sidecarPath": "",
+  "sha256": "a3f0a7988e22677d90e02817ed48885603e4dc53bcda2d47cdde8a173edbc30f",
+  "width": 6612,
+  "height": 4408,
+  "approvedId": "office_005_office_cubicle",
+  "approvedImagePath": "images/approved/office/office_005_office_cubicle.jpg"
+}

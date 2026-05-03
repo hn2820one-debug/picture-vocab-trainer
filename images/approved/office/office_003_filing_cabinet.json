@@ -1,0 +1,19 @@
+{
+  "word": "filing cabinet",
+  "category": "office",
+  "query": "office filing cabinet",
+  "provider": "pexels",
+  "provider_id": "6333743",
+  "source": "Pexels",
+  "sourceUrl": "https://www.pexels.com/photo/close-up-of-brown-drawers-6333743/",
+  "photographer": "cottonbro studio",
+  "license": "Pexels License",
+  "downloadUrl": "https://images.pexels.com/photos/6333743/pexels-photo-6333743.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "imagePath": "images/raw/office/filing_cabinet/pexels_6333743.jpg",
+  "sidecarPath": "",
+  "sha256": "df260877a2ccc503f909194174758d33cc5751754b0c8b1b00adb284c8a8e31c",
+  "width": 6494,
+  "height": 4329,
+  "approvedId": "office_003_filing_cabinet",
+  "approvedImagePath": "images/approved/office/office_003_filing_cabinet.jpg"
+}

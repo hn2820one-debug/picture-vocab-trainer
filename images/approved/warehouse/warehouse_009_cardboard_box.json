@@ -1,0 +1,19 @@
+{
+  "word": "cardboard box",
+  "category": "warehouse",
+  "query": "warehouse cardboard box inventory",
+  "provider": "pexels",
+  "provider_id": "10834810",
+  "source": "Pexels",
+  "sourceUrl": "https://www.pexels.com/photo/stacked-boxes-in-a-warehouse-10834810/",
+  "photographer": "Ihsan Adityawarman",
+  "license": "Pexels License",
+  "downloadUrl": "https://images.pexels.com/photos/10834810/pexels-photo-10834810.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "imagePath": "images/raw/warehouse/cardboard_box/pexels_10834810.jpg",
+  "sidecarPath": "",
+  "sha256": "db6c30a75f60aab2de9c99ac64384ed5ef3d9cf6ea73e2f8264868dd3bb81169",
+  "width": 8000,
+  "height": 6000,
+  "approvedId": "warehouse_009_cardboard_box",
+  "approvedImagePath": "images/approved/warehouse/warehouse_009_cardboard_box.jpg"
+}

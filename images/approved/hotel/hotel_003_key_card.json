@@ -1,0 +1,19 @@
+{
+  "word": "key card",
+  "category": "hotel",
+  "query": "hotel room key card access",
+  "provider": "pexels",
+  "provider_id": "13657444",
+  "source": "Pexels",
+  "sourceUrl": "https://www.pexels.com/photo/man-hand-holding-access-card-over-reader-13657444/",
+  "photographer": "Susanne Plank",
+  "license": "Pexels License",
+  "downloadUrl": "https://images.pexels.com/photos/13657444/pexels-photo-13657444.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "imagePath": "images/raw/hotel/key_card/pexels_13657444.jpg",
+  "sidecarPath": "",
+  "sha256": "41d8f8645773238c0966a988f9a4e13c6f82d4b5c3a05b310c41c7f33806f6da",
+  "width": 7360,
+  "height": 4912,
+  "approvedId": "hotel_003_key_card",
+  "approvedImagePath": "images/approved/hotel/hotel_003_key_card.jpg"
+}

@@ -1,0 +1,19 @@
+{
+  "word": "break room",
+  "category": "office",
+  "query": "office break room kitchen",
+  "provider": "pixabay",
+  "provider_id": "2165756",
+  "source": "Pixabay",
+  "sourceUrl": "https://pixabay.com/photos/kitchen-home-interior-modern-room-2165756/",
+  "photographer": "ClickerHappy",
+  "license": "Pixabay Content License",
+  "downloadUrl": "https://pixabay.com/get/g8642702a6f2367a9f636315f367078b9776e2ec66f0b5241969df8b6a6d73ee5d21c3f098f867e9b778c2c48d74db17e33fc0dbef79e3ec09021fce519c24b46_1280.jpg",
+  "imagePath": "images/raw/office/break_room/pixabay_2165756.jpg",
+  "sidecarPath": "",
+  "sha256": "b1171f6468b951d61a5c05a0043fdfd427cc5879a72d4c32fa2bd71d9ecdf081",
+  "width": 4596,
+  "height": 3044,
+  "approvedId": "office_006_break_room",
+  "approvedImagePath": "images/approved/office/office_006_break_room.jpg"
+}

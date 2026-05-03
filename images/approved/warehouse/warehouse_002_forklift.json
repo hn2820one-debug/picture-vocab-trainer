@@ -1,0 +1,19 @@
+{
+  "word": "forklift",
+  "category": "warehouse",
+  "query": "warehouse forklift",
+  "provider": "pexels",
+  "provider_id": "8760709",
+  "source": "Pexels",
+  "sourceUrl": "https://www.pexels.com/photo/orange-and-black-fork-lift-8760709/",
+  "photographer": "set aniset",
+  "license": "Pexels License",
+  "downloadUrl": "https://images.pexels.com/photos/8760709/pexels-photo-8760709.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "imagePath": "images/raw/warehouse/forklift/pexels_8760709.jpg",
+  "sidecarPath": "",
+  "sha256": "bb906ff4b277cd56e76db0d0ea7d296397be12f59b2ba16432f3343173d9acc0",
+  "width": 6000,
+  "height": 4000,
+  "approvedId": "warehouse_002_forklift",
+  "approvedImagePath": "images/approved/warehouse/warehouse_002_forklift.jpg"
+}

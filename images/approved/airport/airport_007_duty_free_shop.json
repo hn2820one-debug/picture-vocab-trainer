@@ -1,0 +1,19 @@
+{
+  "word": "duty-free shop",
+  "category": "airport",
+  "query": "airport duty free store",
+  "provider": "pixabay",
+  "provider_id": "1850804",
+  "source": "Pixabay",
+  "sourceUrl": "https://pixabay.com/photos/apparel-boutique-bags-shoes-shop-1850804/",
+  "photographer": "Pexels",
+  "license": "Pixabay Content License",
+  "downloadUrl": "https://pixabay.com/get/gcda2dda3f697ec64ed338d8c5c9eb1fb67346affdb19387b346795218aae0ff0d2e13400f3410f01b4453869c127cb6f67763c7b959795a25980e5d5e9fa2710_1280.jpg",
+  "imagePath": "images/raw/airport/duty_free_shop/pixabay_1850804.jpg",
+  "sidecarPath": "",
+  "sha256": "440f249774c733b366a4d08136cda46eda7344bc1ba217c52d3e8bbd0f769613",
+  "width": 4000,
+  "height": 2761,
+  "approvedId": "airport_007_duty_free_shop",
+  "approvedImagePath": "images/approved/airport/airport_007_duty_free_shop.jpg"
+}

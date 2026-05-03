@@ -1,0 +1,19 @@
+{
+  "word": "reception area",
+  "category": "office",
+  "query": "office reception area",
+  "provider": "pexels",
+  "provider_id": "36894415",
+  "source": "Pexels",
+  "sourceUrl": "https://www.pexels.com/photo/modern-office-reception-area-with-logo-36894415/",
+  "photographer": "Thien  Nhan",
+  "license": "Pexels License",
+  "downloadUrl": "https://images.pexels.com/photos/36894415/pexels-photo-36894415.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "imagePath": "images/raw/office/reception_area/pexels_36894415.jpg",
+  "sidecarPath": "",
+  "sha256": "1e1e6e6b03db6c935b494dd0ab42d636ba631eb8fa1ad8843e2a32d66f6f0ddb",
+  "width": 7008,
+  "height": 4672,
+  "approvedId": "office_004_reception_area",
+  "approvedImagePath": "images/approved/office/office_004_reception_area.jpg"
+}

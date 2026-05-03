@@ -1,0 +1,19 @@
+{
+  "word": "conference room",
+  "category": "office",
+  "query": "office conference room",
+  "provider": "pexels",
+  "provider_id": "20101490",
+  "source": "Pexels",
+  "sourceUrl": "https://www.pexels.com/photo/meeting-room-in-office-20101490/",
+  "photographer": "qdysk blog",
+  "license": "Pexels License",
+  "downloadUrl": "https://images.pexels.com/photos/20101490/pexels-photo-20101490.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "imagePath": "images/raw/office/conference_room/pexels_20101490.jpg",
+  "sidecarPath": "",
+  "sha256": "4bc8c5b1edb3df69014785d9b5073b45721b3546aea4656fa138f44429029d2c",
+  "width": 7008,
+  "height": 4672,
+  "approvedId": "office_002_conference_room",
+  "approvedImagePath": "images/approved/office/office_002_conference_room.jpg"
+}

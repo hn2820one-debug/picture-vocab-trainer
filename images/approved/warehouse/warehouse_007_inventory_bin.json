@@ -1,0 +1,19 @@
+{
+  "word": "inventory bin",
+  "category": "warehouse",
+  "query": "warehouse inventory bin",
+  "provider": "pexels",
+  "provider_id": "31112251",
+  "source": "Pexels",
+  "sourceUrl": "https://www.pexels.com/photo/warehouse-worker-organizing-inventory-shelves-31112251/",
+  "photographer": "EqualStock IN",
+  "license": "Pexels License",
+  "downloadUrl": "https://images.pexels.com/photos/31112251/pexels-photo-31112251.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "imagePath": "images/raw/warehouse/inventory_bin/pexels_31112251.jpg",
+  "sidecarPath": "",
+  "sha256": "864ab4ad3d739f195aa459d3d820f4ffdb0df6bf70c9ffbb38f8becdf688889a",
+  "width": 6000,
+  "height": 4000,
+  "approvedId": "warehouse_007_inventory_bin",
+  "approvedImagePath": "images/approved/warehouse/warehouse_007_inventory_bin.jpg"
+}

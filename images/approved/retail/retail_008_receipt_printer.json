@@ -1,0 +1,19 @@
+{
+  "word": "receipt printer",
+  "category": "retail",
+  "query": "retail receipt printer",
+  "provider": "pexels",
+  "provider_id": "12935090",
+  "source": "Pexels",
+  "sourceUrl": "https://www.pexels.com/photo/person-changing-the-roll-of-thermal-paper-12935090/",
+  "photographer": "iMin Technology",
+  "license": "Pexels License",
+  "downloadUrl": "https://images.pexels.com/photos/12935090/pexels-photo-12935090.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "imagePath": "images/raw/retail/receipt_printer/pexels_12935090.jpg",
+  "sidecarPath": "",
+  "sha256": "004cb7b363cb92da9474549e18f3d2b08a53eba13205fd9b5ef7417dfd6c302a",
+  "width": 7008,
+  "height": 4672,
+  "approvedId": "retail_008_receipt_printer",
+  "approvedImagePath": "images/approved/retail/retail_008_receipt_printer.jpg"
+}

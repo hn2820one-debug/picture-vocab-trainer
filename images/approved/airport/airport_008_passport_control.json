@@ -1,0 +1,19 @@
+{
+  "word": "passport control",
+  "category": "airport",
+  "query": "airport passport control counter",
+  "provider": "pixabay",
+  "provider_id": "1042891",
+  "source": "Pixabay",
+  "sourceUrl": "https://pixabay.com/photos/passport-sweden-arlanda-travel-1042891/",
+  "photographer": "robertaengland",
+  "license": "Pixabay Content License",
+  "downloadUrl": "https://pixabay.com/get/gd1e8b0fa7ed89d0c43209338814559a751a78479cc3db290298755ffda671f328ac899627aa5361335ff3efcc9c075917684410fe84251e5cf2a20e135a6cad8_1280.jpg",
+  "imagePath": "images/raw/airport/passport_control/pixabay_1042891.jpg",
+  "sidecarPath": "",
+  "sha256": "bd96419ffd95cb74561ed516ef916376b1b8b8d833db64e3d2d7b062549804b9",
+  "width": 2102,
+  "height": 1876,
+  "approvedId": "airport_008_passport_control",
+  "approvedImagePath": "images/approved/airport/airport_008_passport_control.jpg"
+}

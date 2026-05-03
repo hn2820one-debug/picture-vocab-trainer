@@ -1,0 +1,19 @@
+{
+  "word": "wake-up call",
+  "category": "hotel",
+  "query": "hotel bedside phone wake up call",
+  "provider": "pexels",
+  "provider_id": "7609014",
+  "source": "Pexels",
+  "sourceUrl": "https://www.pexels.com/photo/man-holding-the-telephone-putting-on-his-lap-7609014/",
+  "photographer": "cottonbro studio",
+  "license": "Pexels License",
+  "downloadUrl": "https://images.pexels.com/photos/7609014/pexels-photo-7609014.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "imagePath": "images/raw/hotel/wake_up_call/pexels_7609014.jpg",
+  "sidecarPath": "",
+  "sha256": "9f5c852512455847421ddb04872ee3affc5ead3ab7fcb2ee2bc1353a887e5942",
+  "width": 6358,
+  "height": 4239,
+  "approvedId": "hotel_010_wake_up_call",
+  "approvedImagePath": "images/approved/hotel/hotel_010_wake_up_call.jpg"
+}

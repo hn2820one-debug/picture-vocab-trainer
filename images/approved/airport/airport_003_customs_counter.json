@@ -1,0 +1,19 @@
+{
+  "word": "customs counter",
+  "category": "airport",
+  "query": "airport customs counter",
+  "provider": "pexels",
+  "provider_id": "34147081",
+  "source": "Pexels",
+  "sourceUrl": "https://www.pexels.com/photo/traveler-at-modern-airport-terminal-in-guangzhou-34147081/",
+  "photographer": "dongfang xiaowu",
+  "license": "Pexels License",
+  "downloadUrl": "https://images.pexels.com/photos/34147081/pexels-photo-34147081.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "imagePath": "images/raw/airport/customs_counter/pexels_34147081.jpg",
+  "sidecarPath": "",
+  "sha256": "96c94abc48848bab9530bfb802d34de5ee6b8ce5ae039139a1cffd3b634554d4",
+  "width": 7008,
+  "height": 4672,
+  "approvedId": "airport_003_customs_counter",
+  "approvedImagePath": "images/approved/airport/airport_003_customs_counter.jpg"
+}

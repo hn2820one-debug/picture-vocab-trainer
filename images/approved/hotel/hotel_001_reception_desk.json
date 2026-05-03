@@ -1,0 +1,19 @@
+{
+  "word": "reception desk",
+  "category": "hotel",
+  "query": "hotel reception desk",
+  "provider": "pexels",
+  "provider_id": "3768095",
+  "source": "Pexels",
+  "sourceUrl": "https://www.pexels.com/photo/selective-focus-photo-of-reception-signage-3768095/",
+  "photographer": "Andrea Piacquadio",
+  "license": "Pexels License",
+  "downloadUrl": "https://images.pexels.com/photos/3768095/pexels-photo-3768095.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "imagePath": "images/raw/hotel/reception_desk/pexels_3768095.jpg",
+  "sidecarPath": "",
+  "sha256": "05498d90f293b691a1143adbf7afb25c77121820711f71e4384f4b5922aedfda",
+  "width": 7680,
+  "height": 5120,
+  "approvedId": "hotel_001_reception_desk",
+  "approvedImagePath": "images/approved/hotel/hotel_001_reception_desk.jpg"
+}

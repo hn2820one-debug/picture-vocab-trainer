@@ -1,0 +1,19 @@
+{
+  "word": "security checkpoint",
+  "category": "airport",
+  "query": "airport security checkpoint",
+  "provider": "pexels",
+  "provider_id": "2574091",
+  "source": "Pexels",
+  "sourceUrl": "https://www.pexels.com/photo/person-standing-inside-building-2574091/",
+  "photographer": "Matthew Turner",
+  "license": "Pexels License",
+  "downloadUrl": "https://images.pexels.com/photos/2574091/pexels-photo-2574091.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "imagePath": "images/raw/airport/security_checkpoint/pexels_2574091.jpg",
+  "sidecarPath": "",
+  "sha256": "6cef49b3e744ffb64ebdd00473d5c483faca01dd0f6f0a8b2f8f8c58069770f0",
+  "width": 6132,
+  "height": 4088,
+  "approvedId": "airport_005_security_checkpoint",
+  "approvedImagePath": "images/approved/airport/airport_005_security_checkpoint.jpg"
+}

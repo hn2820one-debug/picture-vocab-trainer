@@ -1,0 +1,19 @@
+{
+  "word": "luggage trolley",
+  "category": "hotel",
+  "query": "hotel luggage trolley",
+  "provider": "pexels",
+  "provider_id": "6474527",
+  "source": "Pexels",
+  "sourceUrl": "https://www.pexels.com/photo/man-pushing-the-cart-with-white-boxes-6474527/",
+  "photographer": "cottonbro studio",
+  "license": "Pexels License",
+  "downloadUrl": "https://images.pexels.com/photos/6474527/pexels-photo-6474527.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "imagePath": "images/raw/hotel/luggage_trolley/pexels_6474527.jpg",
+  "sidecarPath": "",
+  "sha256": "30642e93f81b4af15ae5e3cb14e2e0c550dc5cddfd07673f1d09fddc8d5e2410",
+  "width": 6396,
+  "height": 4264,
+  "approvedId": "hotel_007_luggage_trolley",
+  "approvedImagePath": "images/approved/hotel/hotel_007_luggage_trolley.jpg"
+}

@@ -137,20 +137,21 @@ def run_download(args: argparse.Namespace) -> int:
     if not active_providers:
         reason = "No API keys found. Set PEXELS_API_KEY or PIXABAY_API_KEY in the environment or .env."
         report["generatedAt"] = iso_now()
-        report["failures"] = [{"type": "configuration", "message": reason}]
-        report["missing"] = []
-        report["duplicates"] = []
-        report["downloads"] = []
+        report["failures"] = merge_records(
+            report.get("failures", []),
+            [{"type": "configuration", "message": reason}],
+            ("type", "message"),
+        )
         report["summary"] = build_summary(report)
         write_json(REPORT_PATH, report)
         print(reason)
         return 1
 
     seen_hashes = collect_known_hashes(report)
-    downloads: list[dict[str, Any]] = []
-    failures: list[dict[str, Any]] = []
-    missing: list[dict[str, Any]] = []
-    duplicates: list[dict[str, Any]] = []
+    downloads = list(report.get("downloads", []))
+    failures = list(report.get("failures", []))
+    missing = list(report.get("missing", []))
+    duplicates = list(report.get("duplicates", []))
 
     for index, seed in enumerate(seed_records, start=1):
         saved_count = 0
@@ -160,14 +161,18 @@ def run_download(args: argparse.Namespace) -> int:
             try:
                 candidates = search_provider(provider, seed, api_keys[provider], args.per_seed)
             except (HTTPError, URLError, TimeoutError, ValueError) as error:
-                failures.append(
-                    {
-                        "word": seed.word,
-                        "category": seed.category,
-                        "query": seed.query,
-                        "provider": provider,
-                        "message": str(error),
-                    }
+                failures = merge_records(
+                    failures,
+                    [
+                        {
+                            "word": seed.word,
+                            "category": seed.category,
+                            "query": seed.query,
+                            "provider": provider,
+                            "message": str(error),
+                        }
+                    ],
+                    ("word", "category", "query", "provider", "message"),
                 )
                 continue
 
@@ -175,41 +180,53 @@ def run_download(args: argparse.Namespace) -> int:
                 try:
                     jpeg_bytes = fetch_as_jpeg(candidate.downloadUrl)
                 except (HTTPError, URLError, TimeoutError, UnidentifiedImageError, OSError, ValueError) as error:
-                    failures.append(
-                        {
-                            "word": seed.word,
-                            "category": seed.category,
-                            "query": seed.query,
-                            "provider": provider,
-                            "providerId": candidate.provider_id,
-                            "message": str(error),
-                        }
+                    failures = merge_records(
+                        failures,
+                        [
+                            {
+                                "word": seed.word,
+                                "category": seed.category,
+                                "query": seed.query,
+                                "provider": provider,
+                                "providerId": candidate.provider_id,
+                                "message": str(error),
+                            }
+                        ],
+                        ("word", "category", "query", "provider", "providerId", "message"),
                     )
                     continue
 
                 digest = hashlib.sha256(jpeg_bytes).hexdigest()
                 if digest in seen_hashes:
-                    duplicates.append(
-                        {
-                            "word": seed.word,
-                            "category": seed.category,
-                            "query": seed.query,
-                            "provider": provider,
-                            "providerId": candidate.provider_id,
-                            "duplicateOf": seen_hashes[digest],
-                        }
+                    duplicates = merge_records(
+                        duplicates,
+                        [
+                            {
+                                "word": seed.word,
+                                "category": seed.category,
+                                "query": seed.query,
+                                "provider": provider,
+                                "providerId": candidate.provider_id,
+                                "duplicateOf": seen_hashes[digest],
+                            }
+                        ],
+                        ("word", "category", "query", "provider", "providerId", "duplicateOf"),
                     )
                     continue
 
                 image_path, sidecar_path = persist_candidate(candidate, jpeg_bytes, digest, args.overwrite)
                 seen_hashes[digest] = image_path.as_posix()
-                downloads.append(
-                    {
-                        **asdict(candidate),
-                        "imagePath": to_repo_relative(image_path),
-                        "sidecarPath": to_repo_relative(sidecar_path),
-                        "sha256": digest,
-                    }
+                downloads = merge_records(
+                    downloads,
+                    [
+                        {
+                            **asdict(candidate),
+                            "imagePath": to_repo_relative(image_path),
+                            "sidecarPath": to_repo_relative(sidecar_path),
+                            "sha256": digest,
+                        }
+                    ],
+                    ("imagePath",),
                 )
                 saved_count += 1
 
@@ -220,14 +237,27 @@ def run_download(args: argparse.Namespace) -> int:
                 break
 
         if saved_count == 0:
-            missing.append(
-                {
-                    "word": seed.word,
-                    "category": seed.category,
-                    "query": seed.query,
-                    "reason": "No downloadable results found from the configured providers.",
-                }
+            missing = merge_records(
+                missing,
+                [
+                    {
+                        "word": seed.word,
+                        "category": seed.category,
+                        "query": seed.query,
+                        "reason": "No downloadable results found from the configured providers.",
+                    }
+                ],
+                ("word", "category", "query", "reason"),
             )
+        else:
+            missing = [
+                item
+                for item in missing
+                if not (
+                    item.get("word") == seed.word
+                    and item.get("category") == seed.category
+                )
+            ]
 
         if args.delay > 0 and index < len(seed_records):
             time.sleep(args.delay)
@@ -683,6 +713,16 @@ def collect_known_hashes(report: dict[str, Any]) -> dict[str, str]:
                 known[digest] = path
 
     return known
+
+
+def merge_records(existing: list[dict[str, Any]], new_items: list[dict[str, Any]], key_fields: tuple[str, ...]) -> list[dict[str, Any]]:
+    merged: dict[tuple[str, ...], dict[str, Any]] = {}
+
+    for item in existing + new_items:
+        key = tuple(str(item.get(field, "")).strip() for field in key_fields)
+        merged[key] = item
+
+    return list(merged.values())
 
 
 def build_summary(report: dict[str, Any], synced_entries: int | None = None) -> dict[str, int]:

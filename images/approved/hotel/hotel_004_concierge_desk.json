@@ -1,0 +1,19 @@
+{
+  "word": "concierge desk",
+  "category": "hotel",
+  "query": "hotel concierge desk",
+  "provider": "pexels",
+  "provider_id": "14036251",
+  "source": "Pexels",
+  "sourceUrl": "https://www.pexels.com/photo/woman-behind-the-desk-at-the-reception-in-a-luxurious-hotel-14036251/",
+  "photographer": "Quang Nguyen Vinh",
+  "license": "Pexels License",
+  "downloadUrl": "https://images.pexels.com/photos/14036251/pexels-photo-14036251.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "imagePath": "images/raw/hotel/concierge_desk/pexels_14036251.jpg",
+  "sidecarPath": "",
+  "sha256": "6a4842a63b4c9751370c445c856acb27022ccb8b4e4e3127bebc3f19bd124236",
+  "width": 7952,
+  "height": 5304,
+  "approvedId": "hotel_004_concierge_desk",
+  "approvedImagePath": "images/approved/hotel/hotel_004_concierge_desk.jpg"
+}

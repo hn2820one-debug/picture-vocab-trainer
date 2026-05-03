@@ -1,0 +1,19 @@
+{
+  "word": "runway",
+  "category": "airport",
+  "query": "airport runway",
+  "provider": "pexels",
+  "provider_id": "13976771",
+  "source": "Pexels",
+  "sourceUrl": "https://www.pexels.com/photo/closed-runway-in-an-airfield-13976771/",
+  "photographer": "John Hill",
+  "license": "Pexels License",
+  "downloadUrl": "https://images.pexels.com/photos/13976771/pexels-photo-13976771.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "imagePath": "images/raw/airport/runway/pexels_13976771.jpg",
+  "sidecarPath": "",
+  "sha256": "64394a28bc04cdc39cf7277977f4d3637ee961da22c59a2b352bf82943e05280",
+  "width": 6000,
+  "height": 4000,
+  "approvedId": "airport_009_runway",
+  "approvedImagePath": "images/approved/airport/airport_009_runway.jpg"
+}

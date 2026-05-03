@@ -1,0 +1,19 @@
+{
+  "word": "room service",
+  "category": "hotel",
+  "query": "hotel room service tray",
+  "provider": "pexels",
+  "provider_id": "6466285",
+  "source": "Pexels",
+  "sourceUrl": "https://www.pexels.com/photo/woman-serving-order-from-hotel-room-service-6466285/",
+  "photographer": "cottonbro studio",
+  "license": "Pexels License",
+  "downloadUrl": "https://images.pexels.com/photos/6466285/pexels-photo-6466285.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "imagePath": "images/raw/hotel/room_service/pexels_6466285.jpg",
+  "sidecarPath": "",
+  "sha256": "3b4e2c00d93108d7b34d3edd942b7dc074157c5fdec9105e09e359aafd8505aa",
+  "width": 6472,
+  "height": 4315,
+  "approvedId": "hotel_002_room_service",
+  "approvedImagePath": "images/approved/hotel/hotel_002_room_service.jpg"
+}

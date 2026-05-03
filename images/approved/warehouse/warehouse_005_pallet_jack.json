@@ -1,0 +1,19 @@
+{
+  "word": "pallet jack",
+  "category": "warehouse",
+  "query": "warehouse pallet jack",
+  "provider": "pixabay",
+  "provider_id": "2186802",
+  "source": "Pixabay",
+  "sourceUrl": "https://pixabay.com/photos/industrial-pallet-pallet-jack-2186802/",
+  "photographer": "RR151",
+  "license": "Pixabay Content License",
+  "downloadUrl": "https://pixabay.com/get/ge19e5777a3d58bf29c64d629ff84f1c79cf511b66f7ad84fd27a46366e27c014a45af33b0564e37b1ee9186e63f880561725ce6a2ef26e0781daa07e148131d1_1280.jpg",
+  "imagePath": "images/raw/warehouse/pallet_jack/pixabay_2186802.jpg",
+  "sidecarPath": "",
+  "sha256": "2ddee640d935e38ced5c077ef88cc827b316f6cb724b589781bdbf28dd5689d8",
+  "width": 6000,
+  "height": 4000,
+  "approvedId": "warehouse_005_pallet_jack",
+  "approvedImagePath": "images/approved/warehouse/warehouse_005_pallet_jack.jpg"
+}

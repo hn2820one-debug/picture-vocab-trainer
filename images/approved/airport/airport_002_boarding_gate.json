@@ -1,0 +1,19 @@
+{
+  "word": "boarding gate",
+  "category": "airport",
+  "query": "airport boarding gate",
+  "provider": "pexels",
+  "provider_id": "4401167",
+  "source": "Pexels",
+  "sourceUrl": "https://www.pexels.com/photo/terminal-at-airport-4401167/",
+  "photographer": "Tiago Alvar",
+  "license": "Pexels License",
+  "downloadUrl": "https://images.pexels.com/photos/4401167/pexels-photo-4401167.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "imagePath": "images/raw/airport/boarding_gate/pexels_4401167.jpg",
+  "sidecarPath": "",
+  "sha256": "3a97c389125768ccfea94beeca39e4929549e7b055acc1ac3eee27887d022dd7",
+  "width": 6240,
+  "height": 4160,
+  "approvedId": "airport_002_boarding_gate",
+  "approvedImagePath": "images/approved/airport/airport_002_boarding_gate.jpg"
+}

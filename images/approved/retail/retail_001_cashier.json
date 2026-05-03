@@ -1,0 +1,19 @@
+{
+  "word": "cashier",
+  "category": "retail",
+  "query": "cashier counter",
+  "provider": "pexels",
+  "provider_id": "12935066",
+  "source": "Pexels",
+  "sourceUrl": "https://www.pexels.com/photo/cashier-using-touchscreen-12935066/",
+  "photographer": "iMin Technology",
+  "license": "Pexels License",
+  "downloadUrl": "https://images.pexels.com/photos/12935066/pexels-photo-12935066.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "imagePath": "images/raw/retail/cashier/pexels_12935066.jpg",
+  "sidecarPath": "",
+  "sha256": "2392953afb6e7a0668439032ce27146b129fa9e88148686ed12315289b09859a",
+  "width": 7008,
+  "height": 4672,
+  "approvedId": "retail_001_cashier",
+  "approvedImagePath": "images/approved/retail/retail_001_cashier.jpg"
+}

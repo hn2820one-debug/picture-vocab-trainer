@@ -1,0 +1,19 @@
+{
+  "word": "desk lamp",
+  "category": "office",
+  "query": "office desk lamp",
+  "provider": "pexels",
+  "provider_id": "159839",
+  "source": "Pexels",
+  "sourceUrl": "https://www.pexels.com/photo/black-study-lamp-on-black-table-159839/",
+  "photographer": "Pixabay",
+  "license": "Pexels License",
+  "downloadUrl": "https://images.pexels.com/photos/159839/office-home-house-desk-159839.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "imagePath": "images/raw/office/desk_lamp/pexels_159839.jpg",
+  "sidecarPath": "",
+  "sha256": "2b1071b0b3331d079017d13548933b38460381dc8bf3da2c32d1fe45a43ade64",
+  "width": 6016,
+  "height": 4000,
+  "approvedId": "office_008_desk_lamp",
+  "approvedImagePath": "images/approved/office/office_008_desk_lamp.jpg"
+}

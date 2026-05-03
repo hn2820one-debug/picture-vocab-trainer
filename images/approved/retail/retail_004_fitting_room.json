@@ -1,0 +1,19 @@
+{
+  "word": "fitting room",
+  "category": "retail",
+  "query": "store fitting room",
+  "provider": "pexels",
+  "provider_id": "8388311",
+  "source": "Pexels",
+  "sourceUrl": "https://www.pexels.com/photo/two-women-in-the-fitting-room-8388311/",
+  "photographer": "Ron Lach",
+  "license": "Pexels License",
+  "downloadUrl": "https://images.pexels.com/photos/8388311/pexels-photo-8388311.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "imagePath": "images/raw/retail/fitting_room/pexels_8388311.jpg",
+  "sidecarPath": "",
+  "sha256": "1329b3bc6d0af3b7e7a675f7b24eef4536517aa3abd6d43f8a2b24cccbecd40d",
+  "width": 6506,
+  "height": 4337,
+  "approvedId": "retail_004_fitting_room",
+  "approvedImagePath": "images/approved/retail/retail_004_fitting_room.jpg"
+}

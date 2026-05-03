@@ -1,0 +1,19 @@
+{
+  "word": "whiteboard",
+  "category": "office",
+  "query": "office whiteboard meeting",
+  "provider": "pexels",
+  "provider_id": "7495605",
+  "source": "Pexels",
+  "sourceUrl": "https://www.pexels.com/photo/men-presenting-using-a-whiteboard-7495605/",
+  "photographer": "Moe Magners",
+  "license": "Pexels License",
+  "downloadUrl": "https://images.pexels.com/photos/7495605/pexels-photo-7495605.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "imagePath": "images/raw/office/whiteboard/pexels_7495605.jpg",
+  "sidecarPath": "",
+  "sha256": "ab08e04901c207a2068d66cd233ea3bb90adc7718850de286f737f19a41c39e1",
+  "width": 6720,
+  "height": 4480,
+  "approvedId": "office_009_whiteboard",
+  "approvedImagePath": "images/approved/office/office_009_whiteboard.jpg"
+}

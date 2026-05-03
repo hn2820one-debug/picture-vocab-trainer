@@ -1,0 +1,19 @@
+{
+  "word": "price tag",
+  "category": "retail",
+  "query": "retail price tag",
+  "provider": "pexels",
+  "provider_id": "7986985",
+  "source": "Pexels",
+  "sourceUrl": "https://www.pexels.com/photo/a-red-tag-sale-7986985/",
+  "photographer": "Tamanna Rumee",
+  "license": "Pexels License",
+  "downloadUrl": "https://images.pexels.com/photos/7986985/pexels-photo-7986985.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "imagePath": "images/raw/retail/price_tag/pexels_7986985.jpg",
+  "sidecarPath": "",
+  "sha256": "b530be096aabe038e9ccb56b92f8e21e7f5aaca8f05603d5d183559f4aaae574",
+  "width": 6720,
+  "height": 4480,
+  "approvedId": "retail_003_price_tag",
+  "approvedImagePath": "images/approved/retail/retail_003_price_tag.jpg"
+}

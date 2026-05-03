@@ -1,0 +1,19 @@
+{
+  "word": "packing station",
+  "category": "warehouse",
+  "query": "worker packing boxes warehouse table",
+  "provider": "pexels",
+  "provider_id": "3483807",
+  "source": "Pexels",
+  "sourceUrl": "https://www.pexels.com/photo/black-and-white-photo-of-man-checking-cardboard-packages-3483807/",
+  "photographer": "AG Z",
+  "license": "Pexels License",
+  "downloadUrl": "https://images.pexels.com/photos/3483807/pexels-photo-3483807.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "imagePath": "images/raw/warehouse/packing_station/pexels_3483807.jpg",
+  "sidecarPath": "",
+  "sha256": "e52177f27fcee8d3362f2751c2142aba1a6cb546380909d9a2eae7945d2492f4",
+  "width": 7360,
+  "height": 4912,
+  "approvedId": "warehouse_004_packing_station",
+  "approvedImagePath": "images/approved/warehouse/warehouse_004_packing_station.jpg"
+}

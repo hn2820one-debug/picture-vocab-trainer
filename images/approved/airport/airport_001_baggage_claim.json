@@ -1,0 +1,19 @@
+{
+  "word": "baggage claim",
+  "category": "airport",
+  "query": "baggage claim airport",
+  "provider": "pexels",
+  "provider_id": "15923462",
+  "source": "Pexels",
+  "sourceUrl": "https://www.pexels.com/photo/man-standing-in-baggage-claim-in-airport-15923462/",
+  "photographer": "Asad Photo Maldives",
+  "license": "Pexels License",
+  "downloadUrl": "https://images.pexels.com/photos/15923462/pexels-photo-15923462.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "imagePath": "images/raw/airport/baggage_claim/pexels_15923462.jpg",
+  "sidecarPath": "",
+  "sha256": "5f31f07ea171aeefef2c4f078f1ab7e80b31ce5a4e3716a5c037bd24077b07c3",
+  "width": 6000,
+  "height": 4000,
+  "approvedId": "airport_001_baggage_claim",
+  "approvedImagePath": "images/approved/airport/airport_001_baggage_claim.jpg"
+}

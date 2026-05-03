@@ -1,0 +1,19 @@
+{
+  "word": "checkout line",
+  "category": "retail",
+  "query": "customers waiting at supermarket checkout",
+  "provider": "pexels",
+  "provider_id": "4199490",
+  "source": "Pexels",
+  "sourceUrl": "https://www.pexels.com/photo/couple-buying-groceries-at-a-supermarket-4199490/",
+  "photographer": "Jack Sparrow",
+  "license": "Pexels License",
+  "downloadUrl": "https://images.pexels.com/photos/4199490/pexels-photo-4199490.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "imagePath": "images/raw/retail/checkout_line/pexels_4199490.jpg",
+  "sidecarPath": "",
+  "sha256": "c3c2805555fcbdf6978611425890ba18edb7c2010551153cca94749643a5e598",
+  "width": 7229,
+  "height": 4825,
+  "approvedId": "retail_010_checkout_line",
+  "approvedImagePath": "images/approved/retail/retail_010_checkout_line.jpg"
+}

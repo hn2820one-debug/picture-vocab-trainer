@@ -1,0 +1,19 @@
+{
+  "word": "loading dock",
+  "category": "warehouse",
+  "query": "warehouse loading dock",
+  "provider": "pexels",
+  "provider_id": "1267327",
+  "source": "Pexels",
+  "sourceUrl": "https://www.pexels.com/photo/pathway-for-forklifts-1267327/",
+  "photographer": "ELEVATE",
+  "license": "Pexels License",
+  "downloadUrl": "https://images.pexels.com/photos/1267327/pexels-photo-1267327.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "imagePath": "images/raw/warehouse/loading_dock/pexels_1267327.jpg",
+  "sidecarPath": "",
+  "sha256": "aa93d30a9f721545d388bacbe88d6aedaa2e39bc4c892fa5c06846389797b70f",
+  "width": 7373,
+  "height": 4918,
+  "approvedId": "warehouse_001_loading_dock",
+  "approvedImagePath": "images/approved/warehouse/warehouse_001_loading_dock.jpg"
+}

@@ -1,0 +1,19 @@
+{
+  "word": "check-in counter",
+  "category": "airport",
+  "query": "airport check in counter",
+  "provider": "pexels",
+  "provider_id": "2612113",
+  "source": "Pexels",
+  "sourceUrl": "https://www.pexels.com/photo/photo-of-people-in-airport-2612113/",
+  "photographer": "Connor Danylenko",
+  "license": "Pexels License",
+  "downloadUrl": "https://images.pexels.com/photos/2612113/pexels-photo-2612113.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "imagePath": "images/raw/airport/check_in_counter/pexels_2612113.jpg",
+  "sidecarPath": "",
+  "sha256": "37b130461dff26168ca88a33e0acb014ef69022ad0f5d057689e331ebdff8a36",
+  "width": 6000,
+  "height": 4000,
+  "approvedId": "airport_006_check_in_counter",
+  "approvedImagePath": "images/approved/airport/airport_006_check_in_counter.jpg"
+}

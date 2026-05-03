@@ -1,0 +1,19 @@
+{
+  "word": "luggage cart",
+  "category": "airport",
+  "query": "airport luggage cart",
+  "provider": "pexels",
+  "provider_id": "18743908",
+  "source": "Pexels",
+  "sourceUrl": "https://www.pexels.com/photo/tunnel-on-an-airport-in-warsaw-18743908/",
+  "photographer": "Jan van der Wolf",
+  "license": "Pexels License",
+  "downloadUrl": "https://images.pexels.com/photos/18743908/pexels-photo-18743908.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "imagePath": "images/raw/airport/luggage_cart/pexels_18743908.jpg",
+  "sidecarPath": "",
+  "sha256": "c09808131b1271961e581e1541174fdf8432a0cba81f32cc9ea08f6e0c8a8a64",
+  "width": 6000,
+  "height": 4000,
+  "approvedId": "airport_010_luggage_cart",
+  "approvedImagePath": "images/approved/airport/airport_010_luggage_cart.jpg"
+}

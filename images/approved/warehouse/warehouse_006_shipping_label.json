@@ -1,0 +1,19 @@
+{
+  "word": "shipping label",
+  "category": "warehouse",
+  "query": "warehouse shipping label",
+  "provider": "pexels",
+  "provider_id": "4246112",
+  "source": "Pexels",
+  "sourceUrl": "https://www.pexels.com/photo/crop-person-packing-box-with-fragile-items-4246112/",
+  "photographer": "Ketut Subiyanto",
+  "license": "Pexels License",
+  "downloadUrl": "https://images.pexels.com/photos/4246112/pexels-photo-4246112.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "imagePath": "images/raw/warehouse/shipping_label/pexels_4246112.jpg",
+  "sidecarPath": "",
+  "sha256": "ce71d16b823f60dc77613656817f6551d168b54207cd3d9e0ef35aabc9b54f6e",
+  "width": 6000,
+  "height": 4000,
+  "approvedId": "warehouse_006_shipping_label",
+  "approvedImagePath": "images/approved/warehouse/warehouse_006_shipping_label.jpg"
+}

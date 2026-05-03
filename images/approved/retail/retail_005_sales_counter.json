@@ -1,0 +1,19 @@
+{
+  "word": "sales counter",
+  "category": "retail",
+  "query": "retail sales counter",
+  "provider": "pexels",
+  "provider_id": "6925810",
+  "source": "Pexels",
+  "sourceUrl": "https://www.pexels.com/photo/blonde-woman-standing-near-the-checkout-counter-6925810/",
+  "photographer": "Tom Tillhub",
+  "license": "Pexels License",
+  "downloadUrl": "https://images.pexels.com/photos/6925810/pexels-photo-6925810.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "imagePath": "images/raw/retail/sales_counter/pexels_6925810.jpg",
+  "sidecarPath": "",
+  "sha256": "8e9820925effb566a6107a92842e9e4b3724087662d7440794067f84ecfc85e0",
+  "width": 6720,
+  "height": 4480,
+  "approvedId": "retail_005_sales_counter",
+  "approvedImagePath": "images/approved/retail/retail_005_sales_counter.jpg"
+}

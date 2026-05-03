@@ -1,0 +1,19 @@
+{
+  "word": "shopping cart",
+  "category": "retail",
+  "query": "shopping cart retail store",
+  "provider": "pexels",
+  "provider_id": "35556518",
+  "source": "Pexels",
+  "sourceUrl": "https://www.pexels.com/photo/line-of-shopping-carts-outside-retail-store-35556518/",
+  "photographer": "John Robertson",
+  "license": "Pexels License",
+  "downloadUrl": "https://images.pexels.com/photos/35556518/pexels-photo-35556518.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "imagePath": "images/raw/retail/shopping_cart/pexels_35556518.jpg",
+  "sidecarPath": "",
+  "sha256": "0d87e19b50f0a19d62fe6e3de4d1b126abe5624007466050a0ae088bb0ee3332",
+  "width": 6000,
+  "height": 4000,
+  "approvedId": "retail_002_shopping_cart",
+  "approvedImagePath": "images/approved/retail/retail_002_shopping_cart.jpg"
+}

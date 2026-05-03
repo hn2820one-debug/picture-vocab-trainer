@@ -1,0 +1,19 @@
+{
+  "word": "copy machine",
+  "category": "office",
+  "query": "office copy machine",
+  "provider": "pexels",
+  "provider_id": "3831873",
+  "source": "Pexels",
+  "sourceUrl": "https://www.pexels.com/photo/serious-female-office-worker-using-printer-in-workplace-3831873/",
+  "photographer": "Andrea Piacquadio",
+  "license": "Pexels License",
+  "downloadUrl": "https://images.pexels.com/photos/3831873/pexels-photo-3831873.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "imagePath": "images/raw/office/copy_machine/pexels_3831873.jpg",
+  "sidecarPath": "",
+  "sha256": "3577aaa6610d51736942fac59357c6c4b573657c7c9fc41f545b1f8d510f937e",
+  "width": 7680,
+  "height": 5120,
+  "approvedId": "office_007_copy_machine",
+  "approvedImagePath": "images/approved/office/office_007_copy_machine.jpg"
+}

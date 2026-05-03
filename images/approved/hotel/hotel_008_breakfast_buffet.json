@@ -1,0 +1,19 @@
+{
+  "word": "breakfast buffet",
+  "category": "hotel",
+  "query": "hotel breakfast buffet",
+  "provider": "pexels",
+  "provider_id": "29086305",
+  "source": "Pexels",
+  "sourceUrl": "https://www.pexels.com/photo/assorted-breakfast-buffet-with-juices-and-cereals-29086305/",
+  "photographer": "Keegan Checks",
+  "license": "Pexels License",
+  "downloadUrl": "https://images.pexels.com/photos/29086305/pexels-photo-29086305.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "imagePath": "images/raw/hotel/breakfast_buffet/pexels_29086305.jpg",
+  "sidecarPath": "",
+  "sha256": "d2943c4ede1ffab36fdae50b82682e39054a7ca6d2a8bf440b96438906cbbc07",
+  "width": 6928,
+  "height": 4619,
+  "approvedId": "hotel_008_breakfast_buffet",
+  "approvedImagePath": "images/approved/hotel/hotel_008_breakfast_buffet.jpg"
+}

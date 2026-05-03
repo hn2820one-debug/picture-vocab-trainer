@@ -1,0 +1,19 @@
+{
+  "word": "elevator lobby",
+  "category": "hotel",
+  "query": "hotel elevator lobby",
+  "provider": "pexels",
+  "provider_id": "29058906",
+  "source": "Pexels",
+  "sourceUrl": "https://www.pexels.com/photo/elegant-art-deco-elevator-lobby-interior-29058906/",
+  "photographer": "Willian Justen de Vasconcellos",
+  "license": "Pexels License",
+  "downloadUrl": "https://images.pexels.com/photos/29058906/pexels-photo-29058906.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "imagePath": "images/raw/hotel/elevator_lobby/pexels_29058906.jpg",
+  "sidecarPath": "",
+  "sha256": "ba8818904c1a1d451ac218ffcb7b0602a79d4fa571a68b49855decf02a226d11",
+  "width": 6000,
+  "height": 4000,
+  "approvedId": "hotel_005_elevator_lobby",
+  "approvedImagePath": "images/approved/hotel/hotel_005_elevator_lobby.jpg"
+}

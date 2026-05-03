@@ -1,0 +1,19 @@
+{
+  "word": "store aisle",
+  "category": "retail",
+  "query": "store aisle shelves",
+  "provider": "pexels",
+  "provider_id": "21582444",
+  "source": "Pexels",
+  "sourceUrl": "https://www.pexels.com/photo/woman-standing-at-end-of-aisle-in-supermarket-21582444/",
+  "photographer": "Kenneth Surillo",
+  "license": "Pexels License",
+  "downloadUrl": "https://images.pexels.com/photos/21582444/pexels-photo-21582444.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "imagePath": "images/raw/retail/store_aisle/pexels_21582444.jpg",
+  "sidecarPath": "",
+  "sha256": "f3f0f31d642b87f95d869612ded63aa116128aacca220bdd875122d1d651988e",
+  "width": 7008,
+  "height": 4672,
+  "approvedId": "retail_007_store_aisle",
+  "approvedImagePath": "images/approved/retail/retail_007_store_aisle.jpg"
+}
