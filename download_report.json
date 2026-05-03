@@ -1,0 +1,21 @@
+{
+  "generatedAt": "2026-05-03T15:11:01Z",
+  "summary": {
+    "downloadedCandidates": 0,
+    "approvedImages": 0,
+    "syncedEntries": 0,
+    "failures": 1,
+    "missing": 0,
+    "duplicates": 0
+  },
+  "downloads": [],
+  "approved": [],
+  "failures": [
+    {
+      "type": "configuration",
+      "message": "No API keys found. Set PEXELS_API_KEY or PIXABAY_API_KEY in the environment or .env."
+    }
+  ],
+  "missing": [],
+  "duplicates": []
+}

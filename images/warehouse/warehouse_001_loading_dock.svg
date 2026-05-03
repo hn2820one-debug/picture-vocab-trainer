@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="warehouseBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#d9e3ec" />
+      <stop offset="100%" stop-color="#f4ead3" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#warehouseBg)" />
+  <rect x="88" y="86" width="1024" height="626" rx="36" fill="#fffbf4" stroke="#1f2a2c" stroke-opacity="0.15" />
+  <rect x="210" y="478" width="780" height="130" rx="26" fill="#155e63" fill-opacity="0.14" />
+  <rect x="300" y="250" width="160" height="190" rx="18" fill="#8b5e2e" fill-opacity="0.18" />
+  <rect x="520" y="250" width="160" height="190" rx="18" fill="#8b5e2e" fill-opacity="0.18" />
+  <rect x="740" y="250" width="160" height="190" rx="18" fill="#8b5e2e" fill-opacity="0.18" />
+  <text x="600" y="188" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" font-size="34" fill="#155e63">Warehouse Placeholder</text>
+  <text x="600" y="368" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" font-size="52" fill="#1f2a2c">Loading Dock</text>
+  <text x="600" y="650" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" font-size="26" fill="#5f675f">Use a real warehouse image to replace this starter asset.</text>
+</svg>

@@ -1,0 +1,51 @@
+word,category,query,level
+baggage claim,airport,baggage claim airport,1
+boarding gate,airport,airport boarding gate,1
+customs counter,airport,airport customs counter,1
+departure board,airport,airport departure board,1
+security checkpoint,airport,airport security checkpoint,1
+check-in counter,airport,airport check in counter,1
+duty-free shop,airport,airport duty free shop,1
+passport control,airport,airport passport control,1
+runway,airport,airport runway,1
+luggage cart,airport,airport luggage cart,1
+reception desk,hotel,hotel reception desk,1
+room service,hotel,hotel room service tray,1
+key card,hotel,hotel key card door,1
+concierge desk,hotel,hotel concierge desk,1
+elevator lobby,hotel,hotel elevator lobby,1
+housekeeping cart,hotel,hotel housekeeping cart,1
+luggage trolley,hotel,hotel luggage trolley,1
+breakfast buffet,hotel,hotel breakfast buffet,1
+hotel corridor,hotel,hotel corridor,1
+wake-up call,hotel,hotel bedside phone wake up call,1
+printer,office,office printer,1
+conference room,office,office conference room,1
+filing cabinet,office,office filing cabinet,1
+reception area,office,office reception area,1
+office cubicle,office,office cubicle,1
+break room,office,office break room,1
+copy machine,office,office copy machine,1
+desk lamp,office,office desk lamp,1
+whiteboard,office,office whiteboard meeting,1
+swivel chair,office,office swivel chair,1
+cashier,retail,cashier counter,1
+shopping cart,retail,shopping cart retail store,1
+price tag,retail,retail price tag,1
+fitting room,retail,store fitting room,1
+sales counter,retail,retail sales counter,1
+barcode scanner,retail,retail barcode scanner,1
+store aisle,retail,store aisle shelves,1
+receipt printer,retail,retail receipt printer,1
+display shelf,retail,retail display shelf,1
+checkout line,retail,retail checkout line,1
+loading dock,warehouse,warehouse loading dock,1
+forklift,warehouse,warehouse forklift,1
+storage rack,warehouse,warehouse storage rack,1
+packing station,warehouse,warehouse packing station,1
+pallet jack,warehouse,warehouse pallet jack,1
+shipping label,warehouse,warehouse shipping label,1
+inventory bin,warehouse,warehouse inventory bin,1
+conveyor belt,warehouse,warehouse conveyor belt,1
+cardboard box,warehouse,warehouse cardboard box inventory,1
+receiving area,warehouse,warehouse receiving area,1

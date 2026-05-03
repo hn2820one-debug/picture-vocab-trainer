@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="airportBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#d8efe9" />
+      <stop offset="100%" stop-color="#f7f0dd" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#airportBg)" />
+  <rect x="70" y="90" width="1060" height="620" rx="36" fill="#fffaf2" stroke="#155e63" stroke-opacity="0.18" />
+  <rect x="145" y="280" width="910" height="86" rx="24" fill="#155e63" fill-opacity="0.12" />
+  <rect x="150" y="398" width="140" height="170" rx="24" fill="#245f3a" fill-opacity="0.2" />
+  <rect x="338" y="398" width="140" height="170" rx="24" fill="#245f3a" fill-opacity="0.2" />
+  <rect x="526" y="398" width="140" height="170" rx="24" fill="#245f3a" fill-opacity="0.2" />
+  <rect x="714" y="398" width="140" height="170" rx="24" fill="#245f3a" fill-opacity="0.2" />
+  <rect x="902" y="398" width="140" height="170" rx="24" fill="#245f3a" fill-opacity="0.2" />
+  <text x="600" y="215" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" font-size="34" fill="#155e63">Airport Placeholder</text>
+  <text x="600" y="335" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" font-size="50" fill="#1f2a2c">Baggage Claim</text>
+  <text x="600" y="640" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" font-size="26" fill="#5f675f">Replace with a real airport photo when ready.</text>
+</svg>

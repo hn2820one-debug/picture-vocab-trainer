@@ -1,0 +1,112 @@
+[
+  {
+    "id": "airport_001_baggage_claim",
+    "image": "images/airport/airport_001_baggage_claim.svg",
+    "answer": "baggage claim",
+    "choices": [
+      "baggage claim",
+      "boarding gate",
+      "customs form",
+      "departure gate"
+    ],
+    "category": "airport",
+    "level": 1,
+    "partOfSpeech": "noun",
+    "definition": "the place where passengers collect luggage after a flight",
+    "zh": "行李提領處",
+    "hint1": "This is a place in an airport.",
+    "hint2": "Passengers collect their luggage there after landing.",
+    "source": "Internal placeholder",
+    "sourceUrl": "",
+    "photographer": "",
+    "license": "CC0 placeholder"
+  },
+  {
+    "id": "hotel_001_room_service",
+    "image": "images/hotel/hotel_001_room_service.svg",
+    "answer": "room service",
+    "choices": [
+      "front desk",
+      "room service",
+      "wake-up call",
+      "key card"
+    ],
+    "category": "hotel",
+    "level": 1,
+    "partOfSpeech": "noun",
+    "definition": "food or services delivered directly to a hotel room",
+    "zh": "客房服務",
+    "hint1": "This service goes directly to the guest room.",
+    "hint2": "Hotels use it for meals, towels, or other guest requests.",
+    "source": "Internal placeholder",
+    "sourceUrl": "",
+    "photographer": "",
+    "license": "CC0 placeholder"
+  },
+  {
+    "id": "office_001_conference_room",
+    "image": "images/office/office_001_conference_room.svg",
+    "answer": "conference room",
+    "choices": [
+      "conference room",
+      "filing cabinet",
+      "reception desk",
+      "printer tray"
+    ],
+    "category": "office",
+    "level": 1,
+    "partOfSpeech": "noun",
+    "definition": "a room where meetings are held at work",
+    "zh": "會議室",
+    "hint1": "People gather here for meetings.",
+    "hint2": "It usually has a large table, chairs, and a screen.",
+    "source": "Internal placeholder",
+    "sourceUrl": "",
+    "photographer": "",
+    "license": "CC0 placeholder"
+  },
+  {
+    "id": "retail_001_cash_register",
+    "image": "images/retail/retail_001_cash_register.svg",
+    "answer": "cash register",
+    "choices": [
+      "shopping basket",
+      "discount label",
+      "cash register",
+      "changing room"
+    ],
+    "category": "retail",
+    "level": 1,
+    "partOfSpeech": "noun",
+    "definition": "the machine where store purchases are recorded and paid for",
+    "zh": "收銀機",
+    "hint1": "Customers see this near checkout.",
+    "hint2": "The cashier uses it to total the sale and take payment.",
+    "source": "Internal placeholder",
+    "sourceUrl": "",
+    "photographer": "",
+    "license": "CC0 placeholder"
+  },
+  {
+    "id": "warehouse_001_loading_dock",
+    "image": "images/warehouse/warehouse_001_loading_dock.svg",
+    "answer": "loading dock",
+    "choices": [
+      "forklift lane",
+      "loading dock",
+      "storage rack",
+      "packing slip"
+    ],
+    "category": "warehouse",
+    "level": 1,
+    "partOfSpeech": "noun",
+    "definition": "the platform where goods are loaded onto or unloaded from trucks",
+    "zh": "裝卸平台",
+    "hint1": "Trucks stop here to move goods in or out.",
+    "hint2": "Workers often use it when receiving or shipping inventory.",
+    "source": "Internal placeholder",
+    "sourceUrl": "",
+    "photographer": "",
+    "license": "CC0 placeholder"
+  }
+]

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="officeBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#dde9f3" />
+      <stop offset="100%" stop-color="#f4ead9" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#officeBg)" />
+  <rect x="80" y="86" width="1040" height="630" rx="34" fill="#fffdf8" stroke="#155e63" stroke-opacity="0.16" />
+  <rect x="275" y="455" width="650" height="120" rx="48" fill="#155e63" fill-opacity="0.16" />
+  <circle cx="360" cy="395" r="36" fill="#245f3a" fill-opacity="0.2" />
+  <circle cx="840" cy="395" r="36" fill="#245f3a" fill-opacity="0.2" />
+  <rect x="445" y="220" width="310" height="150" rx="22" fill="#1f2a2c" fill-opacity="0.1" />
+  <text x="600" y="185" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" font-size="34" fill="#155e63">Office Placeholder</text>
+  <text x="600" y="342" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" font-size="50" fill="#1f2a2c">Conference Room</text>
+  <text x="600" y="640" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" font-size="26" fill="#5f675f">Swap in a real meeting-room image to expand the bank.</text>
+</svg>

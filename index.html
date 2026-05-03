@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Picture Vocab Trainer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Picture Vocab Trainer</p>
+        <h1>Image-based vocabulary practice with timed hints and answer reveal.</h1>
+        <p class="hero-copy">Study from a picture, get hint1 after 2 seconds, reveal the answer after 5 seconds, and keep all attempt data in localStorage.</p>
+      </div>
+      <button class="ghost-button" id="nav-home" type="button">Home</button>
+    </header>
+
+    <main>
+      <section class="view is-active" id="view-home" aria-labelledby="home-title">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Dashboard</p>
+            <h2 id="home-title">Choose a mode</h2>
+          </div>
+          <p class="inline-note" id="dataset-status">Loading question bank...</p>
+        </div>
+
+        <div class="menu-grid">
+          <button class="menu-card" id="start-practice" type="button">
+            <span class="menu-label">Start Practice</span>
+            <span class="menu-copy">Run through the full image bank.</span>
+          </button>
+          <button class="menu-card" id="review-mistakes" type="button">
+            <span class="menu-label">Review Mistakes</span>
+            <span class="menu-copy">Retry words still in the mistake bank.</span>
+          </button>
+          <button class="menu-card" id="open-progress" type="button">
+            <span class="menu-label">Progress</span>
+            <span class="menu-copy">Inspect accuracy, speed, and recent weak words.</span>
+          </button>
+          <button class="menu-card" id="open-settings" type="button">
+            <span class="menu-label">Settings</span>
+            <span class="menu-copy">Control shuffle, auto-advance, and local data reset.</span>
+          </button>
+        </div>
+
+        <div class="snapshot-grid" id="home-snapshot"></div>
+      </section>
+
+      <section class="view" id="view-practice" aria-labelledby="practice-title">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow" id="practice-mode-label">Practice</p>
+            <h2 id="practice-title">Answer before the reveal</h2>
+          </div>
+          <div class="status-row">
+            <span class="status-pill" id="question-counter">0 / 0</span>
+            <span class="status-pill" id="timer-badge">0.0s</span>
+            <button class="ghost-button" id="exit-practice" type="button">Exit</button>
+          </div>
+        </div>
+
+        <div class="practice-grid">
+          <div class="media-panel">
+            <div class="image-frame">
+              <img id="question-image" alt="Vocabulary prompt image">
+              <div class="image-fallback hidden" id="image-fallback">Image unavailable. Showing placeholder.</div>
+            </div>
+            <div class="meta-grid">
+              <div class="meta-card">
+                <span class="meta-label">Category</span>
+                <strong id="question-category">-</strong>
+              </div>
+              <div class="meta-card">
+                <span class="meta-label">Level</span>
+                <strong id="question-level">-</strong>
+              </div>
+              <div class="meta-card">
+                <span class="meta-label">Part of Speech</span>
+                <strong id="question-pos">-</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="question-panel">
+            <div class="hint-panel">
+              <p class="hint-status" id="hint-status">No hint yet. Hint1 appears at 2s. Answer reveals at 5s.</p>
+              <p class="hint-text" id="hint-text"></p>
+              <p class="answer-text" id="answer-text"></p>
+            </div>
+
+            <div class="choice-grid" id="choice-grid"></div>
+
+            <div class="feedback-panel" id="feedback-panel">
+              <p class="feedback-title" id="feedback-title">Choose one answer.</p>
+              <p class="feedback-copy" id="feedback-copy">Your result type, response time, and hint level will appear here.</p>
+            </div>
+
+            <div class="action-row">
+              <button class="primary-button" id="next-question" type="button" disabled>Next Question</button>
+              <button class="ghost-button" id="restart-queue" type="button">Restart Queue</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="view" id="view-summary" aria-labelledby="summary-title">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Session Summary</p>
+            <h2 id="summary-title">Results for this round</h2>
+          </div>
+          <button class="ghost-button" id="summary-home" type="button">Back Home</button>
+        </div>
+
+        <div class="snapshot-grid" id="summary-snapshot"></div>
+        <div class="summary-list" id="summary-breakdown"></div>
+
+        <div class="action-row">
+          <button class="primary-button" id="summary-restart" type="button">Practice Again</button>
+          <button class="ghost-button" id="summary-review" type="button">Review Mistakes</button>
+        </div>
+      </section>
+
+      <section class="view" id="view-progress" aria-labelledby="progress-title">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Progress</p>
+            <h2 id="progress-title">Long-term stats</h2>
+          </div>
+          <button class="ghost-button" id="progress-home" type="button">Back Home</button>
+        </div>
+
+        <div class="snapshot-grid" id="progress-snapshot"></div>
+        <div class="panel-stack">
+          <div class="panel-block">
+            <h3>Recent weak words</h3>
+            <div id="weak-words"></div>
+          </div>
+          <div class="panel-block">
+            <h3>Category performance</h3>
+            <div id="category-performance"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="view" id="view-settings" aria-labelledby="settings-title">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Settings</p>
+            <h2 id="settings-title">Local preferences</h2>
+          </div>
+          <button class="ghost-button" id="settings-home" type="button">Back Home</button>
+        </div>
+
+        <form class="settings-form" id="settings-form">
+          <label class="settings-row" for="shuffle-questions">
+            <span>
+              <strong>Shuffle question order</strong>
+              <small>Randomize the queue at the start of each session.</small>
+            </span>
+            <input id="shuffle-questions" name="shuffleQuestions" type="checkbox">
+          </label>
+
+          <label class="settings-row" for="auto-advance-ms">
+            <span>
+              <strong>Auto-advance</strong>
+              <small>Move to the next question after an answer is chosen.</small>
+            </span>
+            <select id="auto-advance-ms" name="autoAdvanceMs">
+              <option value="0">Off</option>
+              <option value="1200">1.2 seconds</option>
+              <option value="2000">2 seconds</option>
+            </select>
+          </label>
+
+          <div class="action-row">
+            <button class="primary-button" type="submit">Save Settings</button>
+            <button class="ghost-button" id="reset-storage" type="button">Reset Local Data</button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="retailBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8e7d8" />
+      <stop offset="100%" stop-color="#e2f0e4" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#retailBg)" />
+  <rect x="86" y="84" width="1028" height="628" rx="38" fill="#fffaf4" stroke="#1f2a2c" stroke-opacity="0.15" />
+  <rect x="255" y="408" width="690" height="140" rx="22" fill="#8d2c35" fill-opacity="0.14" />
+  <rect x="355" y="275" width="250" height="120" rx="24" fill="#155e63" fill-opacity="0.16" />
+  <rect x="658" y="250" width="182" height="145" rx="18" fill="#245f3a" fill-opacity="0.16" />
+  <text x="600" y="190" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" font-size="34" fill="#8d2c35">Retail Placeholder</text>
+  <text x="600" y="352" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" font-size="52" fill="#1f2a2c">Cash Register</text>
+  <text x="600" y="636" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" font-size="26" fill="#5f675f">Replace this placeholder with a real checkout image.</text>
+</svg>
