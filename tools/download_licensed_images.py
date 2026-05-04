@@ -9,6 +9,7 @@ import random
 import re
 import sys
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import asdict, dataclass
 from io import BytesIO
 from pathlib import Path
@@ -51,6 +52,33 @@ CATEGORY_HINTS = {
     "warehouse": "This is related to warehouse or shipping work.",
 }
 
+CATEGORY_SLUG_ALIASES = {
+    "airport": "airport",
+    "機場": "airport",
+    "机场": "airport",
+    "hotel": "hotel",
+    "飯店": "hotel",
+    "饭店": "hotel",
+    "酒店": "hotel",
+    "office": "office",
+    "辦公室": "office",
+    "办公室": "office",
+    "retail": "retail",
+    "零售": "retail",
+    "商店": "retail",
+    "warehouse": "warehouse",
+    "倉庫": "warehouse",
+    "仓库": "warehouse",
+}
+
+CSV_FIELD_ALIASES = {
+    "word": ("word", "單字", "单字"),
+    "category": ("category", "主題", "主题"),
+    "zh": ("zh", "中文", "中文名稱", "中文名称"),
+    "query": ("query", "搜尋字串", "搜索字串", "搜尋詞", "搜索词"),
+    "level": ("level", "難度", "难度"),
+}
+
 
 @dataclass(frozen=True)
 class SeedRecord:
@@ -58,6 +86,7 @@ class SeedRecord:
     category: str
     query: str
     level: int
+    zh: str = ""
 
 
 @dataclass
@@ -65,6 +94,7 @@ class CandidateRecord:
     word: str
     category: str
     query: str
+    zh: str
     provider: str
     provider_id: str
     source: str
@@ -95,10 +125,11 @@ def parse_args() -> argparse.Namespace:
     download_parser = subparsers.add_parser("download", help="Download candidate images into images/raw/.")
     download_parser.add_argument("--seed-file", default=str(SEED_PATH), help="Path to vocab_seed.csv")
     download_parser.add_argument("--providers", default="pexels,pixabay", help="Comma-separated provider priority list")
-    download_parser.add_argument("--per-seed", type=int, default=3, help="Number of candidate images to save per seed word")
+    download_parser.add_argument("--per-seed", type=int, default=5, help="Number of candidate images to save per seed word")
     download_parser.add_argument("--delay", type=float, default=0.4, help="Delay between seed queries in seconds")
     download_parser.add_argument("--overwrite", action="store_true", help="Overwrite existing raw candidates with the same provider id")
     download_parser.add_argument("--max-seeds", type=int, default=0, help="Optional limit for testing smaller batches")
+    download_parser.add_argument("--workers", type=int, default=6, help="Number of concurrent image downloads per seed")
 
     sync_parser = subparsers.add_parser("sync", help="Rename approved assets and generate data/image_words.json.")
     sync_parser.add_argument("--seed-file", default=str(SEED_PATH), help="Path to vocab_seed.csv")
@@ -154,8 +185,29 @@ def run_download(args: argparse.Namespace) -> int:
     duplicates = list(report.get("duplicates", []))
 
     for index, seed in enumerate(seed_records, start=1):
-        saved_count = 0
+        existing_count, next_index, existing_provider_paths, existing_hashes = inspect_existing_raw_candidates(seed)
+        for digest, existing_path in existing_hashes.items():
+            seen_hashes.setdefault(digest, existing_path)
+
+        saved_count = existing_count
         print(f"[{index}/{len(seed_records)}] {seed.category} :: {seed.word}")
+
+        if saved_count >= args.per_seed and not args.overwrite:
+            print(f"  already have {saved_count} candidate images, skipping")
+            missing = [
+                item
+                for item in missing
+                if not (
+                    item.get("word") == seed.word
+                    and item.get("category") == seed.category
+                )
+            ]
+            if args.delay > 0 and index < len(seed_records):
+                time.sleep(args.delay)
+            continue
+
+        candidate_queue: list[CandidateRecord] = []
+        queued_provider_keys: set[tuple[str, str]] = set()
 
         for provider in active_providers:
             try:
@@ -177,66 +229,90 @@ def run_download(args: argparse.Namespace) -> int:
                 continue
 
             for candidate in candidates:
-                try:
-                    jpeg_bytes = fetch_as_jpeg(candidate.downloadUrl)
-                except (HTTPError, URLError, TimeoutError, UnidentifiedImageError, OSError, ValueError) as error:
-                    failures = merge_records(
-                        failures,
-                        [
-                            {
-                                "word": seed.word,
-                                "category": seed.category,
-                                "query": seed.query,
-                                "provider": provider,
-                                "providerId": candidate.provider_id,
-                                "message": str(error),
-                            }
-                        ],
-                        ("word", "category", "query", "provider", "providerId", "message"),
-                    )
+                provider_key = (candidate.provider, candidate.provider_id)
+                if provider_key in queued_provider_keys:
                     continue
-
-                digest = hashlib.sha256(jpeg_bytes).hexdigest()
-                if digest in seen_hashes:
-                    duplicates = merge_records(
-                        duplicates,
-                        [
-                            {
-                                "word": seed.word,
-                                "category": seed.category,
-                                "query": seed.query,
-                                "provider": provider,
-                                "providerId": candidate.provider_id,
-                                "duplicateOf": seen_hashes[digest],
-                            }
-                        ],
-                        ("word", "category", "query", "provider", "providerId", "duplicateOf"),
-                    )
+                if provider_key in existing_provider_paths and not args.overwrite:
                     continue
+                candidate_queue.append(candidate)
+                queued_provider_keys.add(provider_key)
 
-                image_path, sidecar_path = persist_candidate(candidate, jpeg_bytes, digest, args.overwrite)
-                seen_hashes[digest] = image_path.as_posix()
-                downloads = merge_records(
-                    downloads,
-                    [
-                        {
-                            **asdict(candidate),
-                            "imagePath": to_repo_relative(image_path),
-                            "sidecarPath": to_repo_relative(sidecar_path),
-                            "sha256": digest,
-                        }
-                    ],
-                    ("imagePath",),
-                )
-                saved_count += 1
+        outcome_by_provider_key = download_candidates_concurrently(candidate_queue, max_workers=args.workers)
 
-                if saved_count >= args.per_seed:
-                    break
-
+        for candidate in candidate_queue:
             if saved_count >= args.per_seed:
                 break
 
-        if saved_count == 0:
+            provider_key = (candidate.provider, candidate.provider_id)
+            outcome = outcome_by_provider_key.get(provider_key)
+            if not outcome:
+                continue
+            if outcome.get("error"):
+                failures = merge_records(
+                    failures,
+                    [
+                        {
+                            "word": seed.word,
+                            "category": seed.category,
+                            "query": candidate.query,
+                            "provider": candidate.provider,
+                            "providerId": candidate.provider_id,
+                            "message": str(outcome["error"]),
+                        }
+                    ],
+                    ("word", "category", "query", "provider", "providerId", "message"),
+                )
+                continue
+
+            digest = str(outcome["digest"])
+            existing_paths = existing_provider_paths.get(provider_key)
+            existing_target = to_repo_relative(existing_paths[0]) if existing_paths else ""
+            duplicate_of = seen_hashes.get(digest, "")
+            if duplicate_of and duplicate_of != existing_target:
+                duplicates = merge_records(
+                    duplicates,
+                    [
+                        {
+                            "word": seed.word,
+                            "category": seed.category,
+                            "query": candidate.query,
+                            "provider": candidate.provider,
+                            "providerId": candidate.provider_id,
+                            "duplicateOf": duplicate_of,
+                        }
+                    ],
+                    ("word", "category", "query", "provider", "providerId", "duplicateOf"),
+                )
+                continue
+
+            image_path, sidecar_path = persist_candidate(
+                candidate,
+                outcome["jpeg_bytes"],
+                digest,
+                args.overwrite,
+                slot_index=None if existing_paths else next_index,
+                existing_paths=existing_paths,
+            )
+            seen_hashes[digest] = to_repo_relative(image_path)
+            existing_provider_paths[provider_key] = (image_path, sidecar_path)
+            downloads = merge_records(
+                downloads,
+                [
+                    {
+                        **asdict(candidate),
+                        "imagePath": to_repo_relative(image_path),
+                        "sidecarPath": to_repo_relative(sidecar_path),
+                        "sha256": digest,
+                    }
+                ],
+                ("imagePath",),
+            )
+
+            if not existing_paths:
+                saved_count += 1
+                next_index += 1
+
+        if saved_count < args.per_seed:
             missing = merge_records(
                 missing,
                 [
@@ -244,7 +320,7 @@ def run_download(args: argparse.Namespace) -> int:
                         "word": seed.word,
                         "category": seed.category,
                         "query": seed.query,
-                        "reason": "No downloadable results found from the configured providers.",
+                        "reason": f"Collected {saved_count} of requested {args.per_seed} candidates using official APIs only.",
                     }
                 ],
                 ("word", "category", "query", "reason"),
@@ -364,11 +440,55 @@ def run_sync(args: argparse.Namespace) -> int:
 
 
 def search_provider(provider: str, seed: SeedRecord, api_key: str, per_seed: int) -> list[CandidateRecord]:
-    if provider == "pexels":
-        return search_pexels(seed, api_key, per_seed)
-    if provider == "pixabay":
-        return search_pixabay(seed, api_key, per_seed)
-    raise ValueError(f"Unsupported provider: {provider}")
+    search_limit = max(per_seed * 3, per_seed + 4, 8)
+    query_variants = build_query_variants(seed)
+    seen_provider_ids: set[str] = set()
+    results: list[CandidateRecord] = []
+
+    for query in query_variants:
+        query_seed = SeedRecord(
+            word=seed.word,
+            category=seed.category,
+            query=query,
+            level=seed.level,
+            zh=seed.zh,
+        )
+        if provider == "pexels":
+            provider_results = search_pexels(query_seed, api_key, search_limit)
+        elif provider == "pixabay":
+            provider_results = search_pixabay(query_seed, api_key, search_limit)
+        else:
+            raise ValueError(f"Unsupported provider: {provider}")
+
+        for candidate in provider_results:
+            if candidate.provider_id in seen_provider_ids:
+                continue
+            seen_provider_ids.add(candidate.provider_id)
+            results.append(candidate)
+            if len(results) >= search_limit:
+                return results
+
+    return results
+
+
+def build_query_variants(seed: SeedRecord) -> list[str]:
+    raw_variants = [
+        seed.query.strip(),
+        f"{seed.category.replace('_', ' ')} {seed.word}".strip(),
+        seed.word.replace("-", " ").strip(),
+        seed.word.strip(),
+    ]
+    seen: set[str] = set()
+    variants: list[str] = []
+
+    for variant in raw_variants:
+        lowered = variant.lower()
+        if not variant or lowered in seen:
+            continue
+        seen.add(lowered)
+        variants.append(variant)
+
+    return variants
 
 
 def search_pexels(seed: SeedRecord, api_key: str, per_seed: int) -> list[CandidateRecord]:
@@ -399,6 +519,7 @@ def search_pexels(seed: SeedRecord, api_key: str, per_seed: int) -> list[Candida
                 word=seed.word,
                 category=seed.category,
                 query=seed.query,
+                zh=seed.zh,
                 provider="pexels",
                 provider_id=str(photo.get("id", "")),
                 source=PROVIDER_LABELS["pexels"],
@@ -443,6 +564,7 @@ def search_pixabay(seed: SeedRecord, api_key: str, per_seed: int) -> list[Candid
                 word=seed.word,
                 category=seed.category,
                 query=seed.query,
+                zh=seed.zh,
                 provider="pixabay",
                 provider_id=str(photo.get("id", "")),
                 source=PROVIDER_LABELS["pixabay"],
@@ -475,25 +597,98 @@ def persist_candidate(
     jpeg_bytes: bytes,
     digest: str,
     overwrite: bool,
+    slot_index: int | None = None,
+    existing_paths: tuple[Path, Path] | None = None,
 ) -> tuple[Path, Path]:
-    category_dir = RAW_ROOT / candidate.category / slugify(candidate.word)
+    category_dir = RAW_ROOT / slugify(candidate.category) / slugify(candidate.word)
     category_dir.mkdir(parents=True, exist_ok=True)
 
-    basename = f"{candidate.provider}_{candidate.provider_id}"
-    image_path = category_dir / f"{basename}.jpg"
-    sidecar_path = category_dir / f"{basename}.json"
+    if existing_paths is not None:
+        image_path, sidecar_path = existing_paths
+    else:
+        if slot_index is None:
+            raise ValueError("slot_index is required when writing a new raw candidate")
+        basename = f"{slugify(candidate.word)}_{slot_index:03d}"
+        image_path = category_dir / f"{basename}.jpg"
+        sidecar_path = category_dir / f"{basename}.json"
 
-    if image_path.exists() and not overwrite:
+    if existing_paths is None and image_path.exists() and not overwrite:
         raise ValueError(f"Candidate already exists: {image_path}")
 
     image_path.write_bytes(jpeg_bytes)
     sidecar_payload = {
         **asdict(candidate),
         "imagePath": to_repo_relative(image_path),
+        "sidecarPath": to_repo_relative(sidecar_path),
         "sha256": digest,
     }
     write_json(sidecar_path, sidecar_payload)
     return image_path, sidecar_path
+
+
+def download_candidates_concurrently(candidates: list[CandidateRecord], max_workers: int) -> dict[tuple[str, str], dict[str, Any]]:
+    if not candidates:
+        return {}
+
+    outcome_by_provider_key: dict[tuple[str, str], dict[str, Any]] = {}
+    worker_count = min(max(1, max_workers), len(candidates))
+    with ThreadPoolExecutor(max_workers=worker_count) as executor:
+        future_to_candidate = {
+            executor.submit(fetch_as_jpeg, candidate.downloadUrl): candidate
+            for candidate in candidates
+        }
+        for future in as_completed(future_to_candidate):
+            candidate = future_to_candidate[future]
+            provider_key = (candidate.provider, candidate.provider_id)
+            try:
+                jpeg_bytes = future.result()
+                outcome_by_provider_key[provider_key] = {
+                    "jpeg_bytes": jpeg_bytes,
+                    "digest": hashlib.sha256(jpeg_bytes).hexdigest(),
+                }
+            except (HTTPError, URLError, TimeoutError, UnidentifiedImageError, OSError, ValueError) as error:
+                outcome_by_provider_key[provider_key] = {"error": str(error)}
+
+    return outcome_by_provider_key
+
+
+def inspect_existing_raw_candidates(seed: SeedRecord) -> tuple[int, int, dict[tuple[str, str], tuple[Path, Path]], dict[str, str]]:
+    raw_dir = RAW_ROOT / slugify(seed.category) / slugify(seed.word)
+    if not raw_dir.exists():
+        return 0, 1, {}, {}
+
+    sidecars = sorted(raw_dir.glob("*.json"), key=lambda path: path.name)
+    next_index = 1
+    provider_paths: dict[tuple[str, str], tuple[Path, Path]] = {}
+    hash_paths: dict[str, str] = {}
+    basename_pattern = re.compile(rf"^{re.escape(slugify(seed.word))}_(\d{{3}})$")
+
+    for sidecar_path in sidecars:
+        match = basename_pattern.match(sidecar_path.stem)
+        if match:
+            next_index = max(next_index, int(match.group(1)) + 1)
+
+        image_path = find_matching_image(sidecar_path)
+        if image_path is None:
+            continue
+
+        try:
+            metadata = json.loads(sidecar_path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            continue
+
+        provider = str(metadata.get("provider", "")).strip().lower()
+        provider_id = str(metadata.get("provider_id") or metadata.get("providerId") or "").strip()
+        digest = str(metadata.get("sha256", "")).strip()
+        if provider and provider_id:
+            provider_paths[(provider, provider_id)] = (image_path, sidecar_path)
+        if digest:
+            hash_paths[digest] = to_repo_relative(image_path)
+
+    if next_index == 1 and sidecars:
+        next_index = len(sidecars) + 1
+
+    return len(sidecars), next_index, provider_paths, hash_paths
 
 
 def discover_approved_assets() -> tuple[dict[tuple[str, str], ApprovedAsset], list[dict[str, Any]]]:
@@ -650,21 +845,50 @@ def load_seed_records(seed_path: Path) -> list[SeedRecord]:
 
     with seed_path.open("r", encoding="utf-8", newline="") as handle:
         reader = csv.DictReader(handle)
-        required_columns = {"word", "category", "query", "level"}
-        if reader.fieldnames is None or not required_columns.issubset(set(reader.fieldnames)):
-            raise ValueError("vocab_seed.csv must contain word, category, query, level columns")
+        if reader.fieldnames is None:
+            raise ValueError("Seed CSV must include a header row.")
 
         rows: list[SeedRecord] = []
         for row in reader:
-            word = str(row.get("word", "")).strip()
-            category = str(row.get("category", "")).strip()
-            query = str(row.get("query", "")).strip()
-            level_text = str(row.get("level", "1")).strip()
-            if not word or not category or not query:
+            word = get_csv_value(row, "word")
+            raw_category = get_csv_value(row, "category")
+            zh = get_csv_value(row, "zh")
+            category = normalize_category_slug(raw_category)
+            query = get_csv_value(row, "query") or build_default_query(category, word)
+            level_text = get_csv_value(row, "level") or "1"
+            if not word or not category:
                 raise ValueError(f"Invalid seed row: {row}")
-            rows.append(SeedRecord(word=word, category=category, query=query, level=int(level_text)))
+            rows.append(SeedRecord(word=word, category=category, query=query, level=int(level_text), zh=zh))
 
     return rows
+
+
+def get_csv_value(row: dict[str, Any], field_name: str) -> str:
+    for alias in CSV_FIELD_ALIASES[field_name]:
+        value = str(row.get(alias, "")).strip()
+        if value:
+            return value
+    return ""
+
+
+def normalize_category_slug(raw_category: str) -> str:
+    cleaned = raw_category.strip()
+    if not cleaned:
+        return ""
+
+    alias_key = cleaned.lower()
+    mapped = CATEGORY_SLUG_ALIASES.get(alias_key) or CATEGORY_SLUG_ALIASES.get(cleaned)
+    if mapped:
+        return mapped
+
+    slug = slugify(cleaned)
+    if not slug:
+        raise ValueError(f"Could not derive a safe ASCII slug for category: {raw_category}")
+    return slug
+
+
+def build_default_query(category: str, word: str) -> str:
+    return f"{category.replace('_', ' ')} {word}".strip()
 
 
 def normalize_provider_list(raw_value: str) -> list[str]:

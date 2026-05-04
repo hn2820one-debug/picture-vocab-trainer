@@ -13,12 +13,10 @@
 - 提供錯題重練模式
 - 提供本機題庫管理頁，協助挑選最佳圖片並填入中文名稱
 
-圖片來源流程只允許官方授權 API：
+圖片來源流程支援兩種模式：
 
-- Pexels API
-- Pixabay API
-
-不使用任何 scraping。
+- **官方授權模式**：僅使用 Pexels API 與 Pixabay API（適用正式題庫）
+- **混合模式（Hybrid）**：優先使用官方 API，不足時自動啟動 Web Scraper 補齊（僅限個人使用，授權標註為 Personal Use Only）
 
 ## 這份 README 適合誰看
 
@@ -93,9 +91,14 @@ python -m http.server 8000
 
 Python 工具：
 
-- tools/download_licensed_images.py：下載官方授權候選圖與同步 approved 題庫
+- tools/download_licensed_images.py：下載官方授權候選圖與同步 approved 題庫（正式 pipeline）
+- tools/download_hybrid.py：混合下載工具，支援新主題詞庫擴充（官方 API + Web Scraper 補齊）
 - tools/question_bank_manager.py：產生管理頁 manifest、套用管理頁選擇
 - tools/validate_image_bank.py：嚴格驗證正式題庫
+
+資料檔：
+
+- data/new_words.csv：新詞彙種子清單（辦公室 / 會議 / 商業合約，供 download_hybrid.py 使用）
 
 圖片資料夾：
 
@@ -108,6 +111,32 @@ Python 工具：
 - 題目規則是 3 秒提示、10 秒揭答。若按「提前顯示答案」，該題會被記為看答案後作答。
 - 作答紀錄、偏好設定、錯題庫都存在瀏覽器本機，不會自動上傳到伺服器。
 - 若你只需要操作步驟，請直接看 [beginner-WI.md](beginner-WI.md)。
+
+## 詞庫擴充（混合模式）
+
+若要新增辦公室、會議、商業合約等新主題詞彙，使用 `download_hybrid.py`：
+
+```bash
+# 完整下載 43 個新單字（每字 5 張候選圖）
+python tools/download_hybrid.py --input data/new_words.csv
+
+# 僅使用官方 API，停用爬蟲
+python tools/download_hybrid.py --input data/new_words.csv --no-scraper
+
+# Dry-run 預覽前 3 個單字（不實際寫入檔案）
+python tools/download_hybrid.py --input data/new_words.csv --max-seeds 3 --dry-run
+```
+
+混合下載工具特性：
+
+- 優先使用 Pexels → Pixabay 官方 API
+- API 數量不足時自動啟動 DuckDuckGo 爬蟲補齊
+- 官方圖片 sidecar 填入對應授權，爬蟲圖片標註 `Personal Use Only`
+- sha256 去重，跳過已下載圖片
+- ThreadPoolExecutor 並發下載（預設 6 threads）
+- 完全獨立，**不影響** image_words.json 等官方 pipeline 檔案
+
+> 注意：混合模式爬蟲圖片僅限個人使用，請勿將其混入 images/approved/ 正式題庫。
 
 ## 題庫維護與開發流程
 
