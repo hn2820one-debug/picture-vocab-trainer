@@ -1,0 +1,2073 @@
+{
+  "generatedAt": "2026-05-03T16:26:12Z",
+  "maxOptions": 4,
+  "summary": {
+    "entries": 50,
+    "entriesWithFullOptions": 10,
+    "averageOptions": 2.4,
+    "failures": 0
+  },
+  "failures": [],
+  "entries": [
+    {
+      "id": "airport_001_baggage_claim",
+      "word": "baggage claim",
+      "category": "airport",
+      "query": "baggage claim airport",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "airport:airport_001_baggage_claim",
+          "label": "目前題庫版本",
+          "image": "images/approved/airport/airport_001_baggage_claim.jpg",
+          "sidecar": "images/approved/airport/airport_001_baggage_claim.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/man-standing-in-baggage-claim-in-airport-15923462/",
+          "photographer": "Asad Photo Maldives",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "5f31f07ea171aeefef2c4f078f1ab7e80b31ce5a4e3716a5c037bd24077b07c3",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "baggage_claim:pexels_14338583",
+          "label": "候選圖 2",
+          "image": "images/raw/airport/baggage_claim/pexels_14338583.jpg",
+          "sidecar": "images/raw/airport/baggage_claim/pexels_14338583.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/an-empty-hallway-in-the-airport-14338583/",
+          "photographer": "jihua shen",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "805bf4f75c92aafd5eaa42402205197aa251534dae7a1a9d8a2c221dd1c53e5b",
+          "isCurrentApproved": false
+        },
+        {
+          "optionId": "baggage_claim:pexels_34629932",
+          "label": "候選圖 3",
+          "image": "images/raw/airport/baggage_claim/pexels_34629932.jpg",
+          "sidecar": "images/raw/airport/baggage_claim/pexels_34629932.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/colorful-suitcases-displayed-outdoors-34629932/",
+          "photographer": "Jahra Tasfia Reza",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "c024a8f0567da83daf2706f466d88b4c81db8fd6f24e86ded3eed8e4dfcf2e18",
+          "isCurrentApproved": false
+        },
+        {
+          "optionId": "baggage_claim:pexels_34629933",
+          "label": "候選圖 4",
+          "image": "images/raw/airport/baggage_claim/pexels_34629933.jpg",
+          "sidecar": "images/raw/airport/baggage_claim/pexels_34629933.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/collection-of-modern-suitcases-lined-up-34629933/",
+          "photographer": "Jahra Tasfia Reza",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "e1b3d0d8c3db112d2b401c2a85193cf4f22cfcfa58017cc0458514bd6b5f7970",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "airport_002_boarding_gate",
+      "word": "boarding gate",
+      "category": "airport",
+      "query": "airport boarding gate",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "airport:airport_002_boarding_gate",
+          "label": "目前題庫版本",
+          "image": "images/approved/airport/airport_002_boarding_gate.jpg",
+          "sidecar": "images/approved/airport/airport_002_boarding_gate.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/terminal-at-airport-4401167/",
+          "photographer": "Tiago Alvar",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "3a97c389125768ccfea94beeca39e4929549e7b055acc1ac3eee27887d022dd7",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "boarding_gate:pexels_11845909",
+          "label": "候選圖 2",
+          "image": "images/raw/airport/boarding_gate/pexels_11845909.jpg",
+          "sidecar": "images/raw/airport/boarding_gate/pexels_11845909.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/airplanes-at-the-airport-seen-through-window-11845909/",
+          "photographer": "Lennard  Schubert",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "16201f41bcba385a9f113465b8ceef9ece4c23142747158ed9b104396c8bb01e",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "airport_003_customs_counter",
+      "word": "customs counter",
+      "category": "airport",
+      "query": "airport customs counter",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "airport:airport_003_customs_counter",
+          "label": "目前題庫版本",
+          "image": "images/approved/airport/airport_003_customs_counter.jpg",
+          "sidecar": "images/approved/airport/airport_003_customs_counter.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/traveler-at-modern-airport-terminal-in-guangzhou-34147081/",
+          "photographer": "dongfang xiaowu",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "96c94abc48848bab9530bfb802d34de5ee6b8ce5ae039139a1cffd3b634554d4",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "customs_counter:pexels_32223420",
+          "label": "候選圖 2",
+          "image": "images/raw/airport/customs_counter/pexels_32223420.jpg",
+          "sidecar": "images/raw/airport/customs_counter/pexels_32223420.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/bustling-airport-check-in-counter-scene-32223420/",
+          "photographer": "Kenneth Surillo",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "a6e68ea51b3854590ef9cd0dad3d79c811fd17ba51bff1b07a4436a014f123b1",
+          "isCurrentApproved": false
+        },
+        {
+          "optionId": "customs_counter:pixabay_1105980",
+          "label": "候選圖 3",
+          "image": "images/raw/airport/customs_counter/pixabay_1105980.jpg",
+          "sidecar": "images/raw/airport/customs_counter/pixabay_1105980.json",
+          "source": "Pixabay",
+          "sourceUrl": "https://pixabay.com/photos/airport-aircraft-departure-travel-1105980/",
+          "photographer": "652234",
+          "license": "Pixabay Content License",
+          "provider": "pixabay",
+          "sha256": "d43936eba8822f50315ed60e99f8f201ad9cededc82f2d38cc6dfff34d260732",
+          "isCurrentApproved": false
+        },
+        {
+          "optionId": "customs_counter:pixabay_4454338",
+          "label": "候選圖 4",
+          "image": "images/raw/airport/customs_counter/pixabay_4454338.jpg",
+          "sidecar": "images/raw/airport/customs_counter/pixabay_4454338.json",
+          "source": "Pixabay",
+          "sourceUrl": "https://pixabay.com/photos/airbus-airplane-jet-flight-airport-4454338/",
+          "photographer": "Steve001",
+          "license": "Pixabay Content License",
+          "provider": "pixabay",
+          "sha256": "43da8a9c4ca7f3a3fdaf14cced1eedf9ff47b5292b99dc314bae446730872702",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "airport_004_departure_board",
+      "word": "departure board",
+      "category": "airport",
+      "query": "airport departure board",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "airport:airport_004_departure_board",
+          "label": "目前題庫版本",
+          "image": "images/approved/airport/airport_004_departure_board.jpg",
+          "sidecar": "images/approved/airport/airport_004_departure_board.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/airport-departures-board-12940608/",
+          "photographer": "Atlantic Ambience",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "8e436eff1b0fd5ad15248834abc994fcc35da53b422c3a35f7fb5297281881fb",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "departure_board:pexels_36338202",
+          "label": "候選圖 2",
+          "image": "images/raw/airport/departure_board/pexels_36338202.jpg",
+          "sidecar": "images/raw/airport/departure_board/pexels_36338202.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/black-and-white-vintage-airport-departure-board-36338202/",
+          "photographer": "wal_ 172619",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "73ae274b68f18b867340202a84c62e8d85ace48be6b340d5e09510899ce949ff",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "airport_005_security_checkpoint",
+      "word": "security checkpoint",
+      "category": "airport",
+      "query": "airport security checkpoint",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "airport:airport_005_security_checkpoint",
+          "label": "目前題庫版本",
+          "image": "images/approved/airport/airport_005_security_checkpoint.jpg",
+          "sidecar": "images/approved/airport/airport_005_security_checkpoint.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/person-standing-inside-building-2574091/",
+          "photographer": "Matthew Turner",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "6cef49b3e744ffb64ebdd00473d5c483faca01dd0f6f0a8b2f8f8c58069770f0",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "security_checkpoint:pexels_32027096",
+          "label": "候選圖 2",
+          "image": "images/raw/airport/security_checkpoint/pexels_32027096.jpg",
+          "sidecar": "images/raw/airport/security_checkpoint/pexels_32027096.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/security-checkpoint-at-historical-landmark-32027096/",
+          "photographer": "HAMZA YAICH",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "638132e741f19ed17564ceb7875add50f22f7e2ff6631718a3e95544cd765f9c",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "airport_006_check_in_counter",
+      "word": "check-in counter",
+      "category": "airport",
+      "query": "airport check in counter",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "airport:airport_006_check_in_counter",
+          "label": "目前題庫版本",
+          "image": "images/approved/airport/airport_006_check_in_counter.jpg",
+          "sidecar": "images/approved/airport/airport_006_check_in_counter.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/photo-of-people-in-airport-2612113/",
+          "photographer": "Connor Danylenko",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "37b130461dff26168ca88a33e0acb014ef69022ad0f5d057689e331ebdff8a36",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "check_in_counter:pexels_34269878",
+          "label": "候選圖 2",
+          "image": "images/raw/airport/check_in_counter/pexels_34269878.jpg",
+          "sidecar": "images/raw/airport/check_in_counter/pexels_34269878.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/modern-airport-terminal-with-self-service-kiosks-34269878/",
+          "photographer": "Vladimir Srajber",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "654766016b5fe62035a0da3d96fb1665c7b35ec56f25adab835e67f07fa8949c",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "airport_007_duty_free_shop",
+      "word": "duty-free shop",
+      "category": "airport",
+      "query": "airport duty free shop",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "airport:airport_007_duty_free_shop",
+          "label": "目前題庫版本",
+          "image": "images/approved/airport/airport_007_duty_free_shop.jpg",
+          "sidecar": "images/approved/airport/airport_007_duty_free_shop.json",
+          "source": "Pixabay",
+          "sourceUrl": "https://pixabay.com/photos/apparel-boutique-bags-shoes-shop-1850804/",
+          "photographer": "Pexels",
+          "license": "Pixabay Content License",
+          "provider": "pixabay",
+          "sha256": "440f249774c733b366a4d08136cda46eda7344bc1ba217c52d3e8bbd0f769613",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "duty_free_shop:pexels_32998741",
+          "label": "候選圖 2",
+          "image": "images/raw/airport/duty_free_shop/pexels_32998741.jpg",
+          "sidecar": "images/raw/airport/duty_free_shop/pexels_32998741.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/interior-of-suvarnabhumi-airport-in-bangkok-32998741/",
+          "photographer": "Shamsuddin Habib",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "242aaaa76a5757ee4df7066a572ce92ba34bde7cb577f14ba36751bab170bac6",
+          "isCurrentApproved": false
+        },
+        {
+          "optionId": "duty_free_shop:pexels_7427427",
+          "label": "候選圖 3",
+          "image": "images/raw/airport/duty_free_shop/pexels_7427427.jpg",
+          "sidecar": "images/raw/airport/duty_free_shop/pexels_7427427.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/a-flight-information-display-system-at-the-istanbul-airport-7427427/",
+          "photographer": "Atlantic Ambience",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "39b154e27401778b88f18bf111dc5fa48025bc0ba36da11d3d66a8bafce1dfa0",
+          "isCurrentApproved": false
+        },
+        {
+          "optionId": "duty_free_shop:pixabay_1232944",
+          "label": "候選圖 4",
+          "image": "images/raw/airport/duty_free_shop/pixabay_1232944.jpg",
+          "sidecar": "images/raw/airport/duty_free_shop/pixabay_1232944.json",
+          "source": "Pixabay",
+          "sourceUrl": "https://pixabay.com/photos/grocery-shopping-supermarket-1232944/",
+          "photographer": "stevepb",
+          "license": "Pixabay Content License",
+          "provider": "pixabay",
+          "sha256": "611cf0e547c277acb974e20c25dae2b070963ed832c80148434d6cf5d8122931",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "airport_008_passport_control",
+      "word": "passport control",
+      "category": "airport",
+      "query": "airport passport control",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "airport:airport_008_passport_control",
+          "label": "目前題庫版本",
+          "image": "images/approved/airport/airport_008_passport_control.jpg",
+          "sidecar": "images/approved/airport/airport_008_passport_control.json",
+          "source": "Pixabay",
+          "sourceUrl": "https://pixabay.com/photos/passport-sweden-arlanda-travel-1042891/",
+          "photographer": "robertaengland",
+          "license": "Pixabay Content License",
+          "provider": "pixabay",
+          "sha256": "bd96419ffd95cb74561ed516ef916376b1b8b8d833db64e3d2d7b062549804b9",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "passport_control:pexels_32176062",
+          "label": "候選圖 2",
+          "image": "images/raw/airport/passport_control/pexels_32176062.jpg",
+          "sidecar": "images/raw/airport/passport_control/pexels_32176062.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/close-up-of-filipino-pasaportes-at-airport-32176062/",
+          "photographer": "Kenneth Surillo",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "fa8df2886e566df51acc7b7356367b9f02a387e6eb98039a8925657fd25e0bc7",
+          "isCurrentApproved": false
+        },
+        {
+          "optionId": "passport_control:pexels_8372629",
+          "label": "候選圖 3",
+          "image": "images/raw/airport/passport_control/pexels_8372629.jpg",
+          "sidecar": "images/raw/airport/passport_control/pexels_8372629.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/white-smartphone-on-the-table-8372629/",
+          "photographer": "Leeloo The First",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "f7af75f78cdf60437e658903c0de2c37e3075959b438c0a1ad377bfa0203b347",
+          "isCurrentApproved": false
+        },
+        {
+          "optionId": "passport_control:pixabay_4329588",
+          "label": "候選圖 4",
+          "image": "images/raw/airport/passport_control/pixabay_4329588.jpg",
+          "sidecar": "images/raw/airport/passport_control/pixabay_4329588.json",
+          "source": "Pixabay",
+          "sourceUrl": "https://pixabay.com/photos/control-tower-airport-tower-4329588/",
+          "photographer": "dayamay",
+          "license": "Pixabay Content License",
+          "provider": "pixabay",
+          "sha256": "aa814fd262b8d2f59fb83c7cd3298aaf8bbbf64637ba07a05c2a0314202c232b",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "airport_009_runway",
+      "word": "runway",
+      "category": "airport",
+      "query": "airport runway",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "airport:airport_009_runway",
+          "label": "目前題庫版本",
+          "image": "images/approved/airport/airport_009_runway.jpg",
+          "sidecar": "images/approved/airport/airport_009_runway.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/closed-runway-in-an-airfield-13976771/",
+          "photographer": "John Hill",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "64394a28bc04cdc39cf7277977f4d3637ee961da22c59a2b352bf82943e05280",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "runway:pexels_36303745",
+          "label": "候選圖 2",
+          "image": "images/raw/airport/runway/pexels_36303745.jpg",
+          "sidecar": "images/raw/airport/runway/pexels_36303745.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/airplane-at-airport-gate-on-a-clear-day-36303745/",
+          "photographer": "Thomas  balabaud",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "8358fab6a9f5742e9ea5053f09ccfd4552eee3353f72a0b8d2551ed5b8510db9",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "airport_010_luggage_cart",
+      "word": "luggage cart",
+      "category": "airport",
+      "query": "airport luggage cart",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "airport:airport_010_luggage_cart",
+          "label": "目前題庫版本",
+          "image": "images/approved/airport/airport_010_luggage_cart.jpg",
+          "sidecar": "images/approved/airport/airport_010_luggage_cart.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/tunnel-on-an-airport-in-warsaw-18743908/",
+          "photographer": "Jan van der Wolf",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "c09808131b1271961e581e1541174fdf8432a0cba81f32cc9ea08f6e0c8a8a64",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "luggage_cart:pexels_34118486",
+          "label": "候選圖 2",
+          "image": "images/raw/airport/luggage_cart/pexels_34118486.jpg",
+          "sidecar": "images/raw/airport/luggage_cart/pexels_34118486.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/travelers-at-terminal-2-in-shanghai-airport-34118486/",
+          "photographer": "dongfang xiaowu",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "775b33d29e1c269bfa313a7d1a5d7fb5fb5dbce1dce44b6a40ceeff965ac4f4d",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "hotel_001_reception_desk",
+      "word": "reception desk",
+      "category": "hotel",
+      "query": "hotel reception desk",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "hotel:hotel_001_reception_desk",
+          "label": "目前題庫版本",
+          "image": "images/approved/hotel/hotel_001_reception_desk.jpg",
+          "sidecar": "images/approved/hotel/hotel_001_reception_desk.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/selective-focus-photo-of-reception-signage-3768095/",
+          "photographer": "Andrea Piacquadio",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "05498d90f293b691a1143adbf7afb25c77121820711f71e4384f4b5922aedfda",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "reception_desk:pexels_7820689",
+          "label": "候選圖 2",
+          "image": "images/raw/hotel/reception_desk/pexels_7820689.jpg",
+          "sidecar": "images/raw/hotel/reception_desk/pexels_7820689.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/photo-of-a-person-s-hand-pressing-a-bell-7820689/",
+          "photographer": "Mikhail Nilov",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "fa5684007aca6da974b303087822a25d3be67bf7672dc3cb3d90fab51545a19f",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "hotel_002_room_service",
+      "word": "room service",
+      "category": "hotel",
+      "query": "hotel room service tray",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "hotel:hotel_002_room_service",
+          "label": "目前題庫版本",
+          "image": "images/approved/hotel/hotel_002_room_service.jpg",
+          "sidecar": "images/approved/hotel/hotel_002_room_service.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/woman-serving-order-from-hotel-room-service-6466285/",
+          "photographer": "cottonbro studio",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "3b4e2c00d93108d7b34d3edd942b7dc074157c5fdec9105e09e359aafd8505aa",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "room_service:pexels_6466301",
+          "label": "候選圖 2",
+          "image": "images/raw/hotel/room_service/pexels_6466301.jpg",
+          "sidecar": "images/raw/hotel/room_service/pexels_6466301.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/person-removing-the-cloche-6466301/",
+          "photographer": "cottonbro studio",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "28057f0333f7795f8e687e63ddfe7718c6fc87e06685a54fb974032138f09b73",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "hotel_003_key_card",
+      "word": "key card",
+      "category": "hotel",
+      "query": "hotel key card door",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "hotel:hotel_003_key_card",
+          "label": "目前題庫版本",
+          "image": "images/approved/hotel/hotel_003_key_card.jpg",
+          "sidecar": "images/approved/hotel/hotel_003_key_card.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/man-hand-holding-access-card-over-reader-13657444/",
+          "photographer": "Susanne Plank",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "41d8f8645773238c0966a988f9a4e13c6f82d4b5c3a05b310c41c7f33806f6da",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "key_card:pexels_18587954",
+          "label": "候選圖 2",
+          "image": "images/raw/hotel/key_card/pexels_18587954.jpg",
+          "sidecar": "images/raw/hotel/key_card/pexels_18587954.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/entrance-to-a-hotel-room-18587954/",
+          "photographer": "Maria Kray",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "222ded2718a2ac81e852cf896e6ebb865481bf05bb0ccc37a9a0b1dd7831b1cf",
+          "isCurrentApproved": false
+        },
+        {
+          "optionId": "key_card:pexels_18587963",
+          "label": "候選圖 3",
+          "image": "images/raw/hotel/key_card/pexels_18587963.jpg",
+          "sidecar": "images/raw/hotel/key_card/pexels_18587963.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/entrance-to-a-hotel-room-18587963/",
+          "photographer": "Maria Kray",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "9ee577bb633c8bbb328b871059a0e9081334b30137e5e24bad68a75e242b30b4",
+          "isCurrentApproved": false
+        },
+        {
+          "optionId": "key_card:pexels_36807310",
+          "label": "候選圖 4",
+          "image": "images/raw/hotel/key_card/pexels_36807310.jpg",
+          "sidecar": "images/raw/hotel/key_card/pexels_36807310.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/aerial-view-of-suitcase-by-hotel-door-36807310/",
+          "photographer": "Chris F",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "81a9f8c3e219dcb1d77a6bc15cb269cce2e322161f0f33c2e162192d532f6c00",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "hotel_004_concierge_desk",
+      "word": "concierge desk",
+      "category": "hotel",
+      "query": "hotel concierge desk",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "hotel:hotel_004_concierge_desk",
+          "label": "目前題庫版本",
+          "image": "images/approved/hotel/hotel_004_concierge_desk.jpg",
+          "sidecar": "images/approved/hotel/hotel_004_concierge_desk.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/woman-behind-the-desk-at-the-reception-in-a-luxurious-hotel-14036251/",
+          "photographer": "Quang Nguyen Vinh",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "6a4842a63b4c9751370c445c856acb27022ccb8b4e4e3127bebc3f19bd124236",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "concierge_desk:pexels_7821340",
+          "label": "候選圖 2",
+          "image": "images/raw/hotel/concierge_desk/pexels_7821340.jpg",
+          "sidecar": "images/raw/hotel/concierge_desk/pexels_7821340.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/table-bell-with-flags-in-background-7821340/",
+          "photographer": "Mikhail Nilov",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "b822291e15e3a65286b241ad001ebb61645ed71f88e47d8f2a4e498d8330a79f",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "hotel_005_elevator_lobby",
+      "word": "elevator lobby",
+      "category": "hotel",
+      "query": "hotel elevator lobby",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "hotel:hotel_005_elevator_lobby",
+          "label": "目前題庫版本",
+          "image": "images/approved/hotel/hotel_005_elevator_lobby.jpg",
+          "sidecar": "images/approved/hotel/hotel_005_elevator_lobby.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/elegant-art-deco-elevator-lobby-interior-29058906/",
+          "photographer": "Willian Justen de Vasconcellos",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "ba8818904c1a1d451ac218ffcb7b0602a79d4fa571a68b49855decf02a226d11",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "elevator_lobby:pexels_26729563",
+          "label": "候選圖 2",
+          "image": "images/raw/hotel/elevator_lobby/pexels_26729563.jpg",
+          "sidecar": "images/raw/hotel/elevator_lobby/pexels_26729563.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/hallway-in-modern-hotel-26729563/",
+          "photographer": "Quang Nguyen Vinh",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "f9d76d4708861042d1a6fca7bf4c6e0fce7a1f86b7b1dc2b2499424f042aa0b7",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "hotel_006_housekeeping_cart",
+      "word": "housekeeping cart",
+      "category": "hotel",
+      "query": "hotel housekeeping cart",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "hotel:hotel_006_housekeeping_cart",
+          "label": "目前題庫版本",
+          "image": "images/approved/hotel/hotel_006_housekeeping_cart.jpg",
+          "sidecar": "images/approved/hotel/hotel_006_housekeeping_cart.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/man-in-white-long-sleeve-3772615/",
+          "photographer": "Andrea Piacquadio",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "c22bec4cb9b90e6abe201edf6a29e0878a78ccd9b84eed915458f312ab9a558e",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "housekeeping_cart:pexels_6466219",
+          "label": "候選圖 2",
+          "image": "images/raw/hotel/housekeeping_cart/pexels_6466219.jpg",
+          "sidecar": "images/raw/hotel/housekeeping_cart/pexels_6466219.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/woman-holding-a-clean-towels-6466219/",
+          "photographer": "cottonbro studio",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "d871c56b282b136f899ee880664a61e3b1901565c1320efafdba01a4459bfbc9",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "hotel_007_luggage_trolley",
+      "word": "luggage trolley",
+      "category": "hotel",
+      "query": "hotel luggage trolley",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "hotel:hotel_007_luggage_trolley",
+          "label": "目前題庫版本",
+          "image": "images/approved/hotel/hotel_007_luggage_trolley.jpg",
+          "sidecar": "images/approved/hotel/hotel_007_luggage_trolley.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/man-pushing-the-cart-with-white-boxes-6474527/",
+          "photographer": "cottonbro studio",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "30642e93f81b4af15ae5e3cb14e2e0c550dc5cddfd07673f1d09fddc8d5e2410",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "luggage_trolley:pexels_6474535",
+          "label": "候選圖 2",
+          "image": "images/raw/hotel/luggage_trolley/pexels_6474535.jpg",
+          "sidecar": "images/raw/hotel/luggage_trolley/pexels_6474535.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/man-pushing-a-cart-6474535/",
+          "photographer": "cottonbro studio",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "70a45f12f27b23ff84172bb59e3fcd74633220af5d62939bef6209da35340773",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "hotel_008_breakfast_buffet",
+      "word": "breakfast buffet",
+      "category": "hotel",
+      "query": "hotel breakfast buffet",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "hotel:hotel_008_breakfast_buffet",
+          "label": "目前題庫版本",
+          "image": "images/approved/hotel/hotel_008_breakfast_buffet.jpg",
+          "sidecar": "images/approved/hotel/hotel_008_breakfast_buffet.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/assorted-breakfast-buffet-with-juices-and-cereals-29086305/",
+          "photographer": "Keegan Checks",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "d2943c4ede1ffab36fdae50b82682e39054a7ca6d2a8bf440b96438906cbbc07",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "breakfast_buffet:pexels_13871291",
+          "label": "候選圖 2",
+          "image": "images/raw/hotel/breakfast_buffet/pexels_13871291.jpg",
+          "sidecar": "images/raw/hotel/breakfast_buffet/pexels_13871291.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/tray-with-ham-and-cheese-next-to-the-bread-13871291/",
+          "photographer": "Matheus Bertelli",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "e48f46511578fed1ab959f389bbf0b06d1a5311eb6df603a45c02aba03b0daf8",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "hotel_009_hotel_corridor",
+      "word": "hotel corridor",
+      "category": "hotel",
+      "query": "hotel corridor",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "hotel:hotel_009_hotel_corridor",
+          "label": "目前題庫版本",
+          "image": "images/approved/hotel/hotel_009_hotel_corridor.jpg",
+          "sidecar": "images/approved/hotel/hotel_009_hotel_corridor.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/luxurious-heritage-hotel-corridor-in-bikaner-33803745/",
+          "photographer": "Abhishek  Navlakha",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "1acfb6202bbadb72a33eabb68c55b21e308a6ae954776363d511a40d10d25eac",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "hotel_corridor:pexels_7608683",
+          "label": "候選圖 2",
+          "image": "images/raw/hotel/hotel_corridor/pexels_7608683.jpg",
+          "sidecar": "images/raw/hotel/hotel_corridor/pexels_7608683.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/woman-in-red-dress-leaning-on-the-wall-7608683/",
+          "photographer": "cottonbro studio",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "1a5d86fa2ac71fe1c89a328644ae408ab9b89415a73115c278bdf40c21f9f09e",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "hotel_010_wake_up_call",
+      "word": "wake-up call",
+      "category": "hotel",
+      "query": "hotel bedside phone wake up call",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "hotel:hotel_010_wake_up_call",
+          "label": "目前題庫版本",
+          "image": "images/approved/hotel/hotel_010_wake_up_call.jpg",
+          "sidecar": "images/approved/hotel/hotel_010_wake_up_call.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/man-holding-the-telephone-putting-on-his-lap-7609014/",
+          "photographer": "cottonbro studio",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "9f5c852512455847421ddb04872ee3affc5ead3ab7fcb2ee2bc1353a887e5942",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "wake_up_call:pexels_7609119",
+          "label": "候選圖 2",
+          "image": "images/raw/hotel/wake_up_call/pexels_7609119.jpg",
+          "sidecar": "images/raw/hotel/wake_up_call/pexels_7609119.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/vintage-telephone-beside-the-bed-7609119/",
+          "photographer": "cottonbro studio",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "329e3b08195dd7aa1baf89431330ddcbe9f1391dff1b03d1f6582d12dda91b77",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "office_001_printer",
+      "word": "printer",
+      "category": "office",
+      "query": "office printer",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "office:office_001_printer",
+          "label": "目前題庫版本",
+          "image": "images/approved/office/office_001_printer.jpg",
+          "sidecar": "images/approved/office/office_001_printer.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/white-and-black-photocopier-machine-11833899/",
+          "photographer": "Engin Akyurt",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "1a29450da05ca2c3c210b1da18a96184fe65ef91e13318e451466ebdbba10df2",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "printer:pexels_8297818",
+          "label": "候選圖 2",
+          "image": "images/raw/office/printer/pexels_8297818.jpg",
+          "sidecar": "images/raw/office/printer/pexels_8297818.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/close-up-of-woman-standing-by-desk-with-printer-8297818/",
+          "photographer": "Mikhail Nilov",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "270f9395dfbbf96823324033dede065d4b6bbf4249d27bc1756e987e6926a25d",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "office_002_conference_room",
+      "word": "conference room",
+      "category": "office",
+      "query": "office conference room",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "office:office_002_conference_room",
+          "label": "目前題庫版本",
+          "image": "images/approved/office/office_002_conference_room.jpg",
+          "sidecar": "images/approved/office/office_002_conference_room.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/meeting-room-in-office-20101490/",
+          "photographer": "qdysk blog",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "4bc8c5b1edb3df69014785d9b5073b45721b3546aea4656fa138f44429029d2c",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "conference_room:pexels_8453800",
+          "label": "候選圖 2",
+          "image": "images/raw/office/conference_room/pexels_8453800.jpg",
+          "sidecar": "images/raw/office/conference_room/pexels_8453800.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/white-table-with-chairs-and-chairs-8453800/",
+          "photographer": "cottonbro studio",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "7ca4f5b66ff4dfbba51301c5dea95a4287d6d171aeb486ccb17ca777778f102d",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "office_003_filing_cabinet",
+      "word": "filing cabinet",
+      "category": "office",
+      "query": "office filing cabinet",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "office:office_003_filing_cabinet",
+          "label": "目前題庫版本",
+          "image": "images/approved/office/office_003_filing_cabinet.jpg",
+          "sidecar": "images/approved/office/office_003_filing_cabinet.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/close-up-of-brown-drawers-6333743/",
+          "photographer": "cottonbro studio",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "df260877a2ccc503f909194174758d33cc5751754b0c8b1b00adb284c8a8e31c",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "filing_cabinet:pexels_8466229",
+          "label": "候選圖 2",
+          "image": "images/raw/office/filing_cabinet/pexels_8466229.jpg",
+          "sidecar": "images/raw/office/filing_cabinet/pexels_8466229.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/a-woman-in-business-attire-holding-folders-8466229/",
+          "photographer": "cottonbro studio",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "0d7ccb70f1ccefbb6b2fe64a0dae178bd6cbbd2953ae722a1c4664e9b030ffc3",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "office_004_reception_area",
+      "word": "reception area",
+      "category": "office",
+      "query": "office reception area",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "office:office_004_reception_area",
+          "label": "目前題庫版本",
+          "image": "images/approved/office/office_004_reception_area.jpg",
+          "sidecar": "images/approved/office/office_004_reception_area.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/modern-office-reception-area-with-logo-36894415/",
+          "photographer": "Thien  Nhan",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "1e1e6e6b03db6c935b494dd0ab42d636ba631eb8fa1ad8843e2a32d66f6f0ddb",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "reception_area:pexels_31771715",
+          "label": "候選圖 2",
+          "image": "images/raw/office/reception_area/pexels_31771715.jpg",
+          "sidecar": "images/raw/office/reception_area/pexels_31771715.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/warm-cozy-reception-area-with-wooden-decor-31771715/",
+          "photographer": "Pacific Business Park",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "b0827c26f1400139d2770f979175cc5ec959eb361d1549ec6e7425dcce42c8d5",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "office_005_office_cubicle",
+      "word": "office cubicle",
+      "category": "office",
+      "query": "office cubicle",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "office:office_005_office_cubicle",
+          "label": "目前題庫版本",
+          "image": "images/approved/office/office_005_office_cubicle.jpg",
+          "sidecar": "images/approved/office/office_005_office_cubicle.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/interior-design-of-an-office-5483233/",
+          "photographer": "cottonbro studio",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "a3f0a7988e22677d90e02817ed48885603e4dc53bcda2d47cdde8a173edbc30f",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "office_cubicle:pexels_7103123",
+          "label": "候選圖 2",
+          "image": "images/raw/office/office_cubicle/pexels_7103123.jpg",
+          "sidecar": "images/raw/office/office_cubicle/pexels_7103123.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/a-man-beside-a-woman-7103123/",
+          "photographer": "Edmond Dantès",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "6073aeee74eb669e3507323c2a9d8e5e94a1ca0288c5ff81cdea50f054924778",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "office_006_break_room",
+      "word": "break room",
+      "category": "office",
+      "query": "office break room",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "office:office_006_break_room",
+          "label": "目前題庫版本",
+          "image": "images/approved/office/office_006_break_room.jpg",
+          "sidecar": "images/approved/office/office_006_break_room.json",
+          "source": "Pixabay",
+          "sourceUrl": "https://pixabay.com/photos/kitchen-home-interior-modern-room-2165756/",
+          "photographer": "ClickerHappy",
+          "license": "Pixabay Content License",
+          "provider": "pixabay",
+          "sha256": "b1171f6468b951d61a5c05a0043fdfd427cc5879a72d4c32fa2bd71d9ecdf081",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "break_room:pexels_5990160",
+          "label": "候選圖 2",
+          "image": "images/raw/office/break_room/pexels_5990160.jpg",
+          "sidecar": "images/raw/office/break_room/pexels_5990160.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/a-man-and-woman-having-conversation-while-standing-near-the-coffee-machine-5990160/",
+          "photographer": "cottonbro studio",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "1e238a240ffbffe6d6c39d68b33a872c445621f7dce69229950e99103fa27a72",
+          "isCurrentApproved": false
+        },
+        {
+          "optionId": "break_room:pexels_6804592",
+          "label": "候選圖 3",
+          "image": "images/raw/office/break_room/pexels_6804592.jpg",
+          "sidecar": "images/raw/office/break_room/pexels_6804592.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/employees-relaxing-in-the-office-recreation-area-6804592/",
+          "photographer": "cottonbro studio",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "0530443a2578977f84fb9c2a2d7a6672ed58f145c011db216230a143f639c229",
+          "isCurrentApproved": false
+        },
+        {
+          "optionId": "break_room:pixabay_2181960",
+          "label": "候選圖 4",
+          "image": "images/raw/office/break_room/pixabay_2181960.jpg",
+          "sidecar": "images/raw/office/break_room/pixabay_2181960.json",
+          "source": "Pixabay",
+          "sourceUrl": "https://pixabay.com/photos/chairs-table-contemporary-furniture-2181960/",
+          "photographer": "Pexels",
+          "license": "Pixabay Content License",
+          "provider": "pixabay",
+          "sha256": "31b451afb5aa1c628d2b5de3ec5bb2c87e46005e8d4b139f19a26c1b4f7c4f47",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "office_007_copy_machine",
+      "word": "copy machine",
+      "category": "office",
+      "query": "office copy machine",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "office:office_007_copy_machine",
+          "label": "目前題庫版本",
+          "image": "images/approved/office/office_007_copy_machine.jpg",
+          "sidecar": "images/approved/office/office_007_copy_machine.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/serious-female-office-worker-using-printer-in-workplace-3831873/",
+          "photographer": "Andrea Piacquadio",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "3577aaa6610d51736942fac59357c6c4b573657c7c9fc41f545b1f8d510f937e",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "copy_machine:pexels_7964429",
+          "label": "候選圖 2",
+          "image": "images/raw/office/copy_machine/pexels_7964429.jpg",
+          "sidecar": "images/raw/office/copy_machine/pexels_7964429.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/woman-and-man-with-printer-in-office-7964429/",
+          "photographer": "Felicity Tai",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "bf21695c9501e139b9c9c1565f9ca9cf73408c8116ec72f28cadd3e88c02a8df",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "office_008_desk_lamp",
+      "word": "desk lamp",
+      "category": "office",
+      "query": "office desk lamp",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "office:office_008_desk_lamp",
+          "label": "目前題庫版本",
+          "image": "images/approved/office/office_008_desk_lamp.jpg",
+          "sidecar": "images/approved/office/office_008_desk_lamp.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/black-study-lamp-on-black-table-159839/",
+          "photographer": "Pixabay",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "2b1071b0b3331d079017d13548933b38460381dc8bf3da2c32d1fe45a43ade64",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "desk_lamp:pexels_36763947",
+          "label": "候選圖 2",
+          "image": "images/raw/office/desk_lamp/pexels_36763947.jpg",
+          "sidecar": "images/raw/office/desk_lamp/pexels_36763947.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/retro-computer-desk-setup-with-vintage-aesthetic-36763947/",
+          "photographer": "Evelyn Rumti",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "eb0c561da884e31d6bc4206e8ffbff72a732aee26da9756f8048c1c0daebe756",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "office_009_whiteboard",
+      "word": "whiteboard",
+      "category": "office",
+      "query": "office whiteboard meeting",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "office:office_009_whiteboard",
+          "label": "目前題庫版本",
+          "image": "images/approved/office/office_009_whiteboard.jpg",
+          "sidecar": "images/approved/office/office_009_whiteboard.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/men-presenting-using-a-whiteboard-7495605/",
+          "photographer": "Moe Magners",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "ab08e04901c207a2068d66cd233ea3bb90adc7718850de286f737f19a41c39e1",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "whiteboard:pexels_8276671",
+          "label": "候選圖 2",
+          "image": "images/raw/office/whiteboard/pexels_8276671.jpg",
+          "sidecar": "images/raw/office/whiteboard/pexels_8276671.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/men-in-a-business-meeting-8276671/",
+          "photographer": "PNW Production",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "a5648d3348a623f755bc1a445123c61f6efc11f34a357b6f163c6a02c3a2e5e5",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "office_010_swivel_chair",
+      "word": "swivel chair",
+      "category": "office",
+      "query": "office swivel chair",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "office:office_010_swivel_chair",
+          "label": "目前題庫版本",
+          "image": "images/approved/office/office_010_swivel_chair.jpg",
+          "sidecar": "images/approved/office/office_010_swivel_chair.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/a-swivel-chair-near-table-with-laptop-14245340/",
+          "photographer": "Anji Beiye",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "16741185eb79de827a00dd1a337c82bd4c407ee1467acd9a869b7ab0dd9d2491",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "swivel_chair:pexels_7750129",
+          "label": "候選圖 2",
+          "image": "images/raw/office/swivel_chair/pexels_7750129.jpg",
+          "sidecar": "images/raw/office/swivel_chair/pexels_7750129.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/white-desks-and-swivel-chairs-in-the-office-7750129/",
+          "photographer": "Max Vakhtbovych",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "167dbd3ed06aeb148675a741a4223943a4174844ee12313cd8f96836fe2e5ca5",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "retail_001_cashier",
+      "word": "cashier",
+      "category": "retail",
+      "query": "cashier counter",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "retail:retail_001_cashier",
+          "label": "目前題庫版本",
+          "image": "images/approved/retail/retail_001_cashier.jpg",
+          "sidecar": "images/approved/retail/retail_001_cashier.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/cashier-using-touchscreen-12935066/",
+          "photographer": "iMin Technology",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "2392953afb6e7a0668439032ce27146b129fa9e88148686ed12315289b09859a",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "cashier:pexels_4199399",
+          "label": "候選圖 2",
+          "image": "images/raw/retail/cashier/pexels_4199399.jpg",
+          "sidecar": "images/raw/retail/cashier/pexels_4199399.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/couple-buying-groceries-at-a-supermarket-4199399/",
+          "photographer": "Jack Sparrow",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "dc4aee282d5b29c22fac1a277a76d424d6cb1e424289fa8b7dd92a726022a7de",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "retail_002_shopping_cart",
+      "word": "shopping cart",
+      "category": "retail",
+      "query": "shopping cart retail store",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "retail:retail_002_shopping_cart",
+          "label": "目前題庫版本",
+          "image": "images/approved/retail/retail_002_shopping_cart.jpg",
+          "sidecar": "images/approved/retail/retail_002_shopping_cart.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/line-of-shopping-carts-outside-retail-store-35556518/",
+          "photographer": "John Robertson",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "0d87e19b50f0a19d62fe6e3de4d1b126abe5624007466050a0ae088bb0ee3332",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "shopping_cart:pexels_15393718",
+          "label": "候選圖 2",
+          "image": "images/raw/retail/shopping_cart/pexels_15393718.jpg",
+          "sidecar": "images/raw/retail/shopping_cart/pexels_15393718.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/shopping-carts-15393718/",
+          "photographer": "Ulrick Trappschuh",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "f7a3f71befe2b7b00e2dd4ce075030cd9b8259089a7b0e90e9dfdb153dd95521",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "retail_003_price_tag",
+      "word": "price tag",
+      "category": "retail",
+      "query": "retail price tag",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "retail:retail_003_price_tag",
+          "label": "目前題庫版本",
+          "image": "images/approved/retail/retail_003_price_tag.jpg",
+          "sidecar": "images/approved/retail/retail_003_price_tag.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/a-red-tag-sale-7986985/",
+          "photographer": "Tamanna Rumee",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "b530be096aabe038e9ccb56b92f8e21e7f5aaca8f05603d5d183559f4aaae574",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "price_tag:pexels_7986988",
+          "label": "候選圖 2",
+          "image": "images/raw/retail/price_tag/pexels_7986988.jpg",
+          "sidecar": "images/raw/retail/price_tag/pexels_7986988.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/a-red-tag-sale-7986988/",
+          "photographer": "Tamanna Rumee",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "176d130a9622ab9f223159976826555d0dc36f3feab7a58dc2dafaf7e60a5cca",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "retail_004_fitting_room",
+      "word": "fitting room",
+      "category": "retail",
+      "query": "store fitting room",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "retail:retail_004_fitting_room",
+          "label": "目前題庫版本",
+          "image": "images/approved/retail/retail_004_fitting_room.jpg",
+          "sidecar": "images/approved/retail/retail_004_fitting_room.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/two-women-in-the-fitting-room-8388311/",
+          "photographer": "Ron Lach",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "1329b3bc6d0af3b7e7a675f7b24eef4536517aa3abd6d43f8a2b24cccbecd40d",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "fitting_room:pexels_8388307",
+          "label": "候選圖 2",
+          "image": "images/raw/retail/fitting_room/pexels_8388307.jpg",
+          "sidecar": "images/raw/retail/fitting_room/pexels_8388307.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/a-woman-in-lilac-tank-top-near-a-person-in-yellow-top-8388307/",
+          "photographer": "Ron Lach",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "44e57b3a181861d48cf0a21dfd8bbcd128a9e872edd7031078104b7bb89f21c8",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "retail_005_sales_counter",
+      "word": "sales counter",
+      "category": "retail",
+      "query": "retail sales counter",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "retail:retail_005_sales_counter",
+          "label": "目前題庫版本",
+          "image": "images/approved/retail/retail_005_sales_counter.jpg",
+          "sidecar": "images/approved/retail/retail_005_sales_counter.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/blonde-woman-standing-near-the-checkout-counter-6925810/",
+          "photographer": "Tom Tillhub",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "8e9820925effb566a6107a92842e9e4b3724087662d7440794067f84ecfc85e0",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "sales_counter:pexels_6925808",
+          "label": "候選圖 2",
+          "image": "images/raw/retail/sales_counter/pexels_6925808.jpg",
+          "sidecar": "images/raw/retail/sales_counter/pexels_6925808.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/checkout-at-the-store-6925808/",
+          "photographer": "Tom Tillhub",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "824b82ef7bc08bf9d8c7c40c7b446599096ed19e5013be66e2b643e47606bab5",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "retail_006_barcode_scanner",
+      "word": "barcode scanner",
+      "category": "retail",
+      "query": "retail barcode scanner",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "retail:retail_006_barcode_scanner",
+          "label": "目前題庫版本",
+          "image": "images/approved/retail/retail_006_barcode_scanner.jpg",
+          "sidecar": "images/approved/retail/retail_006_barcode_scanner.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/person-using-scanner-on-bottle-of-wine-12935075/",
+          "photographer": "iMin Technology",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "f81f3c1a8564e785d0d365a2be83842d14cf862e164080079a9cb07d622ced0a",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "barcode_scanner:pexels_4199490",
+          "label": "候選圖 2",
+          "image": "images/raw/retail/barcode_scanner/pexels_4199490.jpg",
+          "sidecar": "images/raw/retail/barcode_scanner/pexels_4199490.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/couple-buying-groceries-at-a-supermarket-4199490/",
+          "photographer": "Jack Sparrow",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "c3c2805555fcbdf6978611425890ba18edb7c2010551153cca94749643a5e598",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "retail_007_store_aisle",
+      "word": "store aisle",
+      "category": "retail",
+      "query": "store aisle shelves",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "retail:retail_007_store_aisle",
+          "label": "目前題庫版本",
+          "image": "images/approved/retail/retail_007_store_aisle.jpg",
+          "sidecar": "images/approved/retail/retail_007_store_aisle.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/woman-standing-at-end-of-aisle-in-supermarket-21582444/",
+          "photographer": "Kenneth Surillo",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "f3f0f31d642b87f95d869612ded63aa116128aacca220bdd875122d1d651988e",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "store_aisle:pexels_33690927",
+          "label": "候選圖 2",
+          "image": "images/raw/retail/store_aisle/pexels_33690927.jpg",
+          "sidecar": "images/raw/retail/store_aisle/pexels_33690927.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/vibrant-aisle-in-supermarket-with-drinks-display-33690927/",
+          "photographer": "Fabnel LDN",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "fc2f76db88b94b8db3f8b7f8e3ceb1c508c5fb200d25549bdffb3c1276ad3045",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "retail_008_receipt_printer",
+      "word": "receipt printer",
+      "category": "retail",
+      "query": "retail receipt printer",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "retail:retail_008_receipt_printer",
+          "label": "目前題庫版本",
+          "image": "images/approved/retail/retail_008_receipt_printer.jpg",
+          "sidecar": "images/approved/retail/retail_008_receipt_printer.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/person-changing-the-roll-of-thermal-paper-12935090/",
+          "photographer": "iMin Technology",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "004cb7b363cb92da9474549e18f3d2b08a53eba13205fd9b5ef7417dfd6c302a",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "receipt_printer:pexels_36724030",
+          "label": "候選圖 2",
+          "image": "images/raw/retail/receipt_printer/pexels_36724030.jpg",
+          "sidecar": "images/raw/retail/receipt_printer/pexels_36724030.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/modern-cash-register-in-vietnamese-cafe-setting-36724030/",
+          "photographer": "Vuong",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "27bf9add314db274641c8767eaa59474b370329bff6606d8f6b20dcf925f16e5",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "retail_009_display_shelf",
+      "word": "display shelf",
+      "category": "retail",
+      "query": "retail display shelf",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "retail:retail_009_display_shelf",
+          "label": "目前題庫版本",
+          "image": "images/approved/retail/retail_009_display_shelf.jpg",
+          "sidecar": "images/approved/retail/retail_009_display_shelf.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/a-shelf-with-snacks-and-snacks-on-it-27939229/",
+          "photographer": "Allen Boguslavsky",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "7fe16d972718bede18f1b87b87ed4bc3aedb2bcf5de689b71508a6cd5568506a",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "display_shelf:pexels_32474694",
+          "label": "候選圖 2",
+          "image": "images/raw/retail/display_shelf/pexels_32474694.jpg",
+          "sidecar": "images/raw/retail/display_shelf/pexels_32474694.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/colorful-shelf-display-of-cups-in-a-store-32474694/",
+          "photographer": "Sóc Năng Động",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "b1933523d07b5cefcf5eb3cc99c281a6468fa97e16d7b58707e8a1fd48795205",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "retail_010_checkout_line",
+      "word": "checkout line",
+      "category": "retail",
+      "query": "retail checkout line",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "retail:retail_010_checkout_line",
+          "label": "目前題庫版本",
+          "image": "images/approved/retail/retail_010_checkout_line.jpg",
+          "sidecar": "images/approved/retail/retail_010_checkout_line.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/couple-buying-groceries-at-a-supermarket-4199490/",
+          "photographer": "Jack Sparrow",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "c3c2805555fcbdf6978611425890ba18edb7c2010551153cca94749643a5e598",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "checkout_line:pexels_4199399",
+          "label": "候選圖 2",
+          "image": "images/raw/retail/checkout_line/pexels_4199399.jpg",
+          "sidecar": "images/raw/retail/checkout_line/pexels_4199399.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/couple-buying-groceries-at-a-supermarket-4199399/",
+          "photographer": "Jack Sparrow",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "dc4aee282d5b29c22fac1a277a76d424d6cb1e424289fa8b7dd92a726022a7de",
+          "isCurrentApproved": false
+        },
+        {
+          "optionId": "checkout_line:pexels_6390088",
+          "label": "候選圖 3",
+          "image": "images/raw/retail/checkout_line/pexels_6390088.jpg",
+          "sidecar": "images/raw/retail/checkout_line/pexels_6390088.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/close-up-shot-of-a-store-counter-6390088/",
+          "photographer": "Julia Avamotive",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "85d4ed123b9f2492554d2b9260a5272e9af437ce9a7067bc059053c1214d18ef",
+          "isCurrentApproved": false
+        },
+        {
+          "optionId": "checkout_line:pexels_8422728",
+          "label": "候選圖 4",
+          "image": "images/raw/retail/checkout_line/pexels_8422728.jpg",
+          "sidecar": "images/raw/retail/checkout_line/pexels_8422728.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/a-shopper-paying-at-the-counter-8422728/",
+          "photographer": "Kampus Production",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "d1e99795da324e4fa6e10fec19fbad90e034c79612df9d09dc14eac5d7d3a605",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "warehouse_001_loading_dock",
+      "word": "loading dock",
+      "category": "warehouse",
+      "query": "warehouse loading dock",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "warehouse:warehouse_001_loading_dock",
+          "label": "目前題庫版本",
+          "image": "images/approved/warehouse/warehouse_001_loading_dock.jpg",
+          "sidecar": "images/approved/warehouse/warehouse_001_loading_dock.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/pathway-for-forklifts-1267327/",
+          "photographer": "ELEVATE",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "aa93d30a9f721545d388bacbe88d6aedaa2e39bc4c892fa5c06846389797b70f",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "loading_dock:pexels_14860166",
+          "label": "候選圖 2",
+          "image": "images/raw/warehouse/loading_dock/pexels_14860166.jpg",
+          "sidecar": "images/raw/warehouse/loading_dock/pexels_14860166.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/shipping-ramp-text-on-wall-14860166/",
+          "photographer": "David McElwee",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "95e076f42e5fb4c31d3a09f7761ed7460b4c9b34e9ca0681accfabb28d8ad128",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "warehouse_002_forklift",
+      "word": "forklift",
+      "category": "warehouse",
+      "query": "warehouse forklift",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "warehouse:warehouse_002_forklift",
+          "label": "目前題庫版本",
+          "image": "images/approved/warehouse/warehouse_002_forklift.jpg",
+          "sidecar": "images/approved/warehouse/warehouse_002_forklift.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/orange-and-black-fork-lift-8760709/",
+          "photographer": "set aniset",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "bb906ff4b277cd56e76db0d0ea7d296397be12f59b2ba16432f3343173d9acc0",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "forklift:pexels_29491416",
+          "label": "候選圖 2",
+          "image": "images/raw/warehouse/forklift/pexels_29491416.jpg",
+          "sidecar": "images/raw/warehouse/forklift/pexels_29491416.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/10-ton-ace-diesel-forklift-in-industrial-yard-29491416/",
+          "photographer": "Action Construction  Equipment Ltd. - ACE",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "7d77b3f0e7c2cb6f8a51c8a5caf3af5113340d0f31f5c3c2901be88fe9d0c522",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "warehouse_003_storage_rack",
+      "word": "storage rack",
+      "category": "warehouse",
+      "query": "warehouse storage rack",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "warehouse:warehouse_003_storage_rack",
+          "label": "目前題庫版本",
+          "image": "images/approved/warehouse/warehouse_003_storage_rack.jpg",
+          "sidecar": "images/approved/warehouse/warehouse_003_storage_rack.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/green-metal-shelves-with-construction-materials-4170172/",
+          "photographer": "Engin Akyurt",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "8be1dfd34c73951176fc930719468cadc5c958589fc31ed1250714e30dc5a78b",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "storage_rack:pexels_4487363",
+          "label": "候選圖 2",
+          "image": "images/raw/warehouse/storage_rack/pexels_4487363.jpg",
+          "sidecar": "images/raw/warehouse/storage_rack/pexels_4487363.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/wares-in-foils-on-pallets-in-warehouse-4487363/",
+          "photographer": "Tiger Lily",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "e18310df9d442b00e6590b46a6c3bcc99cc97a2f345e99a5fffbc1943caa5632",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "warehouse_004_packing_station",
+      "word": "packing station",
+      "category": "warehouse",
+      "query": "warehouse packing station",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "warehouse:warehouse_004_packing_station",
+          "label": "目前題庫版本",
+          "image": "images/approved/warehouse/warehouse_004_packing_station.jpg",
+          "sidecar": "images/approved/warehouse/warehouse_004_packing_station.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/black-and-white-photo-of-man-checking-cardboard-packages-3483807/",
+          "photographer": "AG Z",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "e52177f27fcee8d3362f2751c2142aba1a6cb546380909d9a2eae7945d2492f4",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "packing_station:pexels_4483774",
+          "label": "候選圖 2",
+          "image": "images/raw/warehouse/packing_station/pexels_4483774.jpg",
+          "sidecar": "images/raw/warehouse/packing_station/pexels_4483774.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/man-standing-in-an-aisle-of-a-warehouse-carrying-a-box-4483774/",
+          "photographer": "Tiger Lily",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "c8ba5b9c9aaa0bd81b1f81dd570b9ebef329bcde85618f45e517be7711a40254",
+          "isCurrentApproved": false
+        },
+        {
+          "optionId": "packing_station:pexels_4487382",
+          "label": "候選圖 3",
+          "image": "images/raw/warehouse/packing_station/pexels_4487382.jpg",
+          "sidecar": "images/raw/warehouse/packing_station/pexels_4487382.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/worker-on-a-construction-4487382/",
+          "photographer": "Tiger Lily",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "6cd19f80e8855cf1749e6f05824d4b6915a05fa8f23184de30679db40c499b86",
+          "isCurrentApproved": false
+        },
+        {
+          "optionId": "packing_station:pexels_6170412",
+          "label": "候選圖 4",
+          "image": "images/raw/warehouse/packing_station/pexels_6170412.jpg",
+          "sidecar": "images/raw/warehouse/packing_station/pexels_6170412.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/low-angle-shot-of-man-in-headphones-and-gray-vest-6170412/",
+          "photographer": "Tima Miroshnichenko",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "65617b385c68bec60cc0a54bab910c6929442baa36d9d236ff4dba60e711167b",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "warehouse_005_pallet_jack",
+      "word": "pallet jack",
+      "category": "warehouse",
+      "query": "warehouse pallet jack",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "warehouse:warehouse_005_pallet_jack",
+          "label": "目前題庫版本",
+          "image": "images/approved/warehouse/warehouse_005_pallet_jack.jpg",
+          "sidecar": "images/approved/warehouse/warehouse_005_pallet_jack.json",
+          "source": "Pixabay",
+          "sourceUrl": "https://pixabay.com/photos/industrial-pallet-pallet-jack-2186802/",
+          "photographer": "RR151",
+          "license": "Pixabay Content License",
+          "provider": "pixabay",
+          "sha256": "2ddee640d935e38ced5c077ef88cc827b316f6cb724b589781bdbf28dd5689d8",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "pallet_jack:pexels_1267324",
+          "label": "候選圖 2",
+          "image": "images/raw/warehouse/pallet_jack/pexels_1267324.jpg",
+          "sidecar": "images/raw/warehouse/pallet_jack/pexels_1267324.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/man-riding-a-yellow-forklift-lifting-boxes-1267324/",
+          "photographer": "ELEVATE",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "c52e03202f46b8ba18ffdf078631f1d9e3630e001eb0a388fd41fe7f1debce37",
+          "isCurrentApproved": false
+        },
+        {
+          "optionId": "pallet_jack:pexels_4481329",
+          "label": "候選圖 3",
+          "image": "images/raw/warehouse/pallet_jack/pexels_4481329.jpg",
+          "sidecar": "images/raw/warehouse/pallet_jack/pexels_4481329.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/men-working-in-a-warehouse-4481329/",
+          "photographer": "Tiger Lily",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "2f96b5e3782d71e802350815975a38dbe6ed7e673a9a43fc7854488930a72cbd",
+          "isCurrentApproved": false
+        },
+        {
+          "optionId": "pallet_jack:pixabay_3184176",
+          "label": "候選圖 4",
+          "image": "images/raw/warehouse/pallet_jack/pixabay_3184176.jpg",
+          "sidecar": "images/raw/warehouse/pallet_jack/pixabay_3184176.json",
+          "source": "Pixabay",
+          "sourceUrl": "https://pixabay.com/photos/machine-forklift-logistics-3184176/",
+          "photographer": "emkanicepic",
+          "license": "Pixabay Content License",
+          "provider": "pixabay",
+          "sha256": "5bf20e4c6fe3350396a5d682c6d8004aeaa34ab821f26ef1b4f6a4497546b2ca",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "warehouse_006_shipping_label",
+      "word": "shipping label",
+      "category": "warehouse",
+      "query": "warehouse shipping label",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "warehouse:warehouse_006_shipping_label",
+          "label": "目前題庫版本",
+          "image": "images/approved/warehouse/warehouse_006_shipping_label.jpg",
+          "sidecar": "images/approved/warehouse/warehouse_006_shipping_label.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/crop-person-packing-box-with-fragile-items-4246112/",
+          "photographer": "Ketut Subiyanto",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "ce71d16b823f60dc77613656817f6551d168b54207cd3d9e0ef35aabc9b54f6e",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "shipping_label:pexels_7843974",
+          "label": "候選圖 2",
+          "image": "images/raw/warehouse/shipping_label/pexels_7843974.jpg",
+          "sidecar": "images/raw/warehouse/shipping_label/pexels_7843974.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/a-woman-in-red-shirt-wearing-red-cap-7843974/",
+          "photographer": "Kampus Production",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "d1c72732986c1c6d63cd251760381518283e6f8058f97007cb2fc9508675da32",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "warehouse_007_inventory_bin",
+      "word": "inventory bin",
+      "category": "warehouse",
+      "query": "warehouse inventory bin",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "warehouse:warehouse_007_inventory_bin",
+          "label": "目前題庫版本",
+          "image": "images/approved/warehouse/warehouse_007_inventory_bin.jpg",
+          "sidecar": "images/approved/warehouse/warehouse_007_inventory_bin.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/warehouse-worker-organizing-inventory-shelves-31112251/",
+          "photographer": "EqualStock IN",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "864ab4ad3d739f195aa459d3d820f4ffdb0df6bf70c9ffbb38f8becdf688889a",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "inventory_bin:pexels_31112238",
+          "label": "候選圖 2",
+          "image": "images/raw/warehouse/inventory_bin/pexels_31112238.jpg",
+          "sidecar": "images/raw/warehouse/inventory_bin/pexels_31112238.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/warehouse-worker-organizing-inventory-shelves-31112238/",
+          "photographer": "EqualStock IN",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "4e5bf35e22b205c5c94da6bf981e6485d1cc5f25786986ea520143bd0df1bdce",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "warehouse_008_conveyor_belt",
+      "word": "conveyor belt",
+      "category": "warehouse",
+      "query": "warehouse conveyor belt",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "warehouse:warehouse_008_conveyor_belt",
+          "label": "目前題庫版本",
+          "image": "images/approved/warehouse/warehouse_008_conveyor_belt.jpg",
+          "sidecar": "images/approved/warehouse/warehouse_008_conveyor_belt.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/conveyer-belt-on-industrial-plant-11679684/",
+          "photographer": "Mark Stebnicki",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "13eec2006693b16134133585a5c272851d7d90767c4b938582573f22cce070a9",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "conveyor_belt:pexels_17320030",
+          "label": "候選圖 2",
+          "image": "images/raw/warehouse/conveyor_belt/pexels_17320030.jpg",
+          "sidecar": "images/raw/warehouse/conveyor_belt/pexels_17320030.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/sand-and-pebbles-on-machine-tape-17320030/",
+          "photographer": "marcin studio",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "9d01ffd308242c3049eb0f163e778598f091950408e6b41dda22303c365e594b",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "warehouse_009_cardboard_box",
+      "word": "cardboard box",
+      "category": "warehouse",
+      "query": "warehouse cardboard box inventory",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "warehouse:warehouse_009_cardboard_box",
+          "label": "目前題庫版本",
+          "image": "images/approved/warehouse/warehouse_009_cardboard_box.jpg",
+          "sidecar": "images/approved/warehouse/warehouse_009_cardboard_box.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/stacked-boxes-in-a-warehouse-10834810/",
+          "photographer": "Ihsan Adityawarman",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "db6c30a75f60aab2de9c99ac64384ed5ef3d9cf6ea73e2f8264868dd3bb81169",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "cardboard_box:pexels_20625561",
+          "label": "候選圖 2",
+          "image": "images/raw/warehouse/cardboard_box/pexels_20625561.jpg",
+          "sidecar": "images/raw/warehouse/cardboard_box/pexels_20625561.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/woman-by-pile-of-boxes-20625561/",
+          "photographer": "yellow tioata",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "ca50fc664f643fab378670ddee8bbaa711b282fe9530db0b8b0954fb1b6c9b2d",
+          "isCurrentApproved": false
+        }
+      ]
+    },
+    {
+      "id": "warehouse_010_receiving_area",
+      "word": "receiving area",
+      "category": "warehouse",
+      "query": "warehouse receiving area",
+      "level": 1,
+      "zh": "",
+      "options": [
+        {
+          "optionId": "warehouse:warehouse_010_receiving_area",
+          "label": "目前題庫版本",
+          "image": "images/approved/warehouse/warehouse_010_receiving_area.jpg",
+          "sidecar": "images/approved/warehouse/warehouse_010_receiving_area.json",
+          "source": "Pixabay",
+          "sourceUrl": "https://pixabay.com/photos/production-facility-logistic-4408573/",
+          "photographer": "marcinjozwiak",
+          "license": "Pixabay Content License",
+          "provider": "pixabay",
+          "sha256": "77fbf1e8017f409f78cbeb07cd9fc630b4a345d89516913b39d6b979f77b42c7",
+          "isCurrentApproved": true
+        },
+        {
+          "optionId": "receiving_area:pexels_4483860",
+          "label": "候選圖 2",
+          "image": "images/raw/warehouse/receiving_area/pexels_4483860.jpg",
+          "sidecar": "images/raw/warehouse/receiving_area/pexels_4483860.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/photo-of-men-working-in-a-warehouse-4483860/",
+          "photographer": "Tiger Lily",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "86a4863fd448426610c84ccf84278b0ac389fea60cd62b2854c4e82cfde57043",
+          "isCurrentApproved": false
+        },
+        {
+          "optionId": "receiving_area:pexels_7019222",
+          "label": "候選圖 3",
+          "image": "images/raw/warehouse/receiving_area/pexels_7019222.jpg",
+          "sidecar": "images/raw/warehouse/receiving_area/pexels_7019222.json",
+          "source": "Pexels",
+          "sourceUrl": "https://www.pexels.com/photo/photo-of-a-man-arranging-in-a-depot-7019222/",
+          "photographer": "cottonbro studio",
+          "license": "Pexels License",
+          "provider": "pexels",
+          "sha256": "44a5e3f77d85331dff4ba5b352942c99a00a563ed0821321baf2b6249cd40106",
+          "isCurrentApproved": false
+        },
+        {
+          "optionId": "receiving_area:pixabay_1406937",
+          "label": "候選圖 4",
+          "image": "images/raw/warehouse/receiving_area/pixabay_1406937.jpg",
+          "sidecar": "images/raw/warehouse/receiving_area/pixabay_1406937.json",
+          "source": "Pixabay",
+          "sourceUrl": "https://pixabay.com/photos/depot-food-trucks-distribution-1406937/",
+          "photographer": "ExplorerAtHeart",
+          "license": "Pixabay Content License",
+          "provider": "pixabay",
+          "sha256": "c814cb68af23c527f074e54fcf6223a6b913f2308d1a7000181a44f87cf8394d",
+          "isCurrentApproved": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>題庫管理 | 圖片單字學習器</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">題庫管理</p>
+        <h1>逐題挑選最佳圖片，並把中文名稱一起匯入題庫。</h1>
+        <p class="hero-copy">這個頁面只供本機管理使用。它會讀取 images/raw 的候選圖，顯示最多四個選項，保存你的選擇到 localStorage，並匯出成可套用回正式題庫的 JSON 檔。</p>
+      </div>
+      <a class="ghost-button nav-link" href="index.html">回到練習器</a>
+    </header>
+
+    <main class="manager-shell">
+      <section class="view is-active" aria-labelledby="manager-title">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">候選圖挑選</p>
+            <h2 id="manager-title">為每個單字選出最佳圖片</h2>
+          </div>
+          <div class="status-row">
+            <span class="status-pill" id="manager-counter">0 / 0</span>
+            <span class="status-pill" id="selection-counter">已完成 0 / 0</span>
+          </div>
+        </div>
+
+        <div class="manager-layout">
+          <aside class="manager-sidebar">
+            <div class="panel-block">
+              <p class="eyebrow" id="manager-category">載入中</p>
+              <h3 id="manager-word">請稍候</h3>
+              <p class="manager-copy table-note" id="manager-query"></p>
+            </div>
+
+            <div class="panel-block">
+              <label class="manager-field" for="manager-zh-input">
+                <strong>中文名稱</strong>
+                <input class="manager-input" id="manager-zh-input" type="text" placeholder="例如：行李推車">
+              </label>
+              <p class="table-note">輸入後會即時存到瀏覽器的本機紀錄，不需要另外按儲存。</p>
+            </div>
+
+            <div class="panel-block current-approved-preview">
+              <h3>目前題庫版本</h3>
+              <div class="current-approved-frame">
+                <img id="current-approved-image" alt="目前題庫圖片">
+              </div>
+              <p class="table-note" id="current-approved-meta">目前沒有已採用圖片。</p>
+            </div>
+
+            <div class="panel-block">
+              <h3>管理動作</h3>
+              <div class="manager-actions">
+                <button class="ghost-button" id="prev-entry" type="button">上一題</button>
+                <button class="ghost-button" id="next-entry" type="button">下一題</button>
+                <button class="primary-button" id="export-selections" type="button">匯出選擇檔</button>
+                <button class="ghost-button" id="reset-manager" type="button">清除本機選擇</button>
+              </div>
+              <p class="manager-note table-note">匯出後可用下面的命令把結果套用回正式題庫：</p>
+              <span class="manager-code">python tools/question_bank_manager.py apply --selection-file 你的匯出檔.json</span>
+            </div>
+          </aside>
+
+          <section class="manager-main">
+            <div class="panel-block">
+              <h3>四格候選圖</h3>
+              <p class="table-note">點一下圖片就會記錄為這一題的最佳選項。如果目前不足四張，空位會顯示為待補候選圖。</p>
+              <div class="candidate-grid" id="candidate-grid"></div>
+            </div>
+
+            <div class="panel-block">
+              <h3>已選摘要</h3>
+              <div id="selection-summary"></div>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="manager.js" defer></script>
+</body>
+</html>

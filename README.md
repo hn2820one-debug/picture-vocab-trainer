@@ -1,179 +1,163 @@
-# Picture Vocab Trainer
+# 圖片單字學習器
 
-Picture Vocab Trainer is a static HTML, CSS, and Vanilla JavaScript project for image-based vocabulary practice. Each round shows one image, four English choices, a hint after 2 seconds, and the answer after 5 seconds.
+這是一個以圖片為核心的英文單字學習專案，前端使用純 HTML、CSS 與 Vanilla JavaScript，部署方式以靜態網站為主，適合放在 GitHub Pages。
 
-The repository now includes an official-API image pipeline for Pexels and Pixabay. It downloads licensed candidates into images/raw/, lets you manually approve them into images/approved/, and then syncs metadata into data/image_words.json.
+學習器目前提供以下功能：
 
-## MVP scope
+- 看圖片做英文四選一
+- 3 秒後顯示提示
+- 10 秒後自動揭示答案
+- 可手動提前顯示答案
+- 以瀏覽器 localStorage 保存作答紀錄、統計與錯題庫
+- 可匯出 JSON 與 CSV 作答紀錄
+- 提供錯題重練模式
+- 提供本機題庫管理頁，協助挑選最佳圖片並填入中文名稱
 
-- Load data/image_words.json
-- Show a picture and four choices
-- Reveal hint1 at 2 seconds
-- Reveal the answer at 5 seconds
-- Record result type, response time, hint level, and category in localStorage
-- Review items from the mistake bank
-- Show lightweight progress snapshots
-- Fall back to a placeholder if an image path is missing
+圖片來源流程只允許官方授權 API：
 
-## Project structure
+- Pexels API
+- Pixabay API
 
-picture-vocab-trainer/
-|- index.html
-|- style.css
-|- app.js
-|- data/
-|  |- image_words.json
-|  |- vocab_seed.csv
-|- images/
-|  |- airport/
-|  |- approved/
-|  |- hotel/
-|  |- office/
-|  |- raw/
-|  |- retail/
-|  |- warehouse/
-|- tools/
-|  |- download_licensed_images.py
-|  |- validate_image_bank.py
-|- README.md
-|- .nojekyll
+不使用任何 scraping。
 
-## Local storage keys
+## 這份 README 適合誰看
 
-- picture_vocab_prefs
-- picture_vocab_attempt_history
-- picture_vocab_word_stats
-- picture_vocab_mistake_bank
+- 一般使用者：只想啟動學習器練習單字
+- 題庫維護者：要挑選圖片、更新中文名稱、套用到正式題庫
+- 開發者：要調整前端行為、維護 Python 工具、整理 GitHub 協作流程
 
-This project does not touch any deepsea_word_aquarium_* keys.
+如果你只想先把網站跑起來，先看「快速開始」。
 
-## Result types
+如果你要維護題庫或程式，請再看 [developer-WI.md](developer-WI.md) 與 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
-- correctBeforeReveal
-- correctAfterHint
-- correctAfterReveal
-- wrongBeforeReveal
-- wrongAfterReveal
+## 快速開始
 
-## Run locally
+### 只想使用學習器
 
-Because the app fetches JSON, open it through a static server instead of double-clicking index.html.
-
-Example with Python:
+1. 在專案根目錄開啟終端機。
+2. 啟動本機靜態伺服器。
+3. 用瀏覽器開啟學習器頁面。
 
 ```bash
 python -m http.server 8000
 ```
 
-Then open http://localhost:8000.
+開啟：
 
-## Validate the question bank
+- http://localhost:8000/index.html
 
-Run the validator from the project root:
+首頁提供：
 
-```bash
-python tools/validate_image_bank.py
-```
+- 開始練習：練完整題庫
+- 錯題重練：只練錯題庫中的題目
+- 學習進度：看統計與匯出紀錄
+- 設定：調整亂數、自動下一題與重設本機資料
 
-The validator checks:
+### 想使用題庫管理頁
 
-- image_words.json is valid JSON
-- duplicate ids
-- missing image paths
-- images live under images/approved/
-- choices length is exactly 4
-- answer exists in choices
-- source exists
-- sourceUrl exists
-- license exists
-- image file can actually be opened
-- SVG placeholders are rejected from the formal bank
-- category folder exists under images/approved/
-- hint1 and hint2 exist
-
-## Official image workflow
-
-The project uses official APIs only. No scraping is used.
-
-Priority order:
-
-- Pexels API
-- Pixabay API
-
-Create a local .env file from .env.example and add at least one API key:
+1. 先產生管理頁需要的 manifest。
+2. 啟動本機靜態伺服器。
+3. 開啟管理頁。
 
 ```bash
-PEXELS_API_KEY=your_key_here
-PIXABAY_API_KEY=your_key_here
+python tools/question_bank_manager.py manifest
+python -m http.server 8000
 ```
 
-### 1. Download raw candidate images
+開啟：
+
+- http://localhost:8000/manager.html
+
+管理頁可讓你：
+
+- 逐題查看候選圖
+- 選出最佳圖片
+- 填入中文名稱
+- 匯出 selection JSON，供後續套用回正式題庫
+
+## 專案主要檔案
+
+前端頁面：
+
+- index.html：學習器頁面
+- app.js：學習器邏輯、計時、localStorage、匯出
+- style.css：學習器與管理頁共用樣式
+- manager.html：本機題庫管理頁
+- manager.js：管理頁邏輯與選擇暫存
+
+資料檔：
+
+- data/image_words.json：正式題庫
+- data/manager_candidates.json：管理頁候選 manifest
+- data/vocab_seed.csv：單字種子清單
+
+Python 工具：
+
+- tools/download_licensed_images.py：下載官方授權候選圖與同步 approved 題庫
+- tools/question_bank_manager.py：產生管理頁 manifest、套用管理頁選擇
+- tools/validate_image_bank.py：嚴格驗證正式題庫
+
+圖片資料夾：
+
+- images/raw/：候選圖工作區
+- images/approved/：正式採用圖庫
+
+## 初學者重點
+
+- 請不要直接雙擊 HTML 檔。此專案會讀取 JSON，必須透過 http://localhost 方式開啟。
+- 題目規則是 3 秒提示、10 秒揭答。若按「提前顯示答案」，該題會被記為看答案後作答。
+- 作答紀錄、偏好設定、錯題庫都存在瀏覽器本機，不會自動上傳到伺服器。
+- 若你只需要操作步驟，請直接看 [beginner-WI.md](beginner-WI.md)。
+
+## 題庫維護與開發流程
+
+標準流程如下：
+
+1. 用官方 API 下載 raw 候選圖。
+2. 產生管理頁 manifest。
+3. 在管理頁挑圖並匯出 selection JSON。
+4. 先用 dry-run 預覽 apply 結果。
+5. 正式 apply 到 images/approved/ 與 data/image_words.json。
+6. 執行 validator。
+7. 用本機靜態伺服器做 smoke test。
+
+常用命令：
 
 ```bash
 python tools/download_licensed_images.py download
+python tools/question_bank_manager.py manifest
+python tools/question_bank_manager.py apply --selection-file path/to/manager_selection.json --dry-run
+python tools/question_bank_manager.py apply --selection-file path/to/manager_selection.json
+python tools/validate_image_bank.py
 ```
 
-This command:
+更完整的維護步驟請看 [developer-WI.md](developer-WI.md)。
 
-- reads data/vocab_seed.csv
-- searches the official APIs in priority order
-- downloads JPEG candidates into images/raw/<category>/<word_slug>/
-- writes a JSON sidecar beside every image so source metadata is preserved
-- updates download_report.json with downloaded items, failures, missing hits, and duplicates
+## 驗證與部署
 
-### 2. Manually approve images
-
-After reviewing the raw images, copy the chosen .jpg file and its matching .json sidecar into:
-
-- images/approved/airport/
-- images/approved/hotel/
-- images/approved/office/
-- images/approved/retail/
-- images/approved/warehouse/
-
-### 3. Rename and sync into the formal bank
+正式題庫更新後，至少要做以下檢查：
 
 ```bash
-python tools/download_licensed_images.py sync
+python tools/validate_image_bank.py
+python -m http.server 8000
 ```
 
-This command:
+然後手動確認：
 
-- renames approved files to category_###_answer.jpg
-- keeps the source metadata in a matching JSON sidecar
-- rebuilds data/image_words.json using approved image paths
-- preserves source, sourceUrl, photographer, and license fields
+- index.html 能正常載入
+- manager.html 能正常載入
+- 圖片沒有壞圖
+- 匯出功能正常
 
-Use dry-run if you want to preview sync actions first:
+若要部署到 GitHub Pages：
 
-```bash
-python tools/download_licensed_images.py sync --dry-run
-```
+- 將變更推上 GitHub
+- 啟用 GitHub Pages
+- 保留根目錄的 .nojekyll
 
-## Seed coverage
+## 建議接著閱讀
 
-The starter seed file contains 50 target words:
-
-- airport: 10
-- hotel: 10
-- office: 10
-- retail: 10
-- warehouse: 10
-
-## Updating the image bank
-
-1. Add the image under images/category/.
-2. Use a filename like category_001_answer.jpg.
-3. Keep the matching .json sidecar so the source metadata survives approval.
-4. Run python tools/download_licensed_images.py sync.
-5. Ensure choices contains the answer.
-6. Run the validator.
-7. Test locally before pushing.
-
-The sample assets in this repository are SVG placeholders so the starter project works without external downloads. Replace them with real images when you expand the bank.
-
-The strict validator will fail until the formal bank is rebuilt to use approved non-SVG images.
-
-## Deployment
-
-Push the repository to GitHub and enable GitHub Pages. The .nojekyll file is already included for static hosting compatibility.
+- [operator WI.md](operator%20WI.md)：操作手冊總入口
+- [beginner-WI.md](beginner-WI.md)：新手版操作手冊
+- [developer-WI.md](developer-WI.md)：開發者與題庫維護手冊
+- [CONTRIBUTING.md](CONTRIBUTING.md)：GitHub 協作與 Pull Request 規範

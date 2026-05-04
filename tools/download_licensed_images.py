@@ -285,6 +285,7 @@ def run_sync(args: argparse.Namespace) -> int:
     seed_records = load_seed_records(Path(args.seed_file))
     report = load_report()
     approved_assets, sync_failures = discover_approved_assets()
+    existing_entries = load_existing_entry_map()
 
     if not approved_assets:
         print("No approved images with sidecar metadata were found under images/approved/. image_words.json was left unchanged.")
@@ -334,7 +335,15 @@ def run_sync(args: argparse.Namespace) -> int:
                 "license": metadata.get("license", ""),
             }
         )
-        entries.append(build_image_word_entry(seed, target_stem, metadata, seed_records))
+        entries.append(
+            build_image_word_entry(
+                seed,
+                target_stem,
+                metadata,
+                seed_records,
+                existing_entry=existing_entries.get((seed.category, seed.word)),
+            )
+        )
 
     if not entries:
         print("Approved assets exist, but none matched the words in vocab_seed.csv.")
@@ -543,7 +552,9 @@ def build_image_word_entry(
     target_stem: str,
     metadata: dict[str, Any],
     seed_records: list[SeedRecord],
+    existing_entry: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
+    existing_entry = existing_entry or {}
     return {
         "id": target_stem,
         "image": f"images/approved/{seed.category}/{target_stem}.jpg",
@@ -551,9 +562,9 @@ def build_image_word_entry(
         "choices": build_choices(seed, seed_records),
         "category": seed.category,
         "level": seed.level,
-        "partOfSpeech": "noun",
-        "definition": "",
-        "zh": "",
+        "partOfSpeech": str(metadata.get("partOfSpeech") or existing_entry.get("partOfSpeech", "noun")),
+        "definition": str(metadata.get("definition") or existing_entry.get("definition", "")),
+        "zh": str(metadata.get("zh") or existing_entry.get("zh", "")),
         "hint1": CATEGORY_HINTS.get(seed.category, f"This is related to {seed.category}."),
         "hint2": build_hint2(seed.word, seed.category),
         "source": str(metadata.get("source", "")),
@@ -700,6 +711,31 @@ def load_report() -> dict[str, Any]:
         }
 
     return json.loads(REPORT_PATH.read_text(encoding="utf-8"))
+
+
+def load_existing_entry_map() -> dict[tuple[str, str], dict[str, Any]]:
+    if not IMAGE_WORDS_PATH.exists():
+        return {}
+
+    try:
+        payload = json.loads(IMAGE_WORDS_PATH.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return {}
+
+    if not isinstance(payload, list):
+        return {}
+
+    entries: dict[tuple[str, str], dict[str, Any]] = {}
+    for item in payload:
+        if not isinstance(item, dict):
+            continue
+        category = str(item.get("category", "")).strip()
+        answer = str(item.get("answer", "")).strip()
+        if not category or not answer:
+            continue
+        entries[(category, answer)] = item
+
+    return entries
 
 
 def collect_known_hashes(report: dict[str, Any]) -> dict[str, str]:

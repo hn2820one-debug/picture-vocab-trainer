@@ -1,49 +1,53 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Picture Vocab Trainer</title>
+  <title>圖片單字學習器</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="app-shell">
     <header class="hero">
       <div>
-        <p class="eyebrow">Picture Vocab Trainer</p>
-        <h1>Image-based vocabulary practice with timed hints and answer reveal.</h1>
-        <p class="hero-copy">Study from a picture, get hint1 after 2 seconds, reveal the answer after 5 seconds, and keep all attempt data in localStorage.</p>
+        <p class="eyebrow">圖片單字學習器</p>
+        <h1>用圖片做英文單字練習，支援計時提示、揭答與答題紀錄。</h1>
+        <p class="hero-copy">看圖片、選四選一英文答案，3 秒後顯示提示、10 秒後顯示答案，也可以手動提前揭答，所有答題結果都會保存在本機並可匯出成紀錄檔。</p>
       </div>
-      <button class="ghost-button" id="nav-home" type="button">Home</button>
+      <button class="ghost-button" id="nav-home" type="button">首頁</button>
     </header>
 
     <main>
       <section class="view is-active" id="view-home" aria-labelledby="home-title">
         <div class="section-head">
           <div>
-            <p class="eyebrow">Dashboard</p>
-            <h2 id="home-title">Choose a mode</h2>
+            <p class="eyebrow">主選單</p>
+            <h2 id="home-title">選擇練習模式</h2>
           </div>
-          <p class="inline-note" id="dataset-status">Loading question bank...</p>
+          <p class="inline-note" id="dataset-status">正在載入題庫...</p>
         </div>
 
         <div class="menu-grid">
           <button class="menu-card" id="start-practice" type="button">
-            <span class="menu-label">Start Practice</span>
-            <span class="menu-copy">Run through the full image bank.</span>
+            <span class="menu-label">開始練習</span>
+            <span class="menu-copy">依序練完整份圖片題庫。</span>
           </button>
           <button class="menu-card" id="review-mistakes" type="button">
-            <span class="menu-label">Review Mistakes</span>
-            <span class="menu-copy">Retry words still in the mistake bank.</span>
+            <span class="menu-label">錯題重練</span>
+            <span class="menu-copy">重新挑戰還在錯題庫的題目。</span>
           </button>
           <button class="menu-card" id="open-progress" type="button">
-            <span class="menu-label">Progress</span>
-            <span class="menu-copy">Inspect accuracy, speed, and recent weak words.</span>
+            <span class="menu-label">學習進度</span>
+            <span class="menu-copy">查看正確率、作答速度與最近紀錄。</span>
           </button>
           <button class="menu-card" id="open-settings" type="button">
-            <span class="menu-label">Settings</span>
-            <span class="menu-copy">Control shuffle, auto-advance, and local data reset.</span>
+            <span class="menu-label">設定</span>
+            <span class="menu-copy">調整亂數、自動下一題與本機資料重設。</span>
           </button>
+          <a class="menu-card menu-link" href="manager.html">
+            <span class="menu-label">題庫管理</span>
+            <span class="menu-copy">逐題挑選最佳圖片、填中文名稱，再匯出匯入檔。</span>
+          </a>
         </div>
 
         <div class="snapshot-grid" id="home-snapshot"></div>
@@ -52,33 +56,33 @@
       <section class="view" id="view-practice" aria-labelledby="practice-title">
         <div class="section-head">
           <div>
-            <p class="eyebrow" id="practice-mode-label">Practice</p>
-            <h2 id="practice-title">Answer before the reveal</h2>
+            <p class="eyebrow" id="practice-mode-label">練習模式</p>
+            <h2 id="practice-title">請在揭答前作答</h2>
           </div>
           <div class="status-row">
             <span class="status-pill" id="question-counter">0 / 0</span>
             <span class="status-pill" id="timer-badge">0.0s</span>
-            <button class="ghost-button" id="exit-practice" type="button">Exit</button>
+            <button class="ghost-button" id="exit-practice" type="button">離開練習</button>
           </div>
         </div>
 
         <div class="practice-grid">
           <div class="media-panel">
             <div class="image-frame">
-              <img id="question-image" alt="Vocabulary prompt image">
-              <div class="image-fallback hidden" id="image-fallback">Image unavailable. Showing placeholder.</div>
+              <img id="question-image" alt="單字題目圖片">
+              <div class="image-fallback hidden" id="image-fallback">圖片載入失敗，已改用後備圖片。</div>
             </div>
             <div class="meta-grid">
               <div class="meta-card">
-                <span class="meta-label">Category</span>
+                <span class="meta-label">分類</span>
                 <strong id="question-category">-</strong>
               </div>
               <div class="meta-card">
-                <span class="meta-label">Level</span>
+                <span class="meta-label">難度</span>
                 <strong id="question-level">-</strong>
               </div>
               <div class="meta-card">
-                <span class="meta-label">Part of Speech</span>
+                <span class="meta-label">詞性</span>
                 <strong id="question-pos">-</strong>
               </div>
             </div>
@@ -86,7 +90,7 @@
 
           <div class="question-panel">
             <div class="hint-panel">
-              <p class="hint-status" id="hint-status">No hint yet. Hint1 appears at 2s. Answer reveals at 5s.</p>
+              <p class="hint-status" id="hint-status">尚未顯示提示。3 秒後顯示提示，10 秒後顯示答案。</p>
               <p class="hint-text" id="hint-text"></p>
               <p class="answer-text" id="answer-text"></p>
             </div>
@@ -94,13 +98,14 @@
             <div class="choice-grid" id="choice-grid"></div>
 
             <div class="feedback-panel" id="feedback-panel">
-              <p class="feedback-title" id="feedback-title">Choose one answer.</p>
-              <p class="feedback-copy" id="feedback-copy">Your result type, response time, and hint level will appear here.</p>
+              <p class="feedback-title" id="feedback-title">請先選擇一個答案。</p>
+              <p class="feedback-copy" id="feedback-copy">你的作答結果、用時、提示等級與揭答狀態會顯示在這裡。</p>
             </div>
 
             <div class="action-row">
-              <button class="primary-button" id="next-question" type="button" disabled>Next Question</button>
-              <button class="ghost-button" id="restart-queue" type="button">Restart Queue</button>
+              <button class="primary-button" id="next-question" type="button" disabled>下一題</button>
+              <button class="ghost-button" id="reveal-answer" type="button">提前顯示答案</button>
+              <button class="ghost-button" id="restart-queue" type="button">重新開始本輪</button>
             </div>
           </div>
         </div>
@@ -109,39 +114,47 @@
       <section class="view" id="view-summary" aria-labelledby="summary-title">
         <div class="section-head">
           <div>
-            <p class="eyebrow">Session Summary</p>
-            <h2 id="summary-title">Results for this round</h2>
+            <p class="eyebrow">本輪結算</p>
+            <h2 id="summary-title">這一輪的作答結果</h2>
           </div>
-          <button class="ghost-button" id="summary-home" type="button">Back Home</button>
+          <button class="ghost-button" id="summary-home" type="button">返回首頁</button>
         </div>
 
         <div class="snapshot-grid" id="summary-snapshot"></div>
         <div class="summary-list" id="summary-breakdown"></div>
 
         <div class="action-row">
-          <button class="primary-button" id="summary-restart" type="button">Practice Again</button>
-          <button class="ghost-button" id="summary-review" type="button">Review Mistakes</button>
+          <button class="primary-button" id="summary-restart" type="button">再練一次</button>
+          <button class="ghost-button" id="summary-review" type="button">重練錯題</button>
         </div>
       </section>
 
       <section class="view" id="view-progress" aria-labelledby="progress-title">
         <div class="section-head">
           <div>
-            <p class="eyebrow">Progress</p>
-            <h2 id="progress-title">Long-term stats</h2>
+            <p class="eyebrow">學習進度</p>
+            <h2 id="progress-title">長期統計與答題紀錄</h2>
           </div>
-          <button class="ghost-button" id="progress-home" type="button">Back Home</button>
+          <button class="ghost-button" id="progress-home" type="button">返回首頁</button>
         </div>
 
         <div class="snapshot-grid" id="progress-snapshot"></div>
+        <div class="action-row">
+          <button class="primary-button" id="export-log-json" type="button">匯出 JSON 紀錄</button>
+          <button class="ghost-button" id="export-log-csv" type="button">匯出 CSV 紀錄</button>
+        </div>
         <div class="panel-stack">
           <div class="panel-block">
-            <h3>Recent weak words</h3>
+            <h3>最近較弱的單字</h3>
             <div id="weak-words"></div>
           </div>
           <div class="panel-block">
-            <h3>Category performance</h3>
+            <h3>分類表現</h3>
             <div id="category-performance"></div>
+          </div>
+          <div class="panel-block">
+            <h3>最近答題紀錄</h3>
+            <div id="recent-attempts"></div>
           </div>
         </div>
       </section>
@@ -149,36 +162,36 @@
       <section class="view" id="view-settings" aria-labelledby="settings-title">
         <div class="section-head">
           <div>
-            <p class="eyebrow">Settings</p>
-            <h2 id="settings-title">Local preferences</h2>
+            <p class="eyebrow">設定</p>
+            <h2 id="settings-title">本機偏好設定</h2>
           </div>
-          <button class="ghost-button" id="settings-home" type="button">Back Home</button>
+          <button class="ghost-button" id="settings-home" type="button">返回首頁</button>
         </div>
 
         <form class="settings-form" id="settings-form">
           <label class="settings-row" for="shuffle-questions">
             <span>
-              <strong>Shuffle question order</strong>
-              <small>Randomize the queue at the start of each session.</small>
+              <strong>打亂題目順序</strong>
+              <small>每次開始練習時隨機排列題目。</small>
             </span>
             <input id="shuffle-questions" name="shuffleQuestions" type="checkbox">
           </label>
 
           <label class="settings-row" for="auto-advance-ms">
             <span>
-              <strong>Auto-advance</strong>
-              <small>Move to the next question after an answer is chosen.</small>
+              <strong>自動前往下一題</strong>
+              <small>作答後自動切到下一題。</small>
             </span>
             <select id="auto-advance-ms" name="autoAdvanceMs">
-              <option value="0">Off</option>
-              <option value="1200">1.2 seconds</option>
-              <option value="2000">2 seconds</option>
+              <option value="0">關閉</option>
+              <option value="1200">1.2 秒</option>
+              <option value="2000">2 秒</option>
             </select>
           </label>
 
           <div class="action-row">
-            <button class="primary-button" type="submit">Save Settings</button>
-            <button class="ghost-button" id="reset-storage" type="button">Reset Local Data</button>
+            <button class="primary-button" type="submit">儲存設定</button>
+            <button class="ghost-button" id="reset-storage" type="button">重設本機資料</button>
           </div>
         </form>
       </section>

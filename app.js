@@ -6,24 +6,24 @@ const STORAGE_KEYS = {
 };
 
 const TIMING = {
-  hintMs: 2000,
-  revealMs: 5000
+  hintMs: 3000,
+  revealMs: 10000
 };
 
 const RESULT_LABELS = {
-  correctBeforeReveal: "Correct before reveal",
-  correctAfterHint: "Correct after hint",
-  correctAfterReveal: "Correct after reveal",
-  wrongBeforeReveal: "Wrong before reveal",
-  wrongAfterReveal: "Wrong after reveal"
+  correctBeforeReveal: "揭答前答對",
+  correctAfterHint: "看提示後答對",
+  correctAfterReveal: "看答案後答對",
+  wrongBeforeReveal: "揭答前答錯",
+  wrongAfterReveal: "看答案後仍答錯"
 };
 
 const FALLBACK_IMAGE = `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(`
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
   <rect width="900" height="600" fill="#efe3cf" />
   <rect x="80" y="80" width="740" height="440" rx="36" fill="#fff8ec" stroke="#1f2a2c" stroke-opacity="0.16" />
-  <text x="450" y="255" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" font-size="40" fill="#155e63">Image not found</text>
-  <text x="450" y="318" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" font-size="24" fill="#5f675f">Check the image path or add the file to the category folder.</text>
+  <text x="450" y="255" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" font-size="40" fill="#155e63">圖片載入失敗</text>
+  <text x="450" y="318" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" font-size="24" fill="#5f675f">請檢查圖片路徑，或補上對應圖片檔案。</text>
 </svg>
 `)}`;
 
@@ -40,8 +40,10 @@ const state = {
   currentQuestion: null,
   currentHintLevel: 0,
   answerRevealed: false,
+  revealedManually: false,
   isAnswered: false,
   startTime: 0,
+  sessionId: "",
   sessionAttempts: [],
   timers: {
     hint: null,
@@ -95,6 +97,7 @@ function cacheDom() {
   dom.feedbackTitle = document.getElementById("feedback-title");
   dom.feedbackCopy = document.getElementById("feedback-copy");
   dom.nextQuestion = document.getElementById("next-question");
+  dom.revealAnswer = document.getElementById("reveal-answer");
   dom.restartQueue = document.getElementById("restart-queue");
   dom.summarySnapshot = document.getElementById("summary-snapshot");
   dom.summaryBreakdown = document.getElementById("summary-breakdown");
@@ -102,8 +105,11 @@ function cacheDom() {
   dom.summaryRestart = document.getElementById("summary-restart");
   dom.summaryReview = document.getElementById("summary-review");
   dom.progressSnapshot = document.getElementById("progress-snapshot");
+  dom.exportLogJson = document.getElementById("export-log-json");
+  dom.exportLogCsv = document.getElementById("export-log-csv");
   dom.weakWords = document.getElementById("weak-words");
   dom.categoryPerformance = document.getElementById("category-performance");
+  dom.recentAttempts = document.getElementById("recent-attempts");
   dom.progressHome = document.getElementById("progress-home");
   dom.settingsHome = document.getElementById("settings-home");
   dom.settingsForm = document.getElementById("settings-form");
@@ -123,10 +129,13 @@ function bindEvents() {
   dom.openSettings.addEventListener("click", () => showView("settings"));
   dom.exitPractice.addEventListener("click", goHome);
   dom.nextQuestion.addEventListener("click", advanceQuestion);
+  dom.revealAnswer.addEventListener("click", () => revealCurrentAnswer(true));
   dom.restartQueue.addEventListener("click", () => startSession(state.queueMode));
   dom.summaryHome.addEventListener("click", goHome);
   dom.summaryRestart.addEventListener("click", () => startSession("all"));
   dom.summaryReview.addEventListener("click", () => startSession("mistakes"));
+  dom.exportLogJson.addEventListener("click", () => exportAttemptHistory("json"));
+  dom.exportLogCsv.addEventListener("click", () => exportAttemptHistory("csv"));
   dom.progressHome.addEventListener("click", goHome);
   dom.settingsHome.addEventListener("click", goHome);
   dom.settingsForm.addEventListener("submit", saveSettings);
@@ -142,10 +151,10 @@ async function loadQuestionBank() {
 
     const data = await response.json();
     state.questionBank = Array.isArray(data) ? data : [];
-    setHomeMessage(`Loaded ${state.questionBank.length} questions.`);
+    setHomeMessage(`已載入 ${state.questionBank.length} 題。`);
   } catch (error) {
     state.questionBank = [];
-    setHomeMessage("Could not load data/image_words.json. Use a static server for local testing.");
+    setHomeMessage("讀取 data/image_words.json 失敗，請改用靜態伺服器開啟頁面。");
     console.error("Failed to load question bank", error);
   }
 
@@ -162,7 +171,7 @@ function showView(viewName) {
 
 function startSession(mode) {
   if (!state.questionBank.length) {
-    setHomeMessage("Question bank is empty. Add data/image_words.json entries first.");
+    setHomeMessage("題庫目前是空的，請先準備 data/image_words.json。");
     showView("home");
     return;
   }
@@ -172,7 +181,7 @@ function startSession(mode) {
     const mistakeIds = new Set(state.mistakeBank);
     queue = state.questionBank.filter((question) => mistakeIds.has(question.id));
     if (!queue.length) {
-      setHomeMessage("Mistake bank is empty. Practice a round first.");
+      setHomeMessage("目前沒有可重練的錯題。");
       showView("home");
       syncHomeButtons();
       return;
@@ -183,9 +192,10 @@ function startSession(mode) {
 
   state.queueMode = mode;
   state.currentIndex = 0;
+  state.sessionId = generateSessionId();
   state.sessionAttempts = [];
   state.queue = state.prefs.shuffleQuestions ? shuffle(queue) : queue;
-  dom.practiceModeLabel.textContent = mode === "mistakes" ? "Mistake Review" : "Full Practice";
+  dom.practiceModeLabel.textContent = mode === "mistakes" ? "錯題重練" : "完整練習";
   showView("practice");
   renderCurrentQuestion();
 }
@@ -203,6 +213,7 @@ function renderCurrentQuestion() {
   state.currentQuestion = question;
   state.currentHintLevel = 0;
   state.answerRevealed = false;
+  state.revealedManually = false;
   state.isAnswered = false;
   state.startTime = performance.now();
 
@@ -211,13 +222,14 @@ function renderCurrentQuestion() {
   dom.questionCategory.textContent = question.category;
   dom.questionLevel.textContent = String(question.level);
   dom.questionPos.textContent = question.partOfSpeech;
-  dom.hintStatus.textContent = "No hint yet. Hint1 appears at 2s. Answer reveals at 5s.";
+  dom.hintStatus.textContent = "尚未顯示提示。3 秒後顯示提示，10 秒後顯示答案。";
   dom.hintText.textContent = "";
   dom.answerText.textContent = "";
   dom.feedbackPanel.dataset.tone = "warning";
-  dom.feedbackTitle.textContent = "Choose one answer.";
-  dom.feedbackCopy.textContent = "Your result type, response time, and hint level will appear here.";
+  dom.feedbackTitle.textContent = "請先選擇一個答案。";
+  dom.feedbackCopy.textContent = "你的作答結果、用時、提示等級與揭答狀態會顯示在這裡。";
   dom.nextQuestion.disabled = true;
+  dom.revealAnswer.disabled = false;
   dom.imageFallback.classList.add("hidden");
 
   dom.questionImage.onerror = () => {
@@ -226,7 +238,7 @@ function renderCurrentQuestion() {
     dom.questionImage.src = FALLBACK_IMAGE;
   };
   dom.questionImage.src = question.image;
-  dom.questionImage.alt = `${question.answer} prompt image`;
+  dom.questionImage.alt = `題目圖片：${question.answer}`;
 
   renderChoices();
   startTimers();
@@ -267,27 +279,40 @@ function startTimers() {
   }, 100);
 
   state.timers.hint = window.setTimeout(() => {
-    if (state.isAnswered || !state.currentQuestion) {
+    if (state.isAnswered || !state.currentQuestion || state.answerRevealed) {
       return;
     }
 
     state.currentHintLevel = 1;
-    dom.hintStatus.textContent = "Hint1 is now available.";
-    dom.hintText.textContent = state.currentQuestion.hint1;
+    dom.hintStatus.textContent = "第一層提示已顯示。";
+    dom.hintText.textContent = state.currentQuestion.hint1 || "目前沒有第一層提示。";
   }, TIMING.hintMs);
 
   state.timers.reveal = window.setTimeout(() => {
-    if (state.isAnswered || !state.currentQuestion) {
+    if (state.isAnswered || !state.currentQuestion || state.answerRevealed) {
       return;
     }
 
-    state.currentHintLevel = 2;
-    state.answerRevealed = true;
-    dom.hintStatus.textContent = "Answer revealed. This no longer counts as true mastery.";
-    dom.hintText.textContent = state.currentQuestion.hint2;
-    dom.answerText.textContent = `Answer: ${state.currentQuestion.answer}`;
-    renderChoices();
+    revealCurrentAnswer(false);
   }, TIMING.revealMs);
+}
+
+function revealCurrentAnswer(manual) {
+  if (!state.currentQuestion || state.isAnswered || state.answerRevealed) {
+    return;
+  }
+
+  clearRevealTimers();
+  state.currentHintLevel = 2;
+  state.answerRevealed = true;
+  state.revealedManually = manual;
+  dom.hintStatus.textContent = manual
+    ? "你已提前顯示答案。之後作答會記為看答案後作答。"
+    : "已顯示答案。這不算真正掌握。";
+  dom.hintText.textContent = state.currentQuestion.hint2 || state.currentQuestion.hint1 || "目前沒有額外提示。";
+  dom.answerText.textContent = `答案：${state.currentQuestion.answer}`;
+  dom.revealAnswer.disabled = true;
+  renderChoices();
 }
 
 function handleChoice(choice) {
@@ -297,19 +322,23 @@ function handleChoice(choice) {
 
   state.isAnswered = true;
   clearTimers();
+  dom.revealAnswer.disabled = true;
 
   const responseTimeMs = Math.round(performance.now() - state.startTime);
   const isCorrect = choice === state.currentQuestion.answer;
   const resultType = classifyAttempt(isCorrect);
   const attempt = {
+    sessionId: state.sessionId,
     questionId: state.currentQuestion.id,
     image: state.currentQuestion.image,
+    questionZh: state.currentQuestion.zh || "",
     correctAnswer: state.currentQuestion.answer,
     userAnswer: choice,
     isCorrect,
     responseTimeMs,
     hintLevel: state.currentHintLevel,
     answerRevealed: state.answerRevealed,
+    revealedManually: state.revealedManually,
     resultType,
     isConfidentError: !isCorrect && !state.answerRevealed,
     category: state.currentQuestion.category,
@@ -325,8 +354,10 @@ function handleChoice(choice) {
   syncHomeButtons();
   updateHomeSnapshot();
 
-  dom.answerText.textContent = `Answer: ${state.currentQuestion.answer}`;
-  dom.hintText.textContent = state.currentHintLevel === 0 ? state.currentQuestion.definition : dom.hintText.textContent;
+  dom.answerText.textContent = `答案：${state.currentQuestion.answer}`;
+  if (!dom.hintText.textContent) {
+    dom.hintText.textContent = state.currentQuestion.hint2 || state.currentQuestion.hint1 || "";
+  }
   renderChoices(choice);
   renderFeedback(attempt);
   dom.nextQuestion.disabled = false;
@@ -352,7 +383,7 @@ function renderFeedback(attempt) {
   const tone = attempt.isCorrect ? (attempt.answerRevealed ? "warning" : "success") : "danger";
   dom.feedbackPanel.dataset.tone = tone;
   dom.feedbackTitle.textContent = RESULT_LABELS[attempt.resultType];
-  dom.feedbackCopy.textContent = `Time ${formatMs(attempt.responseTimeMs)} | hintLevel ${attempt.hintLevel} | answerRevealed ${attempt.answerRevealed ? "yes" : "no"}`;
+  dom.feedbackCopy.textContent = `作答時間 ${formatMs(attempt.responseTimeMs)} | 提示等級 ${attempt.hintLevel} | 已揭答 ${attempt.answerRevealed ? "是" : "否"} | 手動揭答 ${attempt.revealedManually ? "是" : "否"}`;
 }
 
 function renderSummary() {
@@ -364,10 +395,10 @@ function renderSummary() {
   dom.summaryBreakdown.innerHTML = "";
 
   [
-    { label: "Questions", value: String(state.sessionAttempts.length) },
-    { label: "Mastered", value: String(masteredCount) },
-    { label: "Mistake bank", value: String(state.mistakeBank.length) },
-    { label: "Average time", value: formatMs(averageTime) }
+    { label: "題目數", value: String(state.sessionAttempts.length) },
+    { label: "真正掌握", value: String(masteredCount) },
+    { label: "錯題庫", value: String(state.mistakeBank.length) },
+    { label: "平均作答時間", value: formatMs(averageTime) }
   ].forEach((item) => {
     dom.summarySnapshot.appendChild(createSnapshotCard(item.label, item.value));
   });
@@ -389,16 +420,17 @@ function renderProgress() {
 
   dom.progressSnapshot.innerHTML = "";
   [
-    { label: "Total attempts", value: String(state.attemptHistory.length) },
-    { label: "Mastered rate", value: `${masteredRate}%` },
-    { label: "Average time", value: formatMs(averageTime) },
-    { label: "Active mistakes", value: String(state.mistakeBank.length) }
+    { label: "累計作答次數", value: String(state.attemptHistory.length) },
+    { label: "掌握率", value: `${masteredRate}%` },
+    { label: "平均作答時間", value: formatMs(averageTime) },
+    { label: "目前錯題數", value: String(state.mistakeBank.length) }
   ].forEach((item) => {
     dom.progressSnapshot.appendChild(createSnapshotCard(item.label, item.value));
   });
 
   renderWeakWords();
   renderCategoryPerformance();
+  renderRecentAttempts();
 }
 
 function renderWeakWords() {
@@ -408,7 +440,7 @@ function renderWeakWords() {
     .slice(0, 5);
 
   if (!entries.length) {
-    dom.weakWords.innerHTML = '<p class="table-note">No attempts yet.</p>';
+    dom.weakWords.innerHTML = '<p class="table-note">目前還沒有作答紀錄。</p>';
     return;
   }
 
@@ -416,15 +448,15 @@ function renderWeakWords() {
   container.className = "weak-word-list";
 
   entries.forEach((entry) => {
-    const question = state.questionBank.find((item) => item.id === entry.questionId);
+    const question = findQuestion(entry.questionId);
     const row = document.createElement("div");
     row.className = "weak-word-item";
     row.innerHTML = `
       <div>
         <strong>${question ? question.answer : entry.questionId}</strong>
-        <div class="weak-word-meta">${question ? question.category : "unknown"}</div>
+        <div class="weak-word-meta">${question ? question.category : "未知分類"}</div>
       </div>
-      <div class="weak-word-meta">wrong ${entry.wrongBeforeReveal + entry.wrongAfterReveal} / attempts ${entry.attempts}</div>
+      <div class="weak-word-meta">錯誤 ${entry.wrongBeforeReveal + entry.wrongAfterReveal} 次 / 作答 ${entry.attempts} 次</div>
     `;
     container.appendChild(row);
   });
@@ -446,7 +478,7 @@ function renderCategoryPerformance() {
   });
 
   if (!categoryMap.size) {
-    dom.categoryPerformance.innerHTML = '<p class="table-note">No category data yet.</p>';
+    dom.categoryPerformance.innerHTML = '<p class="table-note">目前還沒有分類統計。</p>';
     return;
   }
 
@@ -462,7 +494,7 @@ function renderCategoryPerformance() {
       row.innerHTML = `
         <div>
           <strong>${category}</strong>
-          <div class="table-note">${metrics.mastered} mastered / ${metrics.attempts} attempts</div>
+          <div class="table-note">掌握 ${metrics.mastered} 題 / 作答 ${metrics.attempts} 次</div>
         </div>
         <strong>${accuracy}%</strong>
       `;
@@ -473,6 +505,74 @@ function renderCategoryPerformance() {
   dom.categoryPerformance.appendChild(table);
 }
 
+function renderRecentAttempts() {
+  const recent = [...state.attemptHistory].slice(-10).reverse();
+  if (!recent.length) {
+    dom.recentAttempts.innerHTML = '<p class="table-note">目前還沒有可匯出的作答紀錄。</p>';
+    return;
+  }
+
+  const list = document.createElement("div");
+  list.className = "weak-word-list";
+
+  recent.forEach((attempt) => {
+    const row = document.createElement("div");
+    row.className = "summary-item";
+    row.innerHTML = `
+      <div>
+        <strong>${attempt.correctAnswer}</strong>
+        <div class="table-note">${RESULT_LABELS[attempt.resultType]} | ${formatLocalTime(attempt.timestamp)}</div>
+      </div>
+      <div class="table-note">作答：${attempt.userAnswer} | ${formatMs(attempt.responseTimeMs)}</div>
+    `;
+    list.appendChild(row);
+  });
+
+  dom.recentAttempts.innerHTML = "";
+  dom.recentAttempts.appendChild(list);
+}
+
+function exportAttemptHistory(format) {
+  if (!state.attemptHistory.length) {
+    window.alert("目前沒有可匯出的答題紀錄。");
+    return;
+  }
+
+  const stamp = new Date().toISOString().replace(/[:.]/g, "-");
+  if (format === "json") {
+    const payload = {
+      exportedAt: new Date().toISOString(),
+      totalAttempts: state.attemptHistory.length,
+      hintRuleMs: TIMING,
+      attempts: state.attemptHistory
+    };
+    downloadFile(`picture_vocab_log_${stamp}.json`, JSON.stringify(payload, null, 2), "application/json;charset=utf-8");
+    return;
+  }
+
+  const headers = [
+    "sessionId",
+    "timestamp",
+    "questionId",
+    "questionZh",
+    "category",
+    "level",
+    "correctAnswer",
+    "userAnswer",
+    "isCorrect",
+    "resultType",
+    "responseTimeMs",
+    "hintLevel",
+    "answerRevealed",
+    "revealedManually",
+    "isConfidentError",
+    "image"
+  ];
+  const rows = state.attemptHistory.map((attempt) => headers.map((header) => csvEscape(attempt[header] ?? "")).join(","));
+  const csv = [headers.join(","), ...rows].join("\n");
+  downloadFile(`picture_vocab_log_${stamp}.csv`, csv, "text/csv;charset=utf-8");
+}
+
 function saveSettings(event) {
   event.preventDefault();
   state.prefs = {
@@ -480,13 +580,13 @@ function saveSettings(event) {
     autoAdvanceMs: Number(dom.autoAdvanceMs.value)
   };
   writeStorage(STORAGE_KEYS.prefs, state.prefs);
-  setHomeMessage("Settings saved.");
+  setHomeMessage("設定已儲存。");
   updateHomeSnapshot();
   showView("home");
 }
 
 function resetLocalData() {
-  const shouldReset = window.confirm("Clear attempt history, word stats, and mistake bank?");
+  const shouldReset = window.confirm("要清空本機的作答紀錄、統計資料與錯題庫嗎？");
   if (!shouldReset) {
     return;
   }
@@ -497,7 +597,7 @@ function resetLocalData() {
   persistState();
   syncHomeButtons();
   updateHomeSnapshot();
-  setHomeMessage("Local data reset.");
+  setHomeMessage("本機資料已重設。");
   showView("home");
 }
 
@@ -517,6 +617,17 @@ function goHome() {
   clearTimers();
   updateHomeSnapshot();
   showView("home");
+}
+
+function clearRevealTimers() {
+  if (state.timers.hint) {
+    window.clearTimeout(state.timers.hint);
+    state.timers.hint = null;
+  }
+  if (state.timers.reveal) {
+    window.clearTimeout(state.timers.reveal);
+    state.timers.reveal = null;
+  }
 }
 
 function clearTimers() {
@@ -605,10 +716,10 @@ function updateHomeSnapshot() {
 
   dom.homeSnapshot.innerHTML = "";
   [
-    { label: "Question bank", value: String(state.questionBank.length) },
-    { label: "Attempt history", value: String(state.attemptHistory.length) },
-    { label: "Mistake bank", value: String(state.mistakeBank.length) },
-    { label: "Mastered rate", value: `${accuracy}%` }
+    { label: "題庫總數", value: String(state.questionBank.length) },
+    { label: "作答紀錄", value: String(state.attemptHistory.length) },
+    { label: "錯題庫", value: String(state.mistakeBank.length) },
+    { label: "掌握率", value: `${accuracy}%` }
   ].forEach((item) => {
     dom.homeSnapshot.appendChild(createSnapshotCard(item.label, item.value));
   });
@@ -644,7 +755,19 @@ function average(values) {
 }
 
 function formatMs(value) {
-  return `${(value / 1000).toFixed(1)}s`;
+  return `${(value / 1000).toFixed(1)} 秒`;
+}
+
+function formatLocalTime(timestamp) {
+  return new Date(timestamp).toLocaleString("zh-TW", {
+    hour12: false,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit"
+  });
 }
 
 function shuffle(items) {
@@ -660,6 +783,34 @@ function shuffle(items) {
 
 function setHomeMessage(message) {
   dom.datasetStatus.textContent = message;
+}
+
+function findQuestion(questionId) {
+  return state.questionBank.find((item) => item.id === questionId) || null;
+}
+
+function generateSessionId() {
+  if (window.crypto && typeof window.crypto.randomUUID === "function") {
+    return window.crypto.randomUUID();
+  }
+  return `session-${Date.now()}`;
+}
+
+function downloadFile(filename, content, mimeType) {
+  const blob = new Blob([content], { type: mimeType });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = filename;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(url);
+}
+
+function csvEscape(value) {
+  const text = String(value ?? "");
+  return `"${text.replaceAll('"', '""')}"`;
 }
 
 function loadStorage(key, fallbackValue) {
