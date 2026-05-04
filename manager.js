@@ -1,4 +1,5 @@
 const MANAGER_STORAGE_KEY = "picture_vocab_manager_state_v1";
+const UPLOAD_STORAGE_KEY = "picture_vocab_uploads_v1";
 const MANIFEST_PATH = "data/manager_candidates.json";
 const MAX_DISPLAY_OPTIONS = 4;
 
@@ -6,7 +7,8 @@ const managerState = {
   manifest: null,
   entries: [],
   currentIndex: 0,
-  selections: loadManagerState()
+  selections: loadManagerState(),
+  uploadedImages: loadUploadedImages()
 };
 
 const managerDom = {};
@@ -33,6 +35,7 @@ function cacheManagerDom() {
   managerDom.exportSelections = document.getElementById("export-selections");
   managerDom.resetManager = document.getElementById("reset-manager");
   managerDom.candidateGrid = document.getElementById("candidate-grid");
+  managerDom.uploadInput = document.getElementById("upload-image-input");
   managerDom.selectionSummary = document.getElementById("selection-summary");
 }
 
@@ -42,6 +45,7 @@ function bindManagerEvents() {
   managerDom.exportSelections.addEventListener("click", exportSelections);
   managerDom.resetManager.addEventListener("click", resetSelections);
   managerDom.managerZhInput.addEventListener("input", handleZhInput);
+  managerDom.uploadInput.addEventListener("change", handleFileSelected);
 }
 
 async function loadManifest() {
@@ -132,6 +136,9 @@ function renderCandidateOptions(entry, selectedOptionId) {
     button.addEventListener("click", () => selectOption(entry, option));
     managerDom.candidateGrid.appendChild(button);
   }
+
+  // 5th slot: upload
+  managerDom.candidateGrid.appendChild(createUploadCandidateCard(entry, selectedOptionId));
 }
 
 function createEmptyCandidateCard(index) {
@@ -146,6 +153,108 @@ function createEmptyCandidateCard(index) {
     </div>
   `;
   return card;
+}
+
+function createUploadCandidateCard(entry, selectedOptionId) {
+  const uploadedImg = managerState.uploadedImages[makeEntryKey(entry)];
+  const uploadOptId = "upload::" + makeEntryKey(entry);
+  const isSelected = selectedOptionId === uploadOptId;
+
+  const card = document.createElement("button");
+  card.type = "button";
+  card.className = `candidate-card upload-card${isSelected ? " is-selected" : ""}`;
+
+  if (uploadedImg) {
+    card.innerHTML = `
+      <div class="candidate-frame">
+        <img src="${uploadedImg.dataUrl}" alt="自行上傳">
+      </div>
+      <div class="candidate-meta">
+        <span class="candidate-tag">已上傳</span>
+        <h3>自行上傳</h3>
+        <p class="table-note">${uploadedImg.fileName}</p>
+        <p class="table-note">Personal Use Only</p>
+        <button type="button" class="ghost-button upload-replace-btn">更換圖片</button>
+      </div>
+    `;
+    card.addEventListener("click", (e) => {
+      if (e.target.closest(".upload-replace-btn")) {
+        triggerUpload(entry);
+        return;
+      }
+      const option = buildUploadOption(entry, uploadedImg);
+      selectOption(entry, option);
+    });
+  } else {
+    card.innerHTML = `
+      <div class="candidate-frame upload-placeholder">
+        <span class="upload-icon">⬆️</span>
+      </div>
+      <div class="candidate-meta">
+        <span class="candidate-tag">自行上傳</span>
+        <h3>點擊上傳圖片</h3>
+        <p class="table-note">支援 JPG、PNG、WEBP</p>
+        <p class="table-note">Personal Use Only</p>
+      </div>
+    `;
+    card.addEventListener("click", () => triggerUpload(entry));
+  }
+
+  return card;
+}
+
+function triggerUpload(entry) {
+  managerDom.uploadInput._targetEntry = entry;
+  managerDom.uploadInput.value = "";
+  managerDom.uploadInput.click();
+}
+
+function handleFileSelected(event) {
+  const file = event.target.files[0];
+  const entry = managerDom.uploadInput._targetEntry;
+  if (!file || !entry) return;
+
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    const dataUrl = e.target.result;
+    const key = makeEntryKey(entry);
+    managerState.uploadedImages[key] = { dataUrl, fileName: file.name };
+    saveUploadedImages();
+    // Auto-select the uploaded image
+    const option = buildUploadOption(entry, managerState.uploadedImages[key]);
+    selectOption(entry, option);
+    renderManager();
+  };
+  reader.readAsDataURL(file);
+}
+
+function buildUploadOption(entry, uploadedImg) {
+  return {
+    optionId: "upload::" + makeEntryKey(entry),
+    image: uploadedImg.dataUrl,
+    label: "已上傳",
+    source: "自行上傳",
+    photographer: uploadedImg.fileName,
+    license: "Personal Use Only",
+    isCurrentApproved: false
+  };
+}
+
+function loadUploadedImages() {
+  try {
+    const raw = localStorage.getItem(UPLOAD_STORAGE_KEY);
+    return raw ? JSON.parse(raw) : {};
+  } catch {
+    return {};
+  }
+}
+
+function saveUploadedImages() {
+  try {
+    localStorage.setItem(UPLOAD_STORAGE_KEY, JSON.stringify(managerState.uploadedImages));
+  } catch (e) {
+    console.warn("Could not save uploaded images to localStorage", e);
+  }
 }
 
 function selectOption(entry, option) {

@@ -1,44 +1,486 @@
 主題,單字,中文
-01. 辦公室,cubicle,辦公小隔間 [cite: 1]
-01. 辦公室,desk,辦公桌 [cite: 1]
-01. 辦公室,workstation,工作站 [cite: 1]
-01. 辦公室,filing cabinet,檔案櫃 [cite: 1]
-01. 辦公室,bulletin board,公告欄 [cite: 1]
-01. 辦公室,photocopier,影印機 [cite: 1]
-01. 辦公室,printer,印表機 [cite: 1]
-01. 辦公室,scanner,掃描機 [cite: 1]
-01. 辦公室,shredder,碎紙機 [cite: 1]
-01. 辦公室,stapler,釘書機 [cite: 1]
-01. 辦公室,clipboard,夾板 [cite: 1]
-01. 辦公室,envelope,信封 [cite: 1]
-01. 辦公室,folder,資料夾 [cite: 1]
-01. 辦公室,binder,活頁夾 [cite: 1]
-01. 辦公室,stationery,文具 [cite: 1]
-01. 辦公室,equipment,設備 [cite: 1]
-01. 辦公室,memo,備忘錄 [cite: 1]
-01. 辦公室,agenda,議程表 [cite: 1]
-01. 辦公室,colleague's office,同事辦公室 [cite: 1]
-01. 辦公室,conference room,會議室 [cite: 1]
-01. 辦公室,break room,休息室 [cite: 1]
-01. 辦公室,reception,接待處 [cite: 1]
-02. 會議,agenda,議程 [cite: 2]
-02. 會議,speaker,演講者 [cite: 2]
-02. 會議,attendee,與會者 [cite: 2]
-02. 會議,participant,參與者 [cite: 2]
-02. 會議,audience,聽眾 [cite: 2]
-02. 會議,podium,講台 [cite: 2]
-02. 會議,microphone,麥克風 [cite: 2]
-02. 會議,projector,投影機 [cite: 2]
-02. 會議,screen,螢幕 [cite: 2]
-02. 會議,slide,投影片 [cite: 2]
-02. 會議,handout,講義 [cite: 2]
-02. 會議,name tag,名牌 [cite: 2]
-02. 會議,flip chart,翻頁掛圖 [cite: 2]
-02. 會議,whiteboard,白板 [cite: 2]
-02. 會議,itinerary,行程表 [cite: 2]
-02. 會議,venue,場地 [cite: 2]
-03. 商業/合約,contract,合約 [cite: 3]
-03. 商業/合約,attachment,附件 [cite: 3]
-03. 商業/合約,signature,簽名 [cite: 3]
-03. 商業/合約,trademark,商標 [cite: 3]
-03. 商業/合約,patent,專利 [cite: 3]
+01. 辦公室,cubicle,辦公小隔間
+01. 辦公室,desk,辦公桌
+01. 辦公室,workstation,工作站
+01. 辦公室,filing cabinet,檔案櫃
+01. 辦公室,bulletin board,公告欄
+01. 辦公室,photocopier,影印機
+01. 辦公室,printer,印表機
+01. 辦公室,scanner,掃描機
+01. 辦公室,shredder,碎紙機
+01. 辦公室,stapler,釘書機
+01. 辦公室,clipboard,夾板
+01. 辦公室,envelope,信封
+01. 辦公室,folder,資料夾
+01. 辦公室,binder,活頁夾
+01. 辦公室,stationery,文具
+01. 辦公室,equipment,設備
+01. 辦公室,memo,備忘錄
+01. 辦公室,agenda,議程表
+01. 辦公室,colleague's office,同事辦公室
+01. 辦公室,conference room,會議室
+01. 辦公室,break room,休息室
+01. 辦公室,reception,接待處
+02. 會議,agenda,議程
+02. 會議,speaker,演講者
+02. 會議,attendee,與會者
+02. 會議,participant,參與者
+02. 會議,audience,聽眾
+02. 會議,podium,講台
+02. 會議,microphone,麥克風
+02. 會議,projector,投影機
+02. 會議,screen,螢幕
+02. 會議,slide,投影片
+02. 會議,handout,講義
+02. 會議,name tag,名牌
+02. 會議,flip chart,翻頁掛圖
+02. 會議,whiteboard,白板
+02. 會議,itinerary,行程表
+02. 會議,venue,場地
+03. 商業/合約,contract,合約
+03. 商業/合約,attachment,附件
+03. 商業/合約,signature,簽名
+03. 商業/合約,trademark,商標
+03. 商業/合約,patent,專利
+04. 財務/會計,invoice,發票/請款單
+04. 財務/會計,receipt,收據
+04. 財務/會計,statement,結算單/報表
+04. 財務/會計,balance sheet,資產負債表
+04. 財務/會計,ledger,分類帳
+04. 財務/會計,auditor,審計員
+04. 財務/會計,accountant,會計師
+04. 財務/會計,financial statement,財務報表
+05. 行銷/廣告,advertisement,廣告
+05. 行銷/廣告,commercial,電視廣告
+05. 行銷/廣告,brochure,宣傳冊
+05. 行銷/廣告,flyer,傳單
+05. 行銷/廣告,pamphlet,小冊子
+05. 行銷/廣告,catalogue,型錄
+05. 行銷/廣告,billboard,看板
+05. 行銷/廣告,banner,橫幅
+05. 行銷/廣告,logo,標誌
+05. 行銷/廣告,consumer,消費者
+05. 行銷/廣告,survey,問卷調查
+05. 行銷/廣告,questionnaire,問卷
+05. 行銷/廣告,press release,新聞稿
+05. 行銷/廣告,influencer,意見領袖
+06. 銷售/服務,salesperson,銷售員
+06. 銷售/服務,sales representative,業務代表
+06. 銷售/服務,customer,顧客
+06. 銷售/服務,client,客戶
+06. 銷售/服務,merchandise,商品
+06. 銷售/服務,goods,貨物
+06. 銷售/服務,inventory,庫存
+06. 銷售/服務,display,陳列
+06. 銷售/服務,showroom,展示間
+06. 銷售/服務,aisle,走道
+06. 銷售/服務,shelf,貨架
+06. 銷售/服務,counter,櫃台
+06. 銷售/服務,cashier,收銀員
+06. 銷售/服務,checkout,結帳
+06. 銷售/服務,register,收銀機
+06. 銷售/服務,receipt,收據
+06. 銷售/服務,voucher,優惠券/憑證
+06. 銷售/服務,coupon,優惠券
+07. 旅遊/差旅,flight,航班
+07. 旅遊/差旅,airline,航空公司
+07. 旅遊/差旅,airport,機場
+07. 旅遊/差旅,terminal,航廈
+07. 旅遊/差旅,gate,登機門
+07. 旅遊/差旅,boarding pass,登機證
+07. 旅遊/差旅,itinerary,行程表
+07. 旅遊/差旅,luggage,行李
+07. 旅遊/差旅,baggage,行李
+07. 旅遊/差旅,carry-on,手提行李
+07. 旅遊/差旅,suitcase,行李箱
+07. 旅遊/差旅,overhead bin,頭頂行李艙
+07. 旅遊/差旅,aisle seat,走道座位
+07. 旅遊/差旅,window seat,靠窗座位
+07. 旅遊/差旅,hotel,飯店
+07. 旅遊/差旅,check-in,入住/報到
+07. 旅遊/差旅,check-out,退房
+07. 旅遊/差旅,front desk,櫃台
+07. 旅遊/差旅,concierge,禮賓部
+07. 旅遊/差旅,lobby,大廳
+07. 旅遊/差旅,suite,套房
+07. 旅遊/差旅,amenities,設施/便利用品
+07. 旅遊/差旅,housekeeping,客房服務
+07. 旅遊/差旅,valet,代客泊車
+07. 旅遊/差旅,rental car,租車
+07. 旅遊/差旅,shuttle,接駁車
+07. 旅遊/差旅,taxi,計程車
+07. 旅遊/差旅,guide,導遊
+07. 旅遊/差旅,passport,護照
+07. 旅遊/差旅,visa,簽證
+07. 旅遊/差旅,customs,海關
+07. 旅遊/差旅,travel agent,旅行社員
+07. 旅遊/差旅,expense report,出差報告
+08. 餐飲,restaurant,餐廳
+08. 餐飲,café,咖啡館
+08. 餐飲,diner,餐館/食客
+08. 餐飲,bistro,小餐館
+08. 餐飲,cafeteria,自助餐廳
+08. 餐飲,buffet,自助餐
+08. 餐飲,menu,菜單
+08. 餐飲,entrée,主菜
+08. 餐飲,appetizer,開胃菜
+08. 餐飲,side dish,配菜
+08. 餐飲,dessert,甜點
+08. 餐飲,beverage,飲料
+08. 餐飲,server,服務生
+08. 餐飲,waiter,男服務生
+08. 餐飲,waitress,女服務生
+08. 餐飲,chef,主廚
+08. 餐飲,host,接待員
+08. 餐飲,hostess,女接待員
+08. 餐飲,beverage menu,飲料單
+08. 餐飲,wine list,酒單
+08. 餐飲,bill,帳單
+08. 餐飲,check,帳單
+08. 餐飲,caterer,外燴業者
+08. 餐飲,banquet,宴會
+08. 餐飲,banquet hall,宴會廳
+09. 房地產/建築,property,房地產
+09. 房地產/建築,realtor,房地產經紀人
+09. 房地產/建築,agent,仲介
+09. 房地產/建築,listing,刊登物件
+09. 房地產/建築,residence,住所
+09. 房地產/建築,apartment,公寓
+09. 房地產/建築,condominium,共有公寓
+09. 房地產/建築,townhouse,連棟住宅
+09. 房地產/建築,studio,套房
+09. 房地產/建築,duplex,雙拼住宅
+09. 房地產/建築,loft,閣樓住宅
+09. 房地產/建築,penthouse,頂層豪華公寓
+09. 房地產/建築,villa,別墅
+09. 房地產/建築,mansion,豪宅
+09. 房地產/建築,complex,建築群
+09. 房地產/建築,development,建案
+09. 房地產/建築,blueprint,藍圖
+09. 房地產/建築,floor plan,平面圖
+09. 房地產/建築,foundation,地基
+09. 房地產/建築,scaffold,鷹架
+09. 房地產/建築,scaffolding,鷹架（集合）
+09. 房地產/建築,construction site,工地
+09. 房地產/建築,contractor,承包商
+09. 房地產/建築,subcontractor,分包商
+09. 房地產/建築,architect,建築師
+09. 房地產/建築,engineer,工程師
+09. 房地產/建築,foreman,工頭
+09. 房地產/建築,crew,工作團隊
+09. 房地產/建築,hard hat,安全帽
+09. 房地產/建築,safety vest,安全背心
+09. 房地產/建築,permit,許可證
+09. 房地產/建築,tenant,房客
+09. 房地產/建築,landlord,房東
+09. 房地產/建築,landlady,女房東
+09. 房地產/建築,amenities,設施
+10. 運輸/物流,cargo,貨物
+10. 運輸/物流,shipment,貨件
+10. 運輸/物流,package,包裹
+10. 運輸/物流,parcel,包裹
+10. 運輸/物流,crate,板條箱
+10. 運輸/物流,pallet,棧板
+10. 運輸/物流,container,貨櫃
+10. 運輸/物流,warehouse,倉庫
+10. 運輸/物流,distribution center,配送中心
+10. 運輸/物流,loading dock,裝卸碼頭
+10. 運輸/物流,conveyor belt,輸送帶
+10. 運輸/物流,forklift,堆高機
+10. 運輸/物流,dolly,手推車
+10. 運輸/物流,hand truck,手推車
+10. 運輸/物流,courier,快遞員
+10. 運輸/物流,delivery driver,送貨司機
+10. 運輸/物流,dispatcher,調度員
+10. 運輸/物流,vessel,船舶
+10. 運輸/物流,port,港口
+10. 運輸/物流,dock,碼頭
+10. 運輸/物流,harbor,港灣
+10. 運輸/物流,freighter,貨船
+10. 運輸/物流,truck,卡車
+10. 運輸/物流,trailer,拖車
+10. 運輸/物流,van,廂型車
+10. 運輸/物流,tracking number,追蹤碼
+10. 運輸/物流,waybill,貨運單
+10. 運輸/物流,bill of lading,提單
+10. 運輸/物流,invoice,發票
+10. 運輸/物流,packing slip,裝箱單
+10. 運輸/物流,inventory,庫存
+10. 運輸/物流,customs,海關
+11. 製造/生產,factory,工廠
+11. 製造/生產,plant,廠房
+11. 製造/生產,facility,設施
+11. 製造/生產,assembly line,裝配線
+11. 製造/生產,production line,生產線
+11. 製造/生產,workstation,工作站
+11. 製造/生產,shop floor,車間
+11. 製造/生產,machinery,機械
+11. 製造/生產,equipment,設備
+11. 製造/生產,apparatus,儀器
+11. 製造/生產,conveyor,輸送帶
+11. 製造/生產,operator,操作員
+11. 製造/生產,technician,技術員
+11. 製造/生產,foreman,工頭
+11. 製造/生產,supervisor,主管
+11. 製造/生產,inspector,檢驗員
+11. 製造/生產,raw material,原物料
+11. 製造/生產,component,零組件
+11. 製造/生產,part,零件
+11. 製造/生產,spare part,備用零件
+11. 製造/生產,blueprint,藍圖
+11. 製造/生產,safety gear,安全裝備
+11. 製造/生產,hard hat,安全帽
+11. 製造/生產,goggles,護目鏡
+11. 製造/生產,gloves,手套
+12. 科技/IT,computer,電腦
+12. 科技/IT,laptop,筆電
+12. 科技/IT,desktop,桌機
+12. 科技/IT,server,伺服器
+12. 科技/IT,monitor,螢幕
+12. 科技/IT,keyboard,鍵盤
+12. 科技/IT,mouse,滑鼠
+12. 科技/IT,router,路由器
+12. 科技/IT,modem,數據機
+12. 科技/IT,dashboard,儀表板
+12. 科技/IT,technician,技術人員
+12. 科技/IT,help desk,服務台
+12. 科技/IT,ticket,工單
+13. 招聘/人事,employer,雇主
+13. 招聘/人事,employee,員工
+13. 招聘/人事,applicant,應徵者
+13. 招聘/人事,candidate,候選人
+13. 招聘/人事,résumé,履歷
+13. 招聘/人事,CV,履歷
+13. 招聘/人事,cover letter,求職信
+13. 招聘/人事,portfolio,作品集
+13. 招聘/人事,interview,面試
+13. 招聘/人事,interviewer,面試官
+13. 招聘/人事,interviewee,應試者
+13. 招聘/人事,job posting,招聘啟事
+13. 招聘/人事,job description,職務說明
+13. 招聘/人事,contractor,約聘人員
+13. 招聘/人事,intern,實習生
+13. 招聘/人事,apprentice,學徒
+13. 招聘/人事,performance review,績效考核
+13. 招聘/人事,handbook,員工手冊
+14. 醫療/健康,hospital,醫院
+14. 醫療/健康,clinic,診所
+14. 醫療/健康,ward,病房區
+14. 醫療/健康,emergency room,急診室
+14. 醫療/健康,ICU,加護病房
+14. 醫療/健康,operating room,手術室
+14. 醫療/健康,examination room,診間
+14. 醫療/健康,waiting room,候診室
+14. 醫療/健康,pharmacy,藥局
+14. 醫療/健康,drugstore,藥妝店
+14. 醫療/健康,doctor,醫生
+14. 醫療/健康,physician,醫師
+14. 醫療/健康,surgeon,外科醫生
+14. 醫療/健康,nurse,護理師
+14. 醫療/健康,paramedic,急救員
+14. 醫療/健康,pharmacist,藥劑師
+14. 醫療/健康,dentist,牙醫
+14. 醫療/健康,specialist,專科醫師
+14. 醫療/健康,patient,病患
+14. 醫療/健康,wound,傷口
+14. 醫療/健康,medication,藥物
+14. 醫療/健康,medicine,藥/醫學
+14. 醫療/健康,prescription,處方
+14. 醫療/健康,vaccine,疫苗
+14. 醫療/健康,X-ray,X光
+14. 醫療/健康,MRI,核磁共振
+14. 醫療/健康,CT scan,電腦斷層
+14. 醫療/健康,ultrasound,超音波
+14. 醫療/健康,blood test,血液檢查
+14. 醫療/健康,stethoscope,聽診器
+14. 醫療/健康,syringe,注射器
+14. 醫療/健康,bandage,繃帶
+14. 醫療/健康,crutches,拐杖
+14. 醫療/健康,wheelchair,輪椅
+14. 醫療/健康,stretcher,擔架
+14. 醫療/健康,ambulance,救護車
+15. 教育/學術,school,學校
+15. 教育/學術,university,大學
+15. 教育/學術,college,學院
+15. 教育/學術,campus,校園
+15. 教育/學術,classroom,教室
+15. 教育/學術,lecture hall,演講廳
+15. 教育/學術,library,圖書館
+15. 教育/學術,laboratory,實驗室
+15. 教育/學術,dormitory,宿舍
+15. 教育/學術,auditorium,禮堂
+15. 教育/學術,teacher,老師
+15. 教育/學術,instructor,講師
+15. 教育/學術,professor,教授
+15. 教育/學術,lecturer,講師
+15. 教育/學術,dean,院長
+15. 教育/學術,administrator,行政人員
+15. 教育/學術,student,學生
+15. 教育/學術,undergraduate,大學生
+15. 教育/學術,graduate,研究生/畢業生
+15. 教育/學術,classmate,同學
+15. 教育/學術,syllabus,教學大綱
+15. 教育/學術,textbook,教科書
+15. 教育/學術,workbook,練習本
+15. 教育/學術,notebook,筆記本
+15. 教育/學術,paper,報告/論文
+15. 教育/學術,essay,論文
+15. 教育/學術,thesis,畢業論文
+15. 教育/學術,dissertation,博士論文
+15. 教育/學術,exam,考試
+15. 教育/學術,transcript,成績單
+15. 教育/學術,diploma,畢業證書
+16. 環境/能源,wildlife,野生動物
+16. 環境/能源,landfill,垃圾掩埋場
+16. 環境/能源,dump,垃圾場
+16. 環境/能源,coal,煤炭
+16. 環境/能源,solar panel,太陽能板
+16. 環境/能源,wind turbine,風力發電機
+16. 環境/能源,power plant,發電廠
+17. 銀行/金融服務,bank,銀行
+17. 銀行/金融服務,branch,分行
+17. 銀行/金融服務,ATM,提款機
+17. 銀行/金融服務,teller,銀行櫃員
+17. 銀行/金融服務,statement,對帳單
+17. 銀行/金融服務,check,支票
+17. 銀行/金融服務,cash,現金
+17. 銀行/金融服務,credit card,信用卡
+17. 銀行/金融服務,debit card,金融卡
+17. 銀行/金融服務,investor,投資者
+17. 銀行/金融服務,broker,經紀人
+17. 銀行/金融服務,trader,交易員
+17. 銀行/金融服務,financial advisor,理財顧問
+17. 銀行/金融服務,policy,保單
+17. 銀行/金融服務,policyholder,保戶
+17. 銀行/金融服務,beneficiary,受益人
+17. 銀行/金融服務,vault,金庫
+17. 銀行/金融服務,safe,保險箱
+17. 銀行/金融服務,safety deposit box,保管箱
+18. 法律/法規,court,法院
+18. 法律/法規,courthouse,法院大樓
+18. 法律/法規,courtroom,法庭
+18. 法律/法規,judge,法官
+18. 法律/法規,jury,陪審團
+18. 法律/法規,juror,陪審員
+18. 法律/法規,attorney,律師
+18. 法律/法規,lawyer,律師
+18. 法律/法規,plaintiff,原告
+18. 法律/法規,defendant,被告
+18. 法律/法規,witness,證人
+18. 法律/法規,contract,合約
+18. 法律/法規,notary,公證人
+18. 法律/法規,affidavit,宣誓書
+18. 法律/法規,subpoena,傳票
+18. 法律/法規,warrant,搜索票
+19. 公告/通知,announcement,公告
+19. 公告/通知,notice,通知
+19. 公告/通知,warning,警告
+19. 公告/通知,memo,備忘錄
+19. 公告/通知,bulletin,公告欄
+19. 公告/通知,press release,新聞稿
+20. 公益慈善,donor,捐贈者
+20. 公益慈善,benefactor,贊助者
+20. 公益慈善,philanthropist,慈善家
+20. 公益慈善,fundraiser,募款活動
+20. 公益慈善,volunteer,志工
+20. 公益慈善,beneficiary,受益人
+20. 公益慈善,recipient,受贈者
+20. 公益慈善,shelter,收容所
+20. 公益慈善,food bank,食物銀行
+20. 公益慈善,soup kitchen,施食處
+20. 公益慈善,orphanage,孤兒院
+20. 公益慈善,nursing home,養老院
+21. 社會經濟,consumer,消費者
+22. 媒體/出版,newspaper,報紙
+22. 媒體/出版,magazine,雜誌
+22. 媒體/出版,journal,期刊
+22. 媒體/出版,publication,出版品
+22. 媒體/出版,publisher,出版商
+22. 媒體/出版,subscriber,訂閱者
+22. 媒體/出版,article,文章
+22. 媒體/出版,column,專欄
+22. 媒體/出版,editorial,社論
+22. 媒體/出版,op-ed,投書
+22. 媒體/出版,headline,頭條
+22. 媒體/出版,editor,編輯
+22. 媒體/出版,journalist,記者
+22. 媒體/出版,reporter,記者
+22. 媒體/出版,correspondent,通訊員
+22. 媒體/出版,anchor,主播
+22. 媒體/出版,commentator,評論員
+22. 媒體/出版,columnist,專欄作家
+22. 媒體/出版,documentary,紀錄片
+22. 媒體/出版,influencer,網紅
+22. 媒體/出版,content creator,內容創作者
+22. 媒體/出版,follower,追蹤者
+23. 健身/運動,gym,健身房
+23. 健身/運動,fitness center,健身中心
+23. 健身/運動,yoga,瑜珈
+23. 健身/運動,pilates,皮拉提斯
+23. 健身/運動,trainer,教練
+23. 健身/運動,instructor,指導員
+23. 健身/運動,coach,教練
+23. 健身/運動,treadmill,跑步機
+23. 健身/運動,elliptical,橢圓機
+23. 健身/運動,stationary bike,健身車
+23. 健身/運動,rowing machine,划船機
+23. 健身/運動,dumbbell,啞鈴
+23. 健身/運動,barbell,槓鈴
+23. 健身/運動,kettlebell,壺鈴
+23. 健身/運動,bench,臥推椅
+23. 健身/運動,mat,墊子
+23. 健身/運動,locker,置物櫃
+23. 健身/運動,locker room,更衣室
+23. 健身/運動,athlete,運動員
+23. 健身/運動,opponent,對手
+23. 健身/運動,stadium,體育場
+23. 健身/運動,arena,競技場
+23. 健身/運動,court,球場
+23. 健身/運動,field,球場（足/棒）
+23. 健身/運動,track,跑道
+23. 健身/運動,pool,游泳池
+23. 健身/運動,equipment,器材
+23. 健身/運動,gear,裝備
+24. 藝術/娛樂,gallery,畫廊
+24. 藝術/娛樂,museum,博物館
+24. 藝術/娛樂,exhibition,展覽
+24. 藝術/娛樂,exhibit,展示品
+24. 藝術/娛樂,artist,藝術家
+24. 藝術/娛樂,painter,畫家
+24. 藝術/娛樂,sculptor,雕塑家
+24. 藝術/娛樂,painting,畫作
+24. 藝術/娛樂,sculpture,雕塑
+24. 藝術/娛樂,portrait,肖像畫
+24. 藝術/娛樂,landscape,風景畫
+24. 藝術/娛樂,masterpiece,傑作
+24. 藝術/娛樂,curator,策展人
+24. 藝術/娛樂,art fair,藝術博覽會
+24. 藝術/娛樂,auction,拍賣
+24. 藝術/娛樂,theater,劇院
+24. 藝術/娛樂,stage,舞台
+24. 藝術/娛樂,musical,音樂劇
+24. 藝術/娛樂,opera,歌劇
+24. 藝術/娛樂,ballet,芭蕾舞
+24. 藝術/娛樂,concert,演唱會
+24. 藝術/娛樂,recital,獨奏會
+24. 藝術/娛樂,orchestra,管弦樂團
+24. 藝術/娛樂,conductor,指揮家
+24. 藝術/娛樂,musician,音樂家
+24. 藝術/娛樂,singer,歌手
+24. 藝術/娛樂,performer,表演者
+24. 藝術/娛樂,actor,演員
+24. 藝術/娛樂,actress,女演員
+24. 藝術/娛樂,audience,觀眾
+24. 藝術/娛樂,ticket,票
+24. 藝術/娛樂,box office,售票處
+24. 藝術/娛樂,seat,座位
+24. 藝術/娛樂,balcony,包廂
+24. 藝術/娛樂,critic,評論家
+24. 藝術/娛樂,cinema,電影院
+24. 藝術/娛樂,film,電影
+24. 藝術/娛樂,movie,電影
+24. 藝術/娛樂,director,導演
+24. 藝術/娛樂,producer,製作人
+24. 藝術/娛樂,screenwriter,編劇
+24. 藝術/娛樂,nominee,提名者
+25. 環境/天氣,shelter,避難所

@@ -543,6 +543,31 @@ h3 {
   opacity: 0.72;
 }
 
+.upload-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--panel-strong);
+  border: 2px dashed var(--line);
+  border-radius: var(--radius-md);
+}
+
+.upload-icon {
+  font-size: 2rem;
+  opacity: 0.5;
+}
+
+.upload-replace-btn {
+  margin-top: 4px;
+  font-size: 0.8rem;
+  color: var(--primary-strong);
+  text-decoration: underline;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
 .candidate-frame {
   aspect-ratio: 4 / 3;
 }

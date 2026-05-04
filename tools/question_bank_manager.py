@@ -79,7 +79,7 @@ def run_manifest(args: argparse.Namespace) -> int:
                 "category": seed.category,
                 "query": seed.query,
                 "level": seed.level,
-                "zh": str(existing_entry.get("zh", "") or metadata_value(approved_asset, "zh")),
+                "zh": str(existing_entry.get("zh", "") or metadata_value(approved_asset, "zh") or seed.zh),
                 "options": options,
             }
         )
