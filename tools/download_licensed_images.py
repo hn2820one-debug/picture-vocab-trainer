@@ -15,7 +15,7 @@ from io import BytesIO
 from pathlib import Path
 from typing import Any
 from urllib.error import HTTPError, URLError
-from urllib.parse import urlencode
+from urllib.parse import quote_plus, urlencode
 from urllib.request import Request, urlopen
 
 try:
@@ -44,12 +44,17 @@ PROVIDER_LICENSES = {
     "pixabay": "Pixabay Content License",
 }
 
+SCRAPER_LABEL = "Web Scraper (DuckDuckGo)"
+SCRAPER_LICENSE = "Personal Use Only"
+
 CATEGORY_HINTS = {
     "airport": "This is related to airport travel.",
     "hotel": "This is related to staying at a hotel.",
     "office": "This is related to office work.",
     "retail": "This is related to shopping or store operations.",
     "warehouse": "This is related to warehouse or shipping work.",
+    "meeting": "This is related to business meetings or presentations.",
+    "business_contract": "This is related to business documents, contracts, or legal agreements.",
 }
 
 CATEGORY_SLUG_ALIASES = {
@@ -69,6 +74,12 @@ CATEGORY_SLUG_ALIASES = {
     "warehouse": "warehouse",
     "倉庫": "warehouse",
     "仓库": "warehouse",
+    "meeting": "meeting",
+    "會議": "meeting",
+    "会议": "meeting",
+    "business_contract": "business_contract",
+    "商業/合約": "business_contract",
+    "商业/合约": "business_contract",
 }
 
 CSV_FIELD_ALIASES = {
@@ -130,6 +141,7 @@ def parse_args() -> argparse.Namespace:
     download_parser.add_argument("--overwrite", action="store_true", help="Overwrite existing raw candidates with the same provider id")
     download_parser.add_argument("--max-seeds", type=int, default=0, help="Optional limit for testing smaller batches")
     download_parser.add_argument("--workers", type=int, default=6, help="Number of concurrent image downloads per seed")
+    download_parser.add_argument("--scraper", action="store_true", help="Enable Web Scraper fallback (DuckDuckGo) when API results are insufficient. Scraper images are tagged 'Personal Use Only'.")
 
     sync_parser = subparsers.add_parser("sync", help="Rename approved assets and generate data/image_words.json.")
     sync_parser.add_argument("--seed-file", default=str(SEED_PATH), help="Path to vocab_seed.csv")
@@ -312,6 +324,76 @@ def run_download(args: argparse.Namespace) -> int:
                 saved_count += 1
                 next_index += 1
 
+        # Scraper fallback: supplement if API results were insufficient
+        if saved_count < args.per_seed and getattr(args, "scraper", False):
+            shortfall = args.per_seed - saved_count
+            print(f"  [hybrid] {saved_count}/{args.per_seed} from APIs, scraping {shortfall} more\u2026")
+            scraper_candidates = search_scraper(seed, shortfall)
+            scraper_outcomes = download_candidates_concurrently(scraper_candidates, max_workers=args.workers)
+            for candidate in scraper_candidates:
+                if saved_count >= args.per_seed:
+                    break
+                provider_key = (candidate.provider, candidate.provider_id)
+                outcome = scraper_outcomes.get(provider_key)
+                if not outcome:
+                    continue
+                if outcome.get("error"):
+                    failures = merge_records(
+                        failures,
+                        [
+                            {
+                                "word": seed.word,
+                                "category": seed.category,
+                                "query": seed.query,
+                                "provider": candidate.provider,
+                                "providerId": candidate.provider_id,
+                                "message": str(outcome["error"]),
+                            }
+                        ],
+                        ("word", "category", "query", "provider", "providerId", "message"),
+                    )
+                    continue
+                digest = str(outcome["digest"])
+                duplicate_of = seen_hashes.get(digest, "")
+                if duplicate_of:
+                    duplicates = merge_records(
+                        duplicates,
+                        [
+                            {
+                                "word": seed.word,
+                                "category": seed.category,
+                                "provider": candidate.provider,
+                                "providerId": candidate.provider_id,
+                                "duplicateOf": duplicate_of,
+                            }
+                        ],
+                        ("word", "category", "provider", "providerId", "duplicateOf"),
+                    )
+                    continue
+                image_path, sidecar_path = persist_candidate(
+                    candidate,
+                    outcome["jpeg_bytes"],
+                    digest,
+                    args.overwrite,
+                    slot_index=next_index,
+                    existing_paths=None,
+                )
+                seen_hashes[digest] = to_repo_relative(image_path)
+                downloads = merge_records(
+                    downloads,
+                    [
+                        {
+                            **asdict(candidate),
+                            "imagePath": to_repo_relative(image_path),
+                            "sidecarPath": to_repo_relative(sidecar_path),
+                            "sha256": digest,
+                        }
+                    ],
+                    ("imagePath",),
+                )
+                saved_count += 1
+                next_index += 1
+
         if saved_count < args.per_seed:
             missing = merge_records(
                 missing,
@@ -320,7 +402,7 @@ def run_download(args: argparse.Namespace) -> int:
                         "word": seed.word,
                         "category": seed.category,
                         "query": seed.query,
-                        "reason": f"Collected {saved_count} of requested {args.per_seed} candidates using official APIs only.",
+                        "reason": f"Collected {saved_count} of requested {args.per_seed} candidates.",
                     }
                 ],
                 ("word", "category", "query", "reason"),
@@ -577,6 +659,65 @@ def search_pixabay(seed: SeedRecord, api_key: str, per_seed: int) -> list[Candid
             )
         )
 
+    return results
+
+
+def _ddg_image_urls(query: str, needed: int) -> list[str]:
+    """Fetch image direct-link URLs from DuckDuckGo Images via their token endpoint."""
+    try:
+        search_url = "https://duckduckgo.com/?q=" + quote_plus(query) + "&iax=images&ia=images"
+        req = Request(search_url, headers={"User-Agent": "picture-vocab-trainer/1.0"})
+        with urlopen(req, timeout=15) as resp:
+            html = resp.read().decode("utf-8", errors="replace")
+        m = re.search(r"vqd=([\d-]+)", html)
+        if not m:
+            return []
+        vqd = m.group(1)
+        params = urlencode({"l": "us-en", "o": "json", "q": query, "vqd": vqd, "f": ",,,,,", "p": "1"})
+        api_req = Request(
+            f"https://duckduckgo.com/i.js?{params}",
+            headers={"User-Agent": "picture-vocab-trainer/1.0", "Referer": "https://duckduckgo.com/"},
+        )
+        with urlopen(api_req, timeout=15) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+        urls: list[str] = []
+        for item in data.get("results", []):
+            img = item.get("image", "")
+            if img and img.startswith("http"):
+                urls.append(img)
+                if len(urls) >= needed * 3:
+                    break
+        return urls
+    except Exception as exc:
+        print(f"  [scraper] DuckDuckGo query '{query}' failed: {exc}", file=sys.stderr)
+        return []
+
+
+def search_scraper(seed: SeedRecord, needed: int) -> list[CandidateRecord]:
+    """Supplement missing candidates via DuckDuckGo Images.
+
+    Returned images carry license = SCRAPER_LICENSE ('Personal Use Only').
+    """
+    query = f"{seed.word} {seed.category.replace('_', ' ')} photo"
+    urls = _ddg_image_urls(query, needed)
+    results: list[CandidateRecord] = []
+    for url in urls:
+        provider_id = hashlib.sha256(url.encode()).hexdigest()[:16]
+        results.append(
+            CandidateRecord(
+                word=seed.word,
+                category=seed.category,
+                query=seed.query,
+                zh=seed.zh,
+                provider="scraper",
+                provider_id=provider_id,
+                source=SCRAPER_LABEL,
+                sourceUrl=url,
+                photographer="",
+                license=SCRAPER_LICENSE,
+                downloadUrl=url,
+            )
+        )
     return results
 
 
@@ -863,10 +1004,23 @@ def load_seed_records(seed_path: Path) -> list[SeedRecord]:
     return rows
 
 
+def _strip_cite(value: str) -> str:
+    """Remove [cite: x] annotations from a CSV field value."""
+    return re.sub(r"\s*\[cite:[^\]]*\]", "", value).strip()
+
+
+def _strip_topic_prefix(value: str) -> str:
+    """Remove leading numeric prefix like '01. ' from a topic/category value."""
+    return re.sub(r"^\d+\.\s*", "", value).strip()
+
+
 def get_csv_value(row: dict[str, Any], field_name: str) -> str:
     for alias in CSV_FIELD_ALIASES[field_name]:
         value = str(row.get(alias, "")).strip()
         if value:
+            value = _strip_cite(value)
+            if field_name == "category":
+                value = _strip_topic_prefix(value)
             return value
     return ""
 
